@@ -1,0 +1,78 @@
+﻿l_english:
+  # alert_xyz_name = name of the Event
+  # alert_xyz_desc = additional description about the current situation (optional) 
+  # alert_xyz_hint = information that should help the player to be able to understand the situation and how to fix the problem
+  # alert_xyz_action = Where does clicking this take you?
+
+  alert_action_typhion:0 "pls remove this PDX"
+
+ alert_low_market_access_alert_typhion_name:0 "Low [concept_market_access]"
+ alert_low_market_access_alert_typhion_desc:0 "We have [GetPlayer.GetNumLowMarketAccessStates] [Concept('concept_state', '$concept_states$')] with low [concept_market_access]"
+ alert_low_market_access_alert_typhion_hint:0 "You can improve the [concept_market_access] in your states by either increasing [concept_infrastructure] (which can be done by building [GetBuildingType('building_port').GetName] or [GetBuildingType('building_railway').GetName]), by [Concept('concept_decree', '$concept_decrees$')] like [GetDecreeType('decree_road_maintenance').GetName], or ensuring that there are enough Convoys to connect to its [concept_market_capital] overseas.
+ alert_low_market_access_alert_typhion_action:0 "$alert_action_typhion$"
+
+ alert_trade_route_needs_convoys_alert_typhion_name:0 "[Concept('concept_trade_route', '$concept_trade_routes$')] need [concept_convoys]"
+ alert_trade_route_needs_convoys_alert_typhion_desc:0 "We have [Concept('concept_trade_route', '$concept_trade_routes$')] that need additional [concept_convoys] in order to grow"
+ alert_trade_route_needs_convoys_alert_typhion_hint:0 "You can increase the number of [concept_convoys] available by constructing additional Ports, altering the Production Methods of those Ports, or cancelling unproductive trade routes"
+ alert_trade_route_needs_convoys_alert_typhion_action:0 "Market Panel for the [SCOPE.GetRootScope.GetTradeRoute.GetActingMarket.GetName]"
+
+ alert_trade_route_needs_convoys_steamers_alert_typhion_name:0 "[Concept('concept_trade_route', '$concept_trade_routes$')] need [concept_convoys]"
+ alert_trade_route_needs_convoys_steamers_alert_typhion_desc:0 "We have [Concept('concept_trade_route', '$concept_trade_routes$')] that need additional [concept_convoys] in order to grow"
+ alert_trade_route_needs_convoys_steamers_alert_typhion_hint:0 "You can increase the number of [concept_convoys] available by constructing additional Ports, altering the Production Methods of those Ports, or cancelling unproductive trade routes"
+ alert_trade_route_needs_convoys_steamers_alert_typhion_action:0 "Market Panel for the [SCOPE.GetRootScope.GetTradeRoute.GetActingMarket.GetName]"
+
+ alert_isolated_state_alert_typhion_name:0 "[Concept('concept_isolated_state', '$concept_isolated_states$')]"
+ alert_isolated_state_alert_typhion_desc:0 "We have [GetPlayer.GetNumIsolatedStates] [Concept('concept_isolated_state', '$concept_isolated_states$')] in our country."
+ alert_isolated_state_alert_typhion_hint:0 "You can connect your states to the [SCOPE.GetRootScope.GetState.GetMarket.GetName] by increasing [concept_infrastructure], which can be done by building Buildings that provide [concept_infrastructure] like Ports or Railroads, or by using the #v $decree_road_maintenance$#! [concept_decree]."
+ alert_isolated_state_alert_typhion_action:0 "$alert_action_typhion$"
+
+ alert_unproductive_trade_route_alert_typhion_name:0 "Unproductive [Concept('concept_trade_route', '$concept_trade_routes$')]"
+ alert_unproductive_trade_route_alert_typhion_desc:0 "We have [GetPlayer.GetNumUnproductiveTradeRoutes|v] unproductive [Concept('concept_trade_route', '$concept_trade_routes$')]."
+ alert_unproductive_trade_route_alert_typhion_hint:0 "You can remove existing [Concept('concept_trade_route', '$concept_trade_routes$')] from either the Market Panel or using the Trade Lens. If you want to keep this route but have no other productive routes to maintain the trade centers profitability, consider subsidizing the building."
+ alert_unproductive_trade_route_alert_typhion_action:0 "Market Panel for the [SCOPE.GetRootScope.GetTradeRoute.GetActingMarket.GetName]"
+
+ alert_insurrectionary_alert_typhion_name:0 "[Concept('concept_revolution','$concept_revolutions$')] Brewing"
+ alert_insurrectionary_alert_typhion_desc:0 "There are Insurrectionary Interest Groups plotting a [Concept('concept_revolution','$concept_revolutions$')] in our country!"
+ alert_insurrectionary_alert_typhion_hint:0 "You can de-radicalize them by improving their Approval, which can be done by enacting [Concept('concept_law', '$concept_laws$')] they approve of (or stop enacting Laws they disapprove of)."
+ alert_insurrectionary_alert_typhion_action:0 "Politics Panel"
+
+ alert_secession_growing_alert_typhion_name:0 "[Concept('concept_secession','$concept_secessions$')] Growing"
+ alert_secession_growing_alert_typhion_desc:0 "There are multiple separatists organizing in our country"
+ alert_secession_growing_alert_typhion_hint:0 "You can alleviate the risk of a [concept_secession] by decreasing the [Concept('concept_radical','$concept_radicals$')] of the targeted [concept_culture] in your [concept_country]. This can be done by improving the [concept_sol] in [Concept('concept_state','$concept_states$')] they live in, ensuring they are not [Concept('concept_discrimination','$concept_discriminated_against$')] in the long term, or by issuing [Concept('concept_decree', '$concept_decrees$')] to mitigate these factors in the short term."
+ alert_secession_growing_alert_typhion_action:0 "Politics Panel"
+
+ alert_idle_mobilized_general_typhion_name:0 "Idle Mobilized Generals"
+ alert_idle_mobilized_general_typhion_desc:0 "[SCOPE.GetRootScope.GetCharacter.GetFullName] are mobilized and is idling without a front assignment. They will defend the [concept_hq] from attacking forces while they await further orders"
+ alert_idle_mobilized_general_typhion_hint:0 "You can give orders to [Concept('concept_general', '$concept_generals$')] in the $concept_general$ Panel."
+ alert_idle_mobilized_general_typhion_action:0 "Army Panel"
+
+ alert_insufficient_tax_capacity_alert_typhion_name:0 "Insufficient [concept_tax_capacity]"
+ alert_insufficient_tax_capacity_alert_typhion_desc:0 "We have [GetPlayer.GetNumInsufficientTaxCapacityStates] [Concept('concept_state', '$concept_states$')] with insufficient [concept_tax_capacity]"
+ alert_insufficient_tax_capacity_alert_typhion_hint:0 "You can improve the [concept_tax_capacity] of your states by building [GetBuildingType('building_government_administration').GetName] [Concept('concept_building','$concept_buildings$')] in the [concept_state]. You can also further utilize production methods to increase the local taxation capacity created by these buildings.\n\n Nationwide you can look to changing your laws and research new technology to modernize your bureaucratic apparatus and increase its innate taxation capacity."
+ alert_insufficient_tax_capacity_alert_typhion_action:0 "$alert_action_typhion$"
+
+ alert_market_goods_shortage_alert_typhion_name:0 "[Concept('concept_input_goods_shortage', '$concept_input_goods_shortages$')]"
+ alert_market_goods_shortage_alert_typhion_desc:0 "There are [Concept('concept_input_goods_shortage', '$concept_input_goods_shortages$')] in our [concept_market]."
+ alert_market_goods_shortage_alert_typhion_hint:0 "You can resolve the shortages by increasing the number of [concept_sell_orders] for [Concept('concept_good', '$concept_goods$')] in [SCOPE.GetRootScope.GetMarketGoods.GetMarket.GetName]. This can be done by either producing more [Concept('concept_good', '$concept_goods$')], improving [concept_infrastructure] in [Concept('concept_state', '$concept_states$')] with low [concept_market_access] producing it, or setting up a [concept_trade_route] to get it from another [concept_market]."
+ alert_market_goods_shortage_alert_typhion_action:0 "$alert_action_typhion$"
+
+ alert_expensive_goods_alert_typhion_name:0 "Expensive [Concept('concept_good', '$concept_goods$')]"
+ alert_expensive_goods_alert_typhion_desc:0 "We have expensive [Concept('concept_good', '$concept_goods$')] in at least one of our [Concept('concept_market', '$concept_markets$')]."
+ alert_expensive_goods_alert_typhion_hint:0 "$alert_expensive_goods_alert_hint_common$"
+ alert_expensive_goods_alert_typhion_action:0 "$alert_action_typhion$"
+
+ alert_has_army_troops_in_reserve_alert_typhion_name:0 "[GetPlayer.GetBattalionsInReserve|0] @battalions! [Concept('concept_battalion', '$concept_battalions$')] [concept_in_reserve]"
+ alert_has_army_troops_in_reserve_alert_typhion_desc:0 ""
+ alert_has_army_troops_in_reserve_alert_typhion_hint:0 "Promote existing [Concept('concept_general', '$concept_generals$')] in order to give them higher [concept_command_limit], which can be done on the details panel for that $concept_general$ (or by right-clicking the $concept_general$). You can also assign $concept_battalions$ by recruiting more $concept_generals$, which can be done on the Army tab in the #b Military#! panel or through the [concept_military_lens].\n\nHowever, promoting a $concept_general$ is usually recommended over recruiting more."
+ alert_has_army_troops_in_reserve_alert_typhion_action:0 "Military Panel"
+
+ alert_has_navy_troops_in_reserve_alert_typhion_name:0 "[GetPlayer.GetWarshipsInReserve|0] @flotillas! [Concept('concept_flotilla', '$concept_flotillas$')] [concept_in_reserve]"
+ alert_has_navy_troops_in_reserve_alert_typhion_desc:0 ""
+ alert_has_navy_troops_in_reserve_alert_typhion_hint:0 "Promote existing [Concept('concept_admiral', '$concept_admirals$')] in order to give them higher [concept_command_limit], which can be done on the details panel for that $concept_admiral$ (or by right-clicking the $concept_admiral$). You can also assign $concept_flotillas$ by recruiting more $concept_admirals$, which can be done on the Navy tab in the #b Military#! panel or through the [concept_military_lens].\n\nHowever, promoting an $concept_admiral$ is usually recommended over recruiting more."
+ alert_has_navy_troops_in_reserve_alert_typhion_action:0 "Military Panel"
+
+ alert_is_in_diplo_play_alert_typhion_name:0 "You are being targeted in a diplo play"
+ alert_is_in_diplo_play_alert_typhion_desc:0 ""
+ alert_is_in_diplo_play_alert_typhion_hint:0 "See whether you can defeat or your enemies or surrender."
+ alert_is_in_diplo_play_alert_typhion_action:0 "$alert_action_typhion$"
+
