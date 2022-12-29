@@ -1,5 +1,5 @@
 ﻿run_sgui_var_toggle = {
-	# Used to run a scripted gui, should be passed a scripted effect.
+	# Used to run a scripted gui on a country
 	# VAR = Variable to toggle with effect
 	every_country = {
 		limit = {

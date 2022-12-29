@@ -147,3 +147,47 @@ secession_growing_toggle_sgui = {
 #-             Vanilla            -
 #----------------------------------
 
+decreasing_interests_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = decreasing_interests_alert_disabled
+		}
+	}
+}
+bureaucracy_shortage_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = bureaucracy_shortage_alert_disabled
+		}
+	}
+}
+government_reform_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = government_reform_alert_disabled
+		}
+	}
+}
+losing_rank_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = losing_rank_alert_disabled
+		}
+	}
+}

@@ -15,16 +15,6 @@ wasted_construction = {
 	open_panel = production_methods|construction_queues
 }
 
-has_decreasing_interests_alert = {
-	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/has_decreasing_interests.dds"
-
-	valid = { has_decreasing_interests = yes }
-
-	open_panel = diplomatic_overview
-	type = alert
-}
-
 has_convoys_being_sunk = {
 	script_context = player_country
 	texture = "gfx/interface/icons/alert_icons/unused/critical_supply_network.dds"
@@ -60,6 +50,56 @@ low_legitimacy_alert = {
 	}
 
 	open_panel = politics|interest_groups
+	type = alert
+}
+
+has_decreasing_interests_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/has_decreasing_interests.dds"
+
+	valid = {
+		has_decreasing_interests = yes
+		NOT = { has_variable = decreasing_interests_alert_disabled }
+	}
+
+	open_panel = diplomatic_overview
+	type = alert
+}
+
+country_approaching_bureaucracy_shortage = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/bureaucracy_shortage.dds"
+
+	valid = {
+		approaching_bureaucracy_shortage = yes
+		NOT = { has_variable = bureaucracy_shortage_alert_disabled }
+	}
+
+	open_panel = politics|institutions
+	type = alert
+}
+free_government_reform = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/reform_government.dds"
+
+	valid = {
+		has_free_government_reform = yes
+		NOT = { has_variable = government_reform_alert_disabled }
+	}
+
+	open_panel = politics|interest_groups
+	type = alert
+}
+is_losing_rank_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/is_losing_rank.dds"
+
+	valid = {
+		is_losing_power_rank = yes
+		NOT = { has_variable = losing_rank_alert_disabled }
+	}
+
+	open_panel = diplomatic_overview
 	type = alert
 }
 

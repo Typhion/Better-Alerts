@@ -36,7 +36,7 @@ types custom_alert_types {
 		widgetanchor = top|left
 		movable = no
 		layer = layer_rightclickmenu
-		size = { 525 135 }
+		size = { 525 132 }
 		state = {
 			name = sound
 			trigger_on_create = yes
@@ -65,8 +65,8 @@ types custom_alert_types {
 		#}
 		flowcontainer = {
 			spacing = 2
+			position = { 5 5 }
 			flowcontainer = {
-				position = { 5 5 }
 				spacing = 1
 				direction = vertical
 				button_checkbox_label_custom = {
@@ -114,7 +114,7 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('upcoming_revolt_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Revolts" }
+					blockoverride "text" { text = "Upcoming Revolt" }
 					tooltip = "UPCOMING_REVOLT_ALERT_TOGGLE"
 				}
 			}
@@ -176,7 +176,7 @@ types custom_alert_types {
 				spacing = 1
 				direction = vertical
 				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('market_shortage_toggle_sgui',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					onclick = "[GetVariableSystem.Toggle('market_shortage_toggle')]"
 
 					blockoverride "checkbox"
@@ -220,8 +220,61 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('secession_growing_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Secession" }
+					blockoverride "text" { text = "Secession Growing" }
 					tooltip = "SECESSION_ALERT_TOGGLE"
+				}
+			}
+			flowcontainer = {
+				position = { 5 5 }
+				spacing = 1
+				direction = vertical
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('decreasing_interests_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Decreasing Interests" }
+					tooltip = "DESCREASING_INTERESTS_ALERT_TOGGLE"
+				}
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('bureaucracy_shortage_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('bureaucracy_shortage_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Low Bureaucracy" }
+					tooltip = "BUREAUCRACY_SHORTAGE_ALERT_TOGGLE"
+				}
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('government_reform_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('government_reform_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Free Reform" }
+					tooltip = "GOV_REFORM_ALERT_TOGGLE"
+				}
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('losing_rank_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('losing_rank_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Losing Rank" }
+					tooltip = "LOSING_RANK_ALERT_TOGGLE"
 				}
 			}
 		}
