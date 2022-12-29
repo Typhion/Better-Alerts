@@ -1,0 +1,149 @@
+﻿diplo_play_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = diplo_play_alert_disabled
+		}
+	}
+}
+isolated_state_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = isolated_state_alert_disabled
+		}
+	}
+}
+unproductive_trade_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = unproductive_trade_alert_disabled
+		}
+	}
+}
+upcoming_revolt_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = upcoming_revolt_alert_disabled
+		}
+	}
+}
+idle_general_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = idle_general_alert_disabled
+		}
+	}
+}
+needs_convoys_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = needs_convoys_alert_disabled
+		}
+	}
+}
+low_market_access_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = low_market_access_alert_disabled
+		}
+	}
+}
+has_insufficient_tax_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = insufficient_tax_alert_disabled
+		}
+	}
+}
+market_shortage_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = market_shortage_alert_disabled
+		}
+	}
+}
+army_reserve_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = army_in_reserve_alert_disabled
+		}
+	}
+}
+navy_reserve_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = navy_in_reserve_alert_disabled
+		}
+	}
+}
+# THIS ONE IS UNUSED
+expensive_goods_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = expensive_goods_alert_disabled
+		}
+	}
+}
+secession_growing_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = secession_growing_alert_disabled
+		}
+	}
+}
+
+#----------------------------------
+#-             Vanilla            -
+#----------------------------------
+

@@ -15,70 +15,6 @@ wasted_construction = {
 	open_panel = production_methods|construction_queues
 }
 
-isolated_state_alert_typhion = {
-	script_context = player_state
-	texture = "gfx/interface/icons/generic_icons/market_isolated.dds"
-
-	valid = {
-		is_isolated_from_market = yes
-	}
-
-	type = alert
-}
-
-unproductive_trade_route_alert_typhion = {
-	script_context = player_trade_route
-	texture = "gfx/interface/icons/alert_icons/unused/market_over_capacity.dds"
-
-	valid = {
-		is_trade_route_productive = no
-		is_trade_route_active = yes
-	}
-
-	open_panel = market|trade_routes
-	type = alert
-}
-
-insurrectionary_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/politics_icons/revolution.dds"
-
-	valid = {
-		has_insurrectionary_interest_groups = yes
-		has_revolution = no
-		is_revolutionary = no
-	}
-
-	open_panel = politics|interest_groups
-	type = alert
-}
-
-secession_growing_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/secession_growing.dds"
-
-	valid = {
-		has_any_secessionists_growing = yes
-		has_any_secessionists_broken_out = no
-	}
-
-	open_panel = culture|cultures
-	type = alert
-}
-
-idle_mobilized_general_typhion = {
-	script_context = player_commander
-	texture = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
-
-	valid = {
-		is_mobilized = yes
-		has_commander_order = stand_by
-	}
-
-	open_panel = military|army
-	type = alert
-}
-
 has_decreasing_interests_alert = {
 	script_context = player_country
 	texture = "gfx/interface/icons/alert_icons/has_decreasing_interests.dds"
@@ -127,127 +63,205 @@ low_legitimacy_alert = {
 	type = alert
 }
 
-trade_route_needs_convoys_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/goods_icons/clippers.dds"
+# DEMENTIVE - DONE
+#isolated_state_alert_typhion = {
+#	script_context = player_state
+#	texture = "gfx/interface/icons/generic_icons/market_isolated.dds"
 
-	valid = {
-		any_trade_route = {
-			trade_route_needs_convoys_to_grow = yes
-		}
-		NOT = { has_technology_researched = ironclad_tech }
-	}
+#	valid = {
+#		is_isolated_from_market = yes
+#	}
 
-	open_panel = market|trade_routes
-	type = alert
-}
+#	type = alert
+#}
 
-trade_route_needs_convoys_steamers_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/goods_icons/steamers.dds"
-	valid = {
-		any_trade_route = {
-			trade_route_needs_convoys_to_grow = yes
-		}
-		has_technology_researched = ironclad_tech
-	}
+# DEMENTIVE - DONE
+#unproductive_trade_route_alert_typhion = {
+#	script_context = player_trade_route
+#	texture = "gfx/interface/icons/alert_icons/unused/market_over_capacity.dds"
 
-	open_panel = market|trade_routes
-	type = alert
-}
+#	valid = {
+#		is_trade_route_productive = no
+#		is_trade_route_active = yes
+#	}
 
-low_market_access_alert_typhion = {
-	script_context = player_state
-	texture = "gfx/interface/icons/invention_icons/railways.dds"
+#	open_panel = market|trade_routes
+#	type = alert
+#}
 
-	valid = {
-		market_access < 1
-		NOT = { is_isolated_from_market = yes }
-	}
+# DEMENTIVE - DONE
+#insurrectionary_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/politics_icons/revolution.dds"
 
-	type = alert
-}
+#	valid = {
+#		has_insurrectionary_interest_groups = yes
+#		has_revolution = no
+#		is_revolutionary = no
+#	}
 
-insufficient_tax_capacity_alert_typhion = {
-	script_context = player_state
-	texture = "gfx/interface/icons/topbar/income_power_icon.dds"
+#	open_panel = politics|interest_groups
+#	type = alert
+#}
 
-	valid = {
-		tax_capacity < tax_capacity_usage
-		is_incorporated = yes
-	}
+# DEMENTIVE - DONE
+#secession_growing_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/alert_icons/secession_growing.dds"
 
-	type = alert
-}
+#	valid = {
+#		has_any_secessionists_growing = yes
+#		has_any_secessionists_broken_out = no
+#	}
 
-market_goods_shortage_alert_typhion = { 
-	script_context = player_market_goods
-	texture = "gfx/interface/icons/alert_icons/unused/supply_low.dds"
+#	open_panel = culture|cultures
+#	type = alert
+#}
 
-	valid = {
-		market_goods_has_goods_shortage = yes
-	}
+# DEMENTIVE - DONE
+#idle_mobilized_general_typhion = {
+#	script_context = player_commander
+#	texture = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
 
-	open_panel = market
-	type = alert
-}
+#	valid = {
+#		is_mobilized = yes
+#		has_commander_order = stand_by
+#	}
 
-has_army_troops_in_reserve_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/has_army_in_reserve.dds"
+#	open_panel = military|army
+#	type = alert
+#}
 
-	valid = {
-		exists = active_diplomatic_play
-		army_reserves  > 0
-	}
+# DEMENTIVE - DONE
+#trade_route_needs_convoys_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/goods_icons/clippers.dds"
 
-	open_panel = military|army
-	type = alert
-}
+#	valid = {
+#		any_trade_route = {
+#			trade_route_needs_convoys_to_grow = yes
+#		}
+#		NOT = { has_technology_researched = ironclad_tech }
+#	}
 
-has_navy_troops_in_reserve_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/has_navy_in_reserve.dds"
+#	open_panel = market|trade_routes
+#	type = alert
+#}
 
-	valid = {
-		exists = active_diplomatic_play
-		navy_reserves  > 0
-	}
+# DEMENTIVE - DONE
+#trade_route_needs_convoys_steamers_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/goods_icons/steamers.dds"
+#	valid = {
+#		any_trade_route = {
+#			trade_route_needs_convoys_to_grow = yes
+#		}
+#		has_technology_researched = ironclad_tech
+#	}
 
-	open_panel = military|navy
-	type = alert
-}
+#	open_panel = market|trade_routes
+#	type = alert
+#}
+# DEMENTIVE - DONE
+#low_market_access_alert_typhion = {
+#	script_context = player_state
+#	texture = "gfx/interface/icons/invention_icons/railways.dds"
 
-expensive_goods_alert_typhion = {
-	script_context = player_market_goods
-	texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
+#	valid = {
+#		market_access < 1
+#		NOT = { is_isolated_from_market = yes }
+#	}
 
-	valid = {
-		OR = {
-			AND = {
-				market_goods_pricier > 0.25
-				is_consumed_by_government_buildings = yes
-				market_goods_buy_orders > 0
-			}
-			AND = {
-				market_goods_pricier > 0.25
-				is_consumed_by_military_buildings = yes
-				market_goods_buy_orders > 0
-			}
-		}
-	}
+#	type = alert
+#}
+# DEMENTIVE - DONE
+#insufficient_tax_capacity_alert_typhion = {
+#	script_context = player_state
+#	texture = "gfx/interface/icons/topbar/income_power_icon.dds"
 
-	open_panel = market
-	type = alert
-}
+#	valid = {
+#		tax_capacity < tax_capacity_usage
+#		is_incorporated = yes
+#	}
 
-is_in_diplo_play_alert_typhion = {
-	script_context = player_country
-	texture = "gfx/interface/icons/lens_toolbar_icons/military_lens_button.dds"
+#	type = alert
+#}
 
-	valid = {
-		is_diplomatic_play_target = yes
-	}
+# DEMENTIVE - DONE
+#market_goods_shortage_alert_typhion = { 
+#	script_context = player_market_goods
+#	texture = "gfx/interface/icons/alert_icons/unused/supply_low.dds"
 
-	type = alert
-}
+#	valid = {
+#		market_goods_has_goods_shortage = yes
+#	}
+
+#	open_panel = market
+#	type = alert
+#}
+
+# DEMENTIVE - DONE
+#has_army_troops_in_reserve_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/alert_icons/has_army_in_reserve.dds"
+
+#	valid = {
+#		exists = active_diplomatic_play
+#		army_reserves  > 0
+#	}
+
+#	open_panel = military|army
+#	type = alert
+#}
+
+# DEMENTIVE - DONE
+#has_navy_troops_in_reserve_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/alert_icons/has_navy_in_reserve.dds"
+
+#	valid = {
+#		exists = active_diplomatic_play
+#		navy_reserves  > 0
+#	}
+
+#	open_panel = military|navy
+#	type = alert
+#}
+
+# DEMENTIVE - DONE
+
+#expensive_goods_alert_typhion = {
+#	script_context = player_market_goods
+#	texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
+
+#	valid = {
+#		OR = {
+#			AND = {
+#				market_goods_pricier > 0.25
+#				is_consumed_by_government_buildings = yes
+#				market_goods_buy_orders > 0
+#			}
+#			AND = {
+#				market_goods_pricier > 0.25
+#				is_consumed_by_military_buildings = yes
+#				market_goods_buy_orders > 0
+#			}
+#		}
+#	}
+
+#	open_panel = market
+#	type = alert
+#}
+
+# DEMENTIVE - DONE
+
+#is_in_diplo_play_alert_typhion = {
+#	script_context = player_country
+#	texture = "gfx/interface/icons/lens_toolbar_icons/military_lens_button.dds"
+
+#	valid = {
+#		is_diplomatic_play_target = yes
+#	}
+
+#	type = alert
+#}

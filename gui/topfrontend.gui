@@ -45,7 +45,7 @@ types topfrontend_types {
 			using = hud_visibility
 			using = default_fade_in_out
 			direction = horizontal
-			spacing = 5
+			#spacing = 5 # MOD COMMENTED OUT
 			margin_left = 10
 			filter_mouse = right
 
@@ -126,6 +126,7 @@ types topfrontend_types {
 
 			### ALERTS
 			dynamicgridbox = {
+				visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
 				datamodel = "[TopFrontend.AccessAlerts]"
 				flipdirection = yes
 
@@ -196,9 +197,7 @@ types topfrontend_types {
 								duration = 0.3
 								alpha = 0
 								on_finish = "[Alert.RemovingFinished]"
-							}	
-							
-							### ALERT BUTTON
+							}
 							button = {
 								size = { 100% 100% }
 								texture = "gfx/interface/icons/alert_icons/alert_button.dds"
@@ -500,6 +499,12 @@ types topfrontend_types {
 				}
 			}
 
+			# MOD ALERTS
+			custom_alert_box = {}
+
+			# MOD ALERTS MENU
+			custom_alert_toggle_menu = {}
+
 			### DIPLO MESSAGES
 			dynamicgridbox = {
 				datamodel = "[TopFrontend.AccessProposals]"
@@ -750,6 +755,7 @@ types topfrontend_types {
 		block "current_situation_button_texture" {
 			texture = "gfx/interface/current_situations/current_situation_button.dds"
 		}
+		onrightclick = "[GetVariableSystem.Toggle('alert_toggle_menu')]"
 		onclick = "[RightClickMenuManager.ToggleImportantActionsList(TopFrontend.AccessSelf, PdxGuiWidget.Self)]"
 		using = current_situation_button_sound
 

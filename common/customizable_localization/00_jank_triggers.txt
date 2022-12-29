@@ -1,0 +1,240 @@
+﻿is_in_diplo_play_loc = {
+	type = country
+	text = {
+		trigger = {
+			is_diplomatic_play_target = yes
+			NOT = { has_variable = diplo_play_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_isolated_state_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_state = {
+				is_isolated_from_market = yes
+			}
+			NOT = { has_variable = isolated_state_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_unproductive_trade_route_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_trade_route = {
+				is_trade_route_productive = no
+				is_trade_route_active = yes
+			}
+			NOT = { has_variable = unproductive_trade_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+has_upcoming_revolt_loc = {
+	type = country
+	text = {
+		trigger = {
+			has_insurrectionary_interest_groups = yes
+			has_revolution = no
+			is_revolutionary = no
+			NOT = { has_variable = upcoming_revolt_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_secession_growing_loc = {
+	type = country
+	text = {
+		trigger = {
+			has_any_secessionists_growing = yes
+			has_any_secessionists_broken_out = no
+			NOT = { has_variable = secession_growing_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_idle_general_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_character = {
+				has_role = general
+				is_mobilized = yes
+				has_commander_order = stand_by
+			}
+			NOT = { has_variable = idle_general_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+needs_convoys_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_trade_route = {
+				trade_route_needs_convoys_to_grow = yes
+			}
+			NOT = { has_technology_researched = ironclad_tech }
+			NOT = { has_variable = needs_convoys_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+needs_convoys_steamers_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_trade_route = {
+				trade_route_needs_convoys_to_grow = yes
+			}
+			has_technology_researched = ironclad_tech
+			# Uses same var as other need_convoy loc
+			NOT = { has_variable = needs_convoys_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}	
+}
+
+has_low_market_access_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_state = {
+				market_access < 1
+				NOT = { is_isolated_from_market = yes }
+			}
+			NOT = { has_variable = low_market_access_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}	
+}
+
+has_insufficient_tax_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_state = {
+				tax_capacity < tax_capacity_usage
+				is_incorporated = yes
+			}
+			NOT = { has_variable = insufficient_tax_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+has_market_shortage_loc = {
+	type = country
+	text = {
+		trigger = {
+			market = {
+				any_market_goods = {
+					market_goods_has_goods_shortage = yes
+				}
+			}
+			NOT = { has_variable = market_shortage_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_army_in_reserve_loc = {
+	type = country
+	text = {
+		trigger = {
+			exists = active_diplomatic_play
+			army_reserves  > 0
+			NOT = { has_variable = army_in_reserve_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}	
+}
+
+has_navy_in_reserve_loc = {
+	type = country
+	text = {
+		trigger = {
+			exists = active_diplomatic_play
+			navy_reserves  > 0
+			NOT = { has_variable = navy_in_reserve_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+has_expensive_goods_loc = {
+	type = country
+	text = {
+		trigger = {
+			market = {
+				any_market_goods = {
+					OR = {
+						AND = {
+							market_goods_pricier > 0.25
+							is_consumed_by_government_buildings = yes
+							market_goods_buy_orders > 0
+						}
+						AND = {
+							market_goods_pricier > 0.25
+							is_consumed_by_military_buildings = yes
+							market_goods_buy_orders > 0
+						}
+					}
+				}
+			}
+			NOT = { has_variable = expensive_goods_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
