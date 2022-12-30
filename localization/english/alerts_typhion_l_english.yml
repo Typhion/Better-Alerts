@@ -84,6 +84,11 @@ no:0 "no"
  alert_stockpiling_gold_alert_typhion_hint:0 "Increase your expenditures or reduce your income to balance your budget better. Stockpiling gold extracts @money![concept_money] from your economy and [concept_pop] at diminishing returns, leading to reductions in [concept_wealth] over time."
  alert_stockpiling_gold_alert_typhion_ui:0 "#T $alert_stockpiling_gold_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_stockpiling_gold_alert_typhion_desc$\n\n@information! $alert_stockpiling_gold_alert_typhion_hint$\n\n#I Click to open the Budget Panel#!"
  
+ alert_is_construction_paused_alert_typhion_ui:0 "#T $alert_is_construction_paused_name$#!\n$TOOLTIP_DELIMITER$\n$alert_is_construction_paused_desc$\n\n@information! $alert_is_construction_paused_hint$\n\n#I Click to open the $alert_is_construction_paused_action$#!"
+
+ alert_has_convoys_being_sunk_alert_typhion_ui:0 "#T $alert_has_convoys_being_sunk_name$#!\n$TOOLTIP_DELIMITER$\n$alert_has_convoys_being_sunk_desc$\n\n@information! $alert_has_convoys_being_sunk_hint$\n\n#I Click to open the $alert_has_convoys_being_sunk_action$#!"
+
+ alert_is_losing_rank_alert_typhion_ui:0 "#T $alert_is_losing_rank_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_is_losing_rank_alert_desc$\n\n@information! $alert_is_losing_rank_alert_hint$\n\n#I Click to open the $alert_is_losing_rank_alert_action$#!"
 
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"

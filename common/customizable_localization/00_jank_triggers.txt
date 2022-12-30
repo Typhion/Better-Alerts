@@ -253,3 +253,45 @@ stockpiling_gold_loc = {
 		localization_key = "no"
 	}		
 }
+
+is_construction_paused_loc = {
+	type = country
+	text = {
+		trigger = {
+			is_construction_paused = yes
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+has_convoys_being_sunk_loc = {
+	type = country
+	text = {
+		trigger = {
+			#is_at_war = yes
+			#has_convoys_being_sunk = yes
+			NOT = { has_variable = has_convoys_being_sunk_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+is_losing_rank_loc = {
+	type = country
+	text = {
+		trigger = {
+			is_losing_power_rank = yes
+			NOT = { has_variable = losing_rank_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}

@@ -16,20 +16,6 @@ wasted_construction = {
 	open_panel = production_methods|construction_queues
 }
 
-has_convoys_being_sunk = {
-	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/unused/critical_supply_network.dds"
-
-	valid = {
-		is_at_war = yes
-		has_convoys_being_sunk = yes
-		NOT = { has_variable = has_convoys_being_sunk_alert_disabled }
-	}
-
-	open_panel = military|navy
-	type = alert
-}
-
 low_legitimacy_alert = {
 	script_context = player_country
 	texture = "gfx/interface/icons/alert_icons/unused/low_legitimacy.dds"
@@ -82,16 +68,25 @@ free_government_reform = {
 }
 is_losing_rank_alert = {
 	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/is_losing_rank.dds"
 
 	valid = {
 		is_losing_power_rank = yes
-		NOT = { has_variable = losing_rank_alert_disabled }
 	}
 
 	open_panel = diplomatic_overview
-	type = alert
+	type = angry_important_action
 }
+
+is_construction_paused = {
+ 	script_context = player_country
+
+	valid = {
+		is_construction_paused = yes
+	}
+
+	open_panel = production_methods|construction_queues
+	type = angry_important_action
+ }
 
 # DEMENTIVE - DONE
 #isolated_state_alert_typhion = {

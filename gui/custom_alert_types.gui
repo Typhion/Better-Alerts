@@ -332,7 +332,7 @@ types custom_alert_types {
 		}
 	}
 
-	type custom_alert_box = flowcontainer {
+	type custom_alert_box_red = flowcontainer {
 		visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
 		# Expensive Goods
 		#custom_alert = {
@@ -347,7 +347,7 @@ types custom_alert_types {
 		#	tooltip = "alert_expensive_goods_alert_typhion_ui"
 		#}
 		# Market Shortage
-		custom_alert = {
+		custom_alert_red = {
 			blockoverride "click"  {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'details' )]"
 			}
@@ -356,7 +356,88 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/alert_icons/unused/supply_low.dds"
 			}
 			tooltip = "alert_market_shortage_alert_typhion_ui"
+			using = tooltip_below
 		}
+		# Secession Growing
+		custom_alert_red = {
+			blockoverride "click"  {
+				onclick = "[InformationPanelBar.OpenPanelTab('culture', 'cultures')]"
+			}
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_secession_growing_loc'), 'yes')]"
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/secession_growing.dds"
+			}
+			tooltip = "alert_secession_growing_alert_typhion_ui"
+			using = tooltip_below
+		}				
+		# Revolution is Coming
+		custom_alert_red = {
+			blockoverride "click"  {
+				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
+			}
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_upcoming_revolt_loc'), 'yes')]"
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/politics_icons/revolution.dds"
+			}
+			tooltip = "alert_upcoming_revolt_alert_typhion_ui"
+			using = tooltip_below
+		}
+		# Isolated State
+		# TODO: Make is so onclick cycles through relevant states.
+		custom_alert_red = {
+			blockoverride "click"  {
+				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+			}
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/generic_icons/market_isolated.dds"
+			}
+			tooltip = "alert_isolated_state_alert_typhion_ui"
+			using = tooltip_below
+		}
+		# Target of Diplo Plays
+		custom_alert_red = {
+			blockoverride "click"  {
+				onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
+			}
+			visible = "[EqualTo_string(GetPlayer.GetCustom('is_in_diplo_play_loc'), 'yes')]"
+			blockoverride "alert_texture" {
+
+				texture = "gfx/interface/icons/lens_toolbar_icons/military_lens_button.dds"
+			}
+			tooltip = "alert_is_in_diplo_play_alert_ui"
+			using = tooltip_below
+		}
+		# Convoys Sunk
+		custom_alert_red = {
+			blockoverride "click"  {
+				onclick = "[InformationPanelBar.OpenPanelTab('military', 'navy')]"
+			}
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_convoys_being_sunk_loc'), 'yes')]"
+			blockoverride "alert_texture" {
+
+				texture = "gfx/interface/icons/alert_icons/unused/critical_supply_network.dds"
+			}
+			tooltip = "alert_has_convoys_being_sunk_alert_typhion_ui"
+			using = tooltip_below
+		}
+	}
+
+	type custom_alert_box = flowcontainer {
+		visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
+		# Expensive Goods
+		#custom_alert = {
+		#	blockoverride "click"  {
+		#		onclick = "[InformationPanelBar.OpenMarketPanelTab( GetPlayer.GetCapital.AccessMarket, 'details' )]"
+		#	}
+		#	visible = "[EqualTo_string(GetPlayer.GetCustom('has_expensive_goods_loc'), 'yes')]"
+		#	blockoverride "alert_texture" {
+		#		texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
+		#		size = { 43 43 }
+		#	}
+		#	tooltip = "alert_expensive_goods_alert_typhion_ui"
+		#	using = tooltip_below
+		#}
 		# Insufficient Tax
 		# TODO: Make is so onclick cycles through relevant states.
 		custom_alert = {
@@ -368,6 +449,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/topbar/income_power_icon.dds"
 			}
 			tooltip = "alert_insufficient_tax_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Low Market Access
 		# TODO: Make is so onclick cycles through relevant states.
@@ -380,6 +462,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/invention_icons/railways.dds"
 			}
 			tooltip = "alert_low_market_access_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Need Convoys Steamers
 		custom_alert = {
@@ -391,6 +474,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/goods_icons/steamers.dds"
 			}
 			tooltip = "alert_need_convoys_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Need Convoys
 		custom_alert = {
@@ -402,52 +486,31 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/goods_icons/clippers.dds"
 			}
 			tooltip = "alert_need_convoys_alert_typhion_ui"
+			using = tooltip_below
 		}
-		# Secession Growing
+		# Construction Paused
 		custom_alert = {
 			blockoverride "click"  {
-				onclick = "[InformationPanelBar.OpenPanelTab('culture', 'cultures')]"
+				onclick = "[InformationPanelBar.OpenPanelTab('production_methods', 'construction_queues')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_secession_growing_loc'), 'yes')]"
+			visible = "[EqualTo_string(GetPlayer.GetCustom('is_construction_paused_loc'), 'yes')]"
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/alert_icons/secession_growing.dds"
+				texture = "gfx/interface/icons/alert_icons/wasted_construction.dds"
 			}
-			tooltip = "alert_secession_growing_alert_typhion_ui"
-		}				
-		# Revolution is Coming
-		custom_alert = {
-			blockoverride "click"  {
-				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
-			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_upcoming_revolt_loc'), 'yes')]"
-			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/politics_icons/revolution.dds"
-			}
-			tooltip = "alert_upcoming_revolt_alert_typhion_ui"
+			tooltip = "alert_is_construction_paused_alert_typhion_ui"
+			using = tooltip_below
 		}
-		# Isolated State
-		# TODO: Make is so onclick cycles through relevant states.
+		# Losing Rank
 		custom_alert = {
 			blockoverride "click"  {
-				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
+			visible = "[EqualTo_string(GetPlayer.GetCustom('is_losing_rank_loc'), 'yes')]"
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/generic_icons/market_isolated.dds"
+				texture = "gfx/interface/icons/alert_icons/is_losing_rank.dds"
 			}
-			tooltip = "alert_isolated_state_alert_typhion_ui"
-		}
-		# Target of Diplo Plays
-		custom_alert = {
-			blockoverride "click"  {
-				onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
-			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('is_in_diplo_play_loc'), 'yes')]"
-			blockoverride "alert_texture" {
-
-				texture = "gfx/interface/icons/lens_toolbar_icons/military_lens_button.dds"
-			}
-			tooltip = "alert_is_in_diplo_play_alert_ui"
+			tooltip = "alert_is_losing_rank_alert_typhion_ui"
+			using = tooltip_below
 		}
 	}
 
@@ -463,6 +526,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/alert_icons/has_navy_in_reserve.dds"
 			}
 			tooltip = "alert_navy_in_reserve_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Army in Reserve
 		custom_alert_green = {
@@ -477,6 +541,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/alert_icons/has_army_in_reserve.dds"
 			}
 			tooltip = "alert_army_in_reserve_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Idle mobilized general
 		custom_alert_green = {
@@ -488,6 +553,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
 			}
 			tooltip = "alert_idle_general_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Unproductive Trade Routes
 		custom_alert_green = {
@@ -499,6 +565,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/alert_icons/unused/market_over_capacity.dds"
 			}
 			tooltip = "alert_unproductive_trade_route_alert_typhion_ui"
+			using = tooltip_below
 		}
 		# Stockpiling Gold
 		custom_alert_green = {
@@ -510,6 +577,7 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/goods_icons/gold.dds"
 			}
 			tooltip = "alert_stockpiling_gold_alert_typhion_ui"
+			using = tooltip_below
 		}
 	}
 
@@ -540,37 +608,37 @@ types custom_alert_types {
 			}
 
 			### alert animation
-			modify_texture = {
-				name = "glow_loop"
-				texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				rotate_uv = 0
-				alpha = 0.8
-			}
-			
-			state = {
-				trigger_on_create = yes
-				name = glow_loop1
-				next = glow_loop2
-				duration = 1.5
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = -22.5
-				}
-			}
-			state = {
-				name = glow_loop2
-				next = glow_loop1
-				duration = 0
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = 0
-				}
-			}
+			#modify_texture = {
+			#	name = "glow_loop"
+			#	texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
+			#	spriteType = Corneredstretched
+			#	spriteborder = { 0 0 }
+			#	blend_mode = overlay
+			#	rotate_uv = 0
+			#	alpha = 0.8
+			#}
+			#
+			#state = {
+			#	trigger_on_create = yes
+			#	name = glow_loop1
+			#	next = glow_loop2
+			#	duration = 1.5
+			#
+			#	modify_texture = {
+			#		name = "glow_loop"
+			#		rotate_uv = -22.5
+			#	}
+			#}
+			#state = {
+			#	name = glow_loop2
+			#	next = glow_loop1
+			#	duration = 0
+			#
+			#	modify_texture = {
+			#		name = "glow_loop"
+			#		rotate_uv = 0
+			#	}
+			#}
 			
 			### button states
 			modify_texture = {
@@ -810,9 +878,311 @@ types custom_alert_types {
 				blockoverride "parent_anchor" {
 					parentanchor = hcenter|vcenter
 				}
+				#blockoverride "entity_instance" {
+				#	entity_instance = vfx_entity_ui_alert_above_icon
+				#}			
+			}
+		}
+	}
+
+	type custom_alert_red = widget {
+		size = { 70 70 }
+		button = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			effectname = "NoHighlight"
+			using = current_situation_button_sound
+			using = tooltip_below
+			block "click"  {
+
+			}
+			### ALERT VFX - NEW
+			vfx = {
+				blockoverride "size" {
+					size = { 400% 400% }
+				}
+				blockoverride "parent_anchor" {
+					parentanchor = hcenter|vcenter
+				}
 				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_above_icon
+					entity_instance = vfx_entity_ui_alert_once_for_new
 				}			
+			}
+
+			### alert animation
+			#modify_texture = {
+			#	name = "glow_loop"
+			#	texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
+			#	spriteType = Corneredstretched
+			#	spriteborder = { 0 0 }
+			#	blend_mode = overlay
+			#	rotate_uv = 0
+			#	alpha = 0.8
+			#}
+			#
+			#state = {
+			#	trigger_on_create = yes
+			#	name = glow_loop1
+			#	next = glow_loop2
+			#	duration = 1.5
+			#
+			#	modify_texture = {
+			#		name = "glow_loop"
+			#		rotate_uv = -22.5
+			#	}
+			#}
+			#state = {
+			#	name = glow_loop2
+			#	next = glow_loop1
+			#	duration = 0
+			#
+			#	modify_texture = {
+			#		name = "glow_loop"
+			#		rotate_uv = 0
+			#	}
+			#}
+			
+			### button states
+			modify_texture = {
+				name = "mouse_enter"
+				texture = "gfx/interface/buttons/button_icons/icon_button_mouse_enter.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 0 0 }
+				blend_mode = overlay
+				alpha = 0
+				rotate_uv = 0
+			}
+			modify_texture = {
+				name = "mouse_press"
+				texture = "gfx/interface/buttons/default_button_mousepress.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 0 0 }
+				blend_mode = overlay
+				alpha = 0
+			}
+			
+			### show
+			state = {
+				name = _show
+				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('show')]"
+				position = { 0 0 }
+				using = button_animation_duration
+				
+				modify_texture = {
+					name = mouse_press
+					alpha = 0
+				}
+				modify_texture = {
+					name = mouse_enter
+					alpha = 0
+					rotate_uv = 0
+				}
+			}
+
+			### enter
+			state = {
+				name = _mouse_enter
+				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('enter')]"
+				position = { 0 0 }
+				using = button_animation_duration
+				
+				modify_texture = {
+					name = mouse_press
+					alpha = 0
+				}
+				modify_texture = {
+					name = mouse_enter
+					alpha = 1
+					rotate_uv = 180
+				}
+			}
+			
+			### leave
+			state = {
+				name = _mouse_leave
+				on_start = "[PdxGuiWidget.AccessChild('icon').InterruptThenTriggerAnimation('enter','leave')]"
+				position = { 0 0 }
+				using = button_animation_duration
+				
+				modify_texture = {
+					name = mouse_press
+					alpha = 0
+				}
+				modify_texture = {
+					name = mouse_enter
+					alpha = 0
+					rotate_uv = 0
+				}
+			}
+
+			### press
+			state = {
+				name = _mouse_press
+				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('press')]"
+				position = { 1 2 }
+				using = button_animation_duration
+				
+				modify_texture = {
+					name = mouse_press
+					alpha = 1
+				}
+				modify_texture = {
+					name = mouse_enter
+					alpha = 0
+					rotate_uv = 0
+				}
+			}
+
+			### release
+			state = {
+				name = _mouse_release
+				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('release')]"
+				position = { 0 0 }
+				using = button_animation_duration
+				
+				modify_texture = {
+					name = mouse_press
+					alpha = 0
+				}
+				modify_texture = {
+					name = mouse_enter
+					alpha = 0
+					rotate_uv = 0
+				}
+			}
+			
+			### ALERT ICON INSIDE THE BUTTON
+			icon = {
+				name = icon
+				parentanchor = center
+				size = { 55 55 }
+				block "alert_texture" {
+					#texture = "[Alert.GetTexture]"
+				}
+				
+				### button states
+				modify_texture = {
+					name = "mouse_enter"
+					texture = "gfx/interface/buttons/button_icons/icon_button_mouse_enter.dds"
+					spriteType = Corneredstretched
+					spriteborder = { 0 0 }
+					blend_mode = overlay
+					alpha = 0
+					rotate_uv = 0
+				}
+				modify_texture = {
+					name = "mouse_press"
+					texture = "gfx/interface/buttons/default_button_mousepress.dds"
+					spriteType = Corneredstretched
+					spriteborder = { 0 0 }
+					blend_mode = overlay
+					alpha = 0
+				}
+				
+				scale = 1
+				
+				### show
+				state = {
+					name = show
+					position = { 0 0 }
+					using = button_animation_duration
+					scale = 1
+					
+					modify_texture = {
+						name = mouse_press
+						alpha = 0
+					}
+					modify_texture = {
+						name = mouse_enter
+						alpha = 0
+						rotate_uv = 0
+					}
+				}
+
+				### enter
+				state = {
+					name = enter
+					position = { 0 0 }
+					using = button_animation_duration
+					scale = 1.1
+					
+					modify_texture = {
+						name = mouse_press
+						alpha = 0
+					}
+					modify_texture = {
+						name = mouse_enter
+						alpha = 1
+						rotate_uv = 180
+					}
+				}
+				
+				### leave
+				state = {
+					name = leave
+					position = { 0 0 }
+					using = button_animation_duration
+					scale = 1
+					
+					modify_texture = {
+						name = mouse_press
+						alpha = 0
+					}
+					modify_texture = {
+						name = mouse_enter
+						alpha = 0
+						rotate_uv = 0
+					}
+				}
+
+				### press
+				state = {
+					name = press
+					position = { 1 2 }
+					using = button_animation_duration
+					scale = 1.1
+					
+					modify_texture = {
+						name = mouse_press
+						alpha = 1
+					}
+					modify_texture = {
+						name = mouse_enter
+						alpha = 0
+						rotate_uv = 0
+					}
+				}
+
+				### release
+				state = {
+					name = release
+					position = { 0 0 }
+					using = button_animation_duration
+					scale = 1.1
+					
+					modify_texture = {
+						name = mouse_press
+						alpha = 0
+					}
+					modify_texture = {
+						name = mouse_enter
+						alpha = 0
+						rotate_uv = 0
+					}
+				}
+			}
+
+			### ALERT VFX - IDLE
+			vfx = {
+				blockoverride "size" {
+					size = { 400% 400% }
+				}
+				blockoverride "parent_anchor" {
+					parentanchor = hcenter|vcenter
+				}
+				#blockoverride "entity_instance" {
+				#	entity_instance = vfx_entity_ui_alert_above_icon
+				#}			
 			}
 		}
 	}
@@ -842,37 +1212,37 @@ types custom_alert_types {
 			}
 
 			### alert animation
-			modify_texture = {
-				name = "glow_loop"
-				texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				rotate_uv = 0
-				alpha = 0.8
-			}
-			
-			state = {
-				trigger_on_create = yes
-				name = glow_loop1
-				next = glow_loop2
-				duration = 1.5
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = -22.5
-				}
-			}
-			state = {
-				name = glow_loop2
-				next = glow_loop1
-				duration = 0
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = 0
-				}
-			}
+			#modify_texture = {
+			#	name = "glow_loop"
+			#	texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
+			#	spriteType = Corneredstretched
+			#	spriteborder = { 0 0 }
+			#	blend_mode = overlay
+			#	rotate_uv = 0
+			#	alpha = 0.8
+			#}
+			#
+			#state = {
+			#	trigger_on_create = yes
+			#	name = glow_loop1
+			#	next = glow_loop2
+			#	duration = 1.5
+			#
+			#	modify_texture = {
+			#		name = "glow_loop"
+			#		rotate_uv = -22.5
+			#	}
+			#}
+			#state = {
+			#	name = glow_loop2
+			#	next = glow_loop1
+			#	duration = 0
+			#
+			#	modify_texture = {
+			#		name = "glow_loop"
+			#		rotate_uv = 0
+			#	}
+			#}
 			
 			### button states
 			modify_texture = {
@@ -1112,9 +1482,9 @@ types custom_alert_types {
 				blockoverride "parent_anchor" {
 					parentanchor = hcenter|vcenter
 				}
-				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_above_icon
-				}			
+				#blockoverride "entity_instance" {
+				#	entity_instance = vfx_entity_ui_alert_above_icon
+				#}			
 			}
 		}
 	}
