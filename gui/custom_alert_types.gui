@@ -102,7 +102,7 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('unproductive_trade_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Bad Trade" }
+					blockoverride "text" { text = "Trade Routes" }
 					tooltip = "UNPRODUCTIVE_TRADE_ALERT_TOGGLE"
 				}
 				button_checkbox_label_custom = {
@@ -114,7 +114,7 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('upcoming_revolt_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Upcoming Revolt" }
+					blockoverride "text" { text = "Revolution" }
 					tooltip = "UPCOMING_REVOLT_ALERT_TOGGLE"
 				}
 			}
@@ -131,7 +131,7 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('idle_gen_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Idle General" }
+					blockoverride "text" { text = "Idle Commander" }
 					tooltip = "IDLE_GENERAL_ALERT_TOGGLE"
 				}
 				button_checkbox_label_custom = {
@@ -167,7 +167,7 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('bad_tax_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Bad Tax" }
+					blockoverride "text" { text = "Tax Capacity" }
 					tooltip = "BAD_TAX_ALERT_TOGGLE"
 				}
 			}
@@ -261,7 +261,7 @@ types custom_alert_types {
 						checked = "[Not(GetVariableSystem.Exists('government_reform_toggle'))]"
 					}
 
-					blockoverride "text" { text = "Free Reform" }
+					blockoverride "text" { text = "Free Gov Reform" }
 					tooltip = "GOV_REFORM_ALERT_TOGGLE"
 				}
 				button_checkbox_label_custom = {
