@@ -271,8 +271,8 @@ has_convoys_being_sunk_loc = {
 	type = country
 	text = {
 		trigger = {
-			#is_at_war = yes
-			#has_convoys_being_sunk = yes
+			is_at_war = yes
+			has_convoys_being_sunk = yes
 			NOT = { has_variable = has_convoys_being_sunk_alert_disabled }
 		}
 		localization_key = "yes"

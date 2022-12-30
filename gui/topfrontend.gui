@@ -221,37 +221,37 @@ types topfrontend_types {
 								}
 
 								### alert animation
-								#modify_texture = {
-								#	name = "glow_loop"
-								#	texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
-								#	spriteType = Corneredstretched
-								#	spriteborder = { 0 0 }
-								#	blend_mode = overlay
-								#	rotate_uv = 0
-								#	alpha = 0.8
-								#}
-								#
-								#state = {
-								#	trigger_on_create = yes
-								#	name = glow_loop1
-								#	next = glow_loop2
-								#	duration = 1.5
-								#
-								#	modify_texture = {
-								#		name = "glow_loop"
-								#		rotate_uv = -22.5
-								#	}
-								#}
-								#state = {
-								#	name = glow_loop2
-								#	next = glow_loop1
-								#	duration = 0
-								#
-								#	modify_texture = {
-								#		name = "glow_loop"
-								#		rotate_uv = 0
-								#	}
-								#}
+								modify_texture = {
+									name = "glow_loop"
+									texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
+									spriteType = Corneredstretched
+									spriteborder = { 0 0 }
+									blend_mode = overlay
+									rotate_uv = 0
+									alpha = 0.8
+								}
+								
+								state = {
+									trigger_on_create = yes
+									name = glow_loop1
+									next = glow_loop2
+									duration = 1.5
+								
+									modify_texture = {
+										name = "glow_loop"
+										rotate_uv = -22.5
+									}
+								}
+								state = {
+									name = glow_loop2
+									next = glow_loop1
+									duration = 0
+								
+									modify_texture = {
+										name = "glow_loop"
+										rotate_uv = 0
+									}
+								}
 								
 								### button states
 								modify_texture = {
@@ -489,9 +489,9 @@ types topfrontend_types {
 									blockoverride "parent_anchor" {
 										parentanchor = hcenter|vcenter
 									}
-									#blockoverride "entity_instance" {
-									#	entity_instance = vfx_entity_ui_alert_above_icon
-									#}			
+									blockoverride "entity_instance" {
+										entity_instance = vfx_entity_ui_alert_above_icon
+									}			
 								}
 							}
 						}
