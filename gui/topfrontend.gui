@@ -200,7 +200,7 @@ types topfrontend_types {
 							}
 							button = {
 								size = { 100% 100% }
-								texture = "gfx/interface/icons/alert_icons/alert_button.dds"
+								texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
 								effectname = "NoHighlight"
 								using = current_situation_button_sound
 								onclick = "[PopupManager.OpenAlert(Alert.AccessSelf)]"
@@ -499,8 +499,11 @@ types topfrontend_types {
 				}
 			}
 
-			# MOD ALERTS
+			# MOD ALERTS YELLOW
 			custom_alert_box = {}
+
+			# MOD ALERTS GREEN
+			custom_alert_box_green = {}
 
 			# MOD ALERTS MENU
 			custom_alert_toggle_menu = {}
