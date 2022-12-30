@@ -9,6 +9,7 @@ wasted_construction = {
 
 	valid = {
 		has_wasted_construction = yes
+		NOT = { has_variable = wasted_construction_alert_disabled }
 	}
 
 	type = alert
@@ -22,22 +23,10 @@ has_convoys_being_sunk = {
 	valid = {
 		is_at_war = yes
 		has_convoys_being_sunk = yes
+		NOT = { has_variable = has_convoys_being_sunk_alert_disabled }
 	}
 
 	open_panel = military|navy
-	type = alert
-}
-
-stockpiling_gold_alert = {
-	script_context = player_country
-	texture = "gfx/interface/icons/goods_icons/gold.dds"
-
-	valid = {
-		gold_reserves > gold_reserves_limit
-		weekly_net_fixed_income > 0
-	}
-
-	open_panel = budget_panel
 	type = alert
 }
 
@@ -47,6 +36,7 @@ low_legitimacy_alert = {
 
 	valid = {
 		government_legitimacy <= 50
+		NOT = { has_variable = low_legitimacy_alert_disabled }
 	}
 
 	open_panel = politics|interest_groups

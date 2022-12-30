@@ -238,3 +238,18 @@ has_expensive_goods_loc = {
 		localization_key = "no"
 	}
 }
+
+stockpiling_gold_loc = {
+	type = country
+	text = {
+		trigger = {
+			gold_reserves > gold_reserves_limit
+			weekly_net_fixed_income > 0
+			NOT = { has_variable = stockpiling_gold_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}

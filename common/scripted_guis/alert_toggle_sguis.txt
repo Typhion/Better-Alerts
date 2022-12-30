@@ -191,3 +191,47 @@ losing_rank_toggle_sgui = {
 		}
 	}
 }
+wasted_construction_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = wasted_construction_alert_disabled
+		}
+	}
+}
+has_convoys_being_sunk_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = has_convoys_being_sunk_alert_disabled
+		}
+	}
+}
+stockpiling_gold_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = stockpiling_gold_alert_disabled
+		}
+	}
+}
+low_legitimacy_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = low_legitimacy_alert_disabled
+		}
+	}
+}

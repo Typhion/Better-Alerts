@@ -36,7 +36,7 @@ types custom_alert_types {
 		widgetanchor = top|left
 		movable = no
 		layer = layer_rightclickmenu
-		size = { 525 132 }
+		size = { 650 132 }
 		state = {
 			name = sound
 			trigger_on_create = yes
@@ -277,6 +277,58 @@ types custom_alert_types {
 					tooltip = "LOSING_RANK_ALERT_TOGGLE"
 				}
 			}
+			flowcontainer = {
+				spacing = 1
+				direction = vertical
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('wasted_construction_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('wasted_construction_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Construction" }
+					tooltip = "WASTED_CONSTRUCTION_ALERT_TOGGLE"
+				}
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('has_convoys_being_sunk_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('has_convoys_being_sunk_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Convoys Sunk" }
+					tooltip = "CONVOYS_SUNK_ALERT_TOGGLE"
+				}
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('stockpiling_gold_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('stockpiling_gold_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Gold Stockpile" }
+					tooltip = "STOCKPILING_GOLD_ALERT_TOGGLE"
+				}
+				button_checkbox_label_custom = {
+					onclick = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetVariableSystem.Toggle('low_legitimacy_toggle')]"
+
+					blockoverride "checkbox"
+					{
+						checked = "[Not(GetVariableSystem.Exists('low_legitimacy_toggle'))]"
+					}
+
+					blockoverride "text" { text = "Low Legitimacy" }
+					tooltip = "LOW_LEGITIMACY_ALERT_TOGGLE"
+				}
+			}
 		}
 	}
 
@@ -447,6 +499,17 @@ types custom_alert_types {
 				texture = "gfx/interface/icons/alert_icons/unused/market_over_capacity.dds"
 			}
 			tooltip = "alert_unproductive_trade_route_alert_typhion_ui"
+		}
+		# Stockpiling Gold
+		custom_alert_green = {
+			blockoverride "click"  {
+				onclick = "[InformationPanelBar.OpenPanelTab('budget', 'overview')]"
+			}
+			visible = "[EqualTo_string(GetPlayer.GetCustom('stockpiling_gold_loc'), 'yes')]"
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/goods_icons/gold.dds"
+			}
+			tooltip = "alert_stockpiling_gold_alert_typhion_ui"
 		}
 	}
 
