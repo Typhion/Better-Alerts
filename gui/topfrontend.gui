@@ -756,6 +756,7 @@ types topfrontend_types {
 			texture = "gfx/interface/current_situations/current_situation_button.dds"
 		}
 		onrightclick = "[GetVariableSystem.Toggle('alert_toggle_menu')]"
+		onclick = "[GetVariableSystem.Clear('alert_toggle_menu')]"
 		onclick = "[RightClickMenuManager.ToggleImportantActionsList(TopFrontend.AccessSelf, PdxGuiWidget.Self)]"
 		using = current_situation_button_sound
 
