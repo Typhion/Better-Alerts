@@ -235,3 +235,69 @@ low_legitimacy_toggle_sgui = {
 		}
 	}
 }
+country_default_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = country_default_alert_disabled
+		}
+	}
+}
+has_no_research_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = has_no_research_alert_disabled
+		}
+	}
+}
+has_no_war_goal_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = has_no_war_goal_alert_disabled
+		}
+	}
+}
+vulnerable_front_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = vulnerable_front_alert_disabled
+		}
+	}
+}
+high_attrition_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = high_attrition_alert_disabled
+		}
+	}
+}
+active_peace_deal_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = active_peace_deal_alert_disabled
+		}
+	}
+}

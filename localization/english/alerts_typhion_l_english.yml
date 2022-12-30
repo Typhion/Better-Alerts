@@ -90,6 +90,12 @@ no:0 "no"
 
  alert_is_losing_rank_alert_typhion_ui:0 "#T $alert_is_losing_rank_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_is_losing_rank_alert_desc$\n\n@information! $alert_is_losing_rank_alert_hint$\n\n#I Click to open the $alert_is_losing_rank_alert_action$#!"
 
+ alert_has_no_war_goal_alert_typhion_ui:0 "#T $alert_has_no_war_goal_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_has_no_war_goal_alert_desc$\n\n@information! $alert_has_no_war_goal_alert_hint$\n\n#I Click to open the $alert_has_no_war_goal_alert_action$#!"
+
+ alert_vulnerable_front_alert_typhion_ui:0 "#T $alert_vulnerable_front_name$#!\n$TOOLTIP_DELIMITER$\n$alert_vulnerable_front_desc$\n\n@information! $alert_vulnerable_front_hint$\n\n#I Click to open the $alert_vulnerable_front_action$#!"
+
+ alert_high_attrition_alert_typhion_ui:0 "#T $alert_high_attrition_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_high_attrition_alert_desc$\n\n@information! $alert_high_attrition_alert_hint$\n\n#I Click to open the $alert_high_attrition_alert_action$#!"
+
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"
  MARKET_SHORTAGE_ALERT_TOGGLE:0 "Toggle [concept_input_goods_shortage] Alerts"

@@ -295,3 +295,55 @@ is_losing_rank_loc = {
 		localization_key = "no"
 	}		
 }
+
+has_no_war_goal_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_diplomatic_play = {
+				OR = {
+					initiator = root
+					target = root
+				}
+				scope:actor = { should_set_wargoal = yes }
+			}
+			NOT = { has_variable = has_no_war_goal_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+vulnerable_front_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_front = {
+    			is_vulnerable_front = scope:actor
+    		}
+        	NOT = { has_variable = vulnerable_front_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+high_attrition_loc = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_general = {
+				has_high_attrition = yes
+			}
+			NOT = { has_variable = high_attrition_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}

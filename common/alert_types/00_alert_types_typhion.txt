@@ -88,6 +88,95 @@ is_construction_paused = {
 	type = angry_important_action
  }
 
+ country_default = {
+ 	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/bankruptcy.dds"
+
+	valid = {
+		in_default = yes
+		NOT = { has_variable = country_default_alert_disabled }
+	}
+
+	open_panel = budget|assets
+	type = alert
+}
+
+has_no_research_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/has_no_research.dds"
+
+	valid = {
+		NOT = { is_researching_technology = any }
+		has_researchable_technology = yes
+		NOT = { has_variable = has_no_research_alert_disabled }
+	}
+
+	open_panel = tech_tree
+	type = alert
+}
+
+has_no_war_goal_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/has_no_war_goal.dds"
+
+	valid = {
+		any_diplomatic_play = {
+			OR = {
+				initiator = root
+				target = root
+			}
+			scope:actor = { should_set_wargoal = yes }
+		}
+		NOT = { has_variable = has_no_war_goal_alert_disabled }
+	}
+
+	open_panel = diplomatic_overview
+	type = important_action
+}
+
+vulnerable_front = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/vaulnarable_front.dds"
+
+    valid = {
+    	any_scope_front = {
+    		is_vulnerable_front = scope:actor
+    	}
+        NOT = { has_variable = vulnerable_front_alert_disabled }
+    }
+
+	open_panel = front
+	type = angry_important_action
+}
+
+high_attrition_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/high_attrition.dds"
+
+	valid = {
+		any_scope_general = {
+			has_high_attrition = yes
+		}
+		NOT = { has_variable = high_attrition_alert_disabled }
+	}
+
+	open_panel = commander
+	type = angry_important_action
+}
+
+active_peace_deal_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/active_peace_deal.dds"
+
+	valid = {
+		has_active_peace_deal = yes
+		NOT = { has_variable = active_peace_deal_alert_disabled }
+	}
+
+	open_panel = war
+	type = alert
+}
+
 # DEMENTIVE - DONE
 #isolated_state_alert_typhion = {
 #	script_context = player_state
