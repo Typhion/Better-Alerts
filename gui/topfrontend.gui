@@ -490,7 +490,7 @@ types topfrontend_types {
 										parentanchor = hcenter|vcenter
 									}
 									blockoverride "entity_instance" {
-										entity_instance = vfx_entity_ui_alert_above_icon
+										entity_instance = vfx_entity_ui_alert_above_icon_red
 									}			
 								}
 							}
@@ -503,7 +503,7 @@ types topfrontend_types {
 			custom_alert_box_red = {}
 
 			# MOD ALERTS YELLOW
-			custom_alert_box = {}
+			custom_alert_box_yellow = {}
 
 			# MOD ALERTS GREEN
 			custom_alert_box_green = {}

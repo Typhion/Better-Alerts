@@ -1,0 +1,71 @@
+types DementiveCommonTypes
+{
+	# Should have ALL vanilla contents of the scrollbox type from lists.gui
+	# Only change is the area_size block was added
+	type DEM_scrollbox = scrollarea {
+		block "area_size" {
+			#size = { 100 100 }
+		}
+
+		scrollbarpolicy_horizontal = always_off
+
+		scrollbar_vertical = {
+			using = Scrollbar_Vertical
+		}
+
+		block "scrollbox_background"
+		{
+			background = {
+				using = Background_Area
+			}
+		}
+
+		scrollwidget = {
+			block "scrollbox_replace_vbox"
+			{
+				vbox = {
+					block "scrollbox_margins"
+					{
+						using = Scrollbox_Margins
+					}
+
+					block "scrollbox_content"
+					{
+						#debug_square = {}
+					}
+
+					text_single = {
+						default_format = "#low;italic"
+
+						block "scrollbox_empty"
+						{
+							visible = no
+						}
+					}
+
+					block "scrollbox_expand"
+					{
+						expand = {
+							layoutpolicy_vertical = growing
+						}
+					}
+				}
+			}
+		}
+
+		### commenting this out for now, might want to think about fade to listboxes but should be added in game as well in that case.
+		block "scrollbox_background_fade" {
+			### v3 outcomment
+			#icon = {
+			#	name = "scrollbar_fade"
+			#	texture = "gfx/frontend/interface/scrollbars/scrollbar_fade.dds"
+			#	size = { 100% 100% }
+			#	alwaystransparent = yes
+			#
+			#	spriteType = Corneredtiled
+			#	spriteborder = { 0 30 }
+			#}
+			### to here
+		}
+	}
+}

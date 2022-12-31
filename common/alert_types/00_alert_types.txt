@@ -1,0 +1,373 @@
+﻿# script_context = <script context>	# see later for list of valid script contexts
+# texture = <path>					# the path is relative to the "game" folder
+# valid = <trigger>					# an invalid alert will not be shown
+# open_panel = <panel_name>[|<tab>]	# if specified, this panel will open when the alert is clicked. Cannot specify both open_panel and open_popup
+									# an optional tab name can be specified after a | character
+# open_popup = <popup_name>			# if specified, this popup will open when the alert is clicked. Cannot specify both open_panel and open_popup
+# type = alert | important_action | angry_important_action	# if unspecified or "alert", this will be a standard alert. Otherwise, it will be shown inside the important actions alert (angry_important_action alerts are sorted first)
+# alert_group = <alert_group_name>	# if specified, multiple alerts in the same group will be grouped in the important actions alert (if they are "important_action"). important_actions with unspecified alert_group will never be grouped together
+#
+# ------------------------------------------------------------------------------
+# Valid script contexts
+# ------------------------------------------------------------------------------
+# player_country
+# player_diplomatic_play
+# player_diplomatic_pact
+# player_diplomatic_action
+# player_diplomatic_relations
+# player_interest_group
+# player_invaded_state
+# player_national_market
+# player_involved_market
+# player_state
+# player_building
+# player_market_goods
+# player_commander
+# player_trade_route
+
+### ALERTS
+### these need icons, if you create a new alert or move an important action here use texture = "gfx/interface/icons/alert_icons/placeholder.dds"
+### and then ask art to make an icon, you can also check the unused folder if anything fits, you can also use ANY icon in the game if it would fit
+### but always check with art to verify it is looking good
+
+# MOD NOTE: Better-Alerts overrides all vanilla alerts with type = alert.
+# To not have database errors they have to be in this file
+# So if vanilla changes alerts only update the alerts with type = alert.
+
+wasted_construction = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/wasted_construction.dds"
+
+	valid = {
+		has_wasted_construction = yes
+		NOT = { has_variable = wasted_construction_alert_disabled }
+	}
+
+	type = alert
+	open_panel = production_methods|construction_queues
+}
+
+low_legitimacy_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/unused/low_legitimacy.dds"
+
+	valid = {
+		government_legitimacy <= 50
+		NOT = { has_variable = low_legitimacy_alert_disabled }
+	}
+
+	open_panel = politics|interest_groups
+	type = alert
+}
+
+has_decreasing_interests_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/has_decreasing_interests.dds"
+
+	valid = {
+		has_decreasing_interests = yes
+		NOT = { has_variable = decreasing_interests_alert_disabled }
+	}
+
+	open_panel = diplomatic_overview
+	type = alert
+}
+
+country_approaching_bureaucracy_shortage = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/bureaucracy_shortage.dds"
+
+	valid = {
+		approaching_bureaucracy_shortage = yes
+		NOT = { has_variable = bureaucracy_shortage_alert_disabled }
+	}
+
+	open_panel = politics|institutions
+	type = alert
+}
+free_government_reform = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/reform_government.dds"
+
+	valid = {
+		has_free_government_reform = yes
+		NOT = { has_variable = government_reform_alert_disabled }
+	}
+
+	open_panel = politics|interest_groups
+	type = alert
+}
+is_losing_rank_alert = {
+	script_context = player_country
+
+	valid = {
+		is_losing_power_rank = yes
+	}
+
+	open_panel = diplomatic_overview
+	type = angry_important_action
+}
+
+is_construction_paused = {
+ 	script_context = player_country
+
+	valid = {
+		is_construction_paused = yes
+	}
+
+	open_panel = production_methods|construction_queues
+	type = angry_important_action
+ }
+
+ country_default = {
+ 	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/bankruptcy.dds"
+
+	valid = {
+		in_default = yes
+		NOT = { has_variable = country_default_alert_disabled }
+	}
+
+	open_panel = budget|assets
+	type = alert
+}
+
+has_no_research_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/has_no_research.dds"
+
+	valid = {
+		NOT = { is_researching_technology = any }
+		has_researchable_technology = yes
+		NOT = { has_variable = has_no_research_alert_disabled }
+	}
+
+	open_panel = tech_tree
+	type = alert
+}
+
+has_no_war_goal_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/has_no_war_goal.dds"
+
+	valid = {
+		any_diplomatic_play = {
+			OR = {
+				initiator = root
+				target = root
+			}
+			scope:actor = { should_set_wargoal = yes }
+		}
+		NOT = { has_variable = has_no_war_goal_alert_disabled }
+	}
+
+	open_panel = diplomatic_overview
+	type = important_action
+}
+
+vulnerable_front = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/vaulnarable_front.dds"
+
+    valid = {
+		any_scope_war = {
+			any_scope_front = {
+				is_vulnerable_front = scope:actor
+			}
+		}
+        NOT = { has_variable = vulnerable_front_alert_disabled }
+    }
+
+	open_panel = front
+	type = angry_important_action
+}
+
+high_attrition_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/high_attrition.dds"
+
+	valid = {
+		any_scope_general = {
+			has_high_attrition = yes
+		}
+		NOT = { has_variable = high_attrition_alert_disabled }
+	}
+
+	open_panel = commander
+	type = angry_important_action
+}
+
+active_peace_deal_alert = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/active_peace_deal.dds"
+
+	valid = {
+		has_active_peace_deal = yes
+		NOT = { has_variable = active_peace_deal_alert_disabled }
+	}
+
+	open_panel = war
+	type = alert
+}
+
+### IMPORTANT ACTIONS (should not have icons, if you move an alert here then remove the texture path and move the icon to the unused folder)
+
+unhealthy_economy_alert = {
+	script_context = player_country
+
+	valid = {
+		has_healthy_economy = no
+	}
+
+	open_panel = budget|overview
+	type = important_action
+}
+
+stockpiling_gold_alert = {
+	script_context = player_country
+
+	valid = {
+		gold_reserves > gold_reserves_limit
+		weekly_net_fixed_income > 0
+	}
+
+	open_panel = budget_panel
+	type = important_action
+}
+
+low_legitimacy_alert = {
+	script_context = player_country
+
+	valid = {
+		government_legitimacy <= 50
+	}
+
+	open_panel = politics|interest_groups
+	type = important_action
+}
+
+unused_interests_alert = {
+	script_context = player_country
+
+	valid = {
+		num_declared_interests < max_num_declared_interests
+	}
+
+	open_panel = diplomatic_overview
+	type = important_action
+}
+
+unproductive_trade_route_alert = {
+	script_context = player_trade_route
+
+	valid = {
+		is_trade_route_productive = no
+		is_trade_route_active = yes
+	}
+
+	open_panel = market|trade_routes
+	type = important_action
+	alert_group = unproductive_trade_routes
+}
+
+trade_route_needs_convoys_alert = {
+	script_context = player_trade_route
+
+	valid = {
+		trade_route_needs_convoys_to_grow = yes
+	}
+
+	open_panel = market|trade_routes
+	type = important_action
+	alert_group = trade_routes_need_convoys
+}
+
+market_goods_shortage_alert = { 
+	script_context = player_market_goods
+
+	valid = {
+		market_goods_has_goods_shortage = yes
+	}
+
+	open_panel = goods_panel
+	type = angry_important_action
+	alert_group = market_goods_shortages
+}
+
+low_market_access_alert = {
+	script_context = player_state
+
+	valid = {
+		market_access < 1
+		NOT = { is_isolated_from_market = yes}
+	}
+
+	open_panel = states_panel
+	type = important_action
+	alert_group = low_market_access_states
+}
+
+insufficient_tax_capacity_alert = {
+	script_context = player_state
+
+	valid = {
+		tax_capacity < tax_capacity_usage
+		is_incorporated = yes
+	}
+
+	open_panel = states_panel
+	type = important_action
+	alert_group = insufficient_tax_capacity_states
+}
+
+expensive_government_goods_alert = {
+	script_context = player_market_goods
+
+	valid = {
+		market_goods_pricier > 0.25
+		is_consumed_by_government_buildings = yes
+		market_goods_buy_orders > 0
+	}
+
+	open_panel = goods_panel
+	type = important_action
+	alert_group = expensive_government_goods
+}
+
+expensive_military_goods_alert = {
+	script_context = player_market_goods
+
+	valid = {
+		market_goods_pricier > 0.25
+		is_consumed_by_military_buildings = yes
+		market_goods_buy_orders > 0
+	}
+
+	open_panel = goods_panel
+	type = important_action
+	alert_group = expensive_military_goods
+}
+
+has_army_troops_in_reserve_alert = {
+	script_context = player_country
+
+	valid = {
+		exists = active_diplomatic_play
+		army_reserves  > 0
+	}
+
+	open_panel = military|army
+	type = important_action
+}
+
+has_navy_troops_in_reserve_alert = {
+	script_context = player_country
+
+	valid = {
+		exists = active_diplomatic_play
+		navy_reserves  > 0
+	}
+
+	open_panel = military|navy
+	type = important_action
+}

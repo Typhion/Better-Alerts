@@ -1,6 +1,5 @@
 types custom_alert_types {
 
-	# NOTE: Put all custom alerts in this container
     type button_checkbox_label_custom = button_group {
 		using = tooltip_se
 		block "sound" {
@@ -8,10 +7,12 @@ types custom_alert_types {
 		}
         flowcontainer = {
             spacing = 2
-
-            button_checkbox = {
-                block "checkbox" {
-                }
+            checkbutton = {
+            	texture = "gfx/interface/buttons/check_button.dds"
+            	framesize = { 80 80 }
+            	size = { 25 25 }
+            	block "checkbox" {
+            	}
             }
 			textbox = {
 				using = Font_Type_Standard
@@ -29,6 +30,7 @@ types custom_alert_types {
 			}
         }
     }
+
 	type custom_alert_toggle_menu = right_click_menu_widget {
 		visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
 		gfxtype = windowgfx
@@ -36,7 +38,7 @@ types custom_alert_types {
 		widgetanchor = top|left
 		movable = no
 		layer = layer_rightclickmenu
-		size = { 650 132 }
+		size = { 525 120 }
 		state = {
 			name = sound
 			trigger_on_create = yes
@@ -57,527 +59,655 @@ types custom_alert_types {
 			shortcut = "close_window"
 			using = ui_close
 		}
-		#textbox = {
-		#	text = "#header Alert Toggles#!"
-		#	autoresize = yes
-		#	fontsize = 20 
-		#	parentanchor = center|top
-		#}
-		flowcontainer = {
-			spacing = 2
-			position = { 5 5 }
-			flowcontainer = {
-				spacing = 1
-				direction = vertical
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('diplo_play_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('diplo_play_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Diplo Plays" }
-					tooltip = "DIPLO_PLAY_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('isolated_state_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('isolated_state_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Isolated States" }
-					tooltip = "ISOLATED_STATES_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('unproductive_trade_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('unproductive_trade_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('unproductive_trade_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Trade Routes" }
-					tooltip = "UNPRODUCTIVE_TRADE_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('upcoming_revolt_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('upcoming_revolt_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Revolution" }
-					tooltip = "UPCOMING_REVOLT_ALERT_TOGGLE"
-				}
+		DEM_scrollbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			blockoverride "area_size" {
+				size = { 512 106 }
+				position = { 5 7 }
 			}
-			flowcontainer = {
-				position = { 5 5 }
-				spacing = 1
-				direction = vertical
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('idle_gen_toggle')]"
+			blockoverride "scrollbox_replace_vbox" {
+				flowcontainer = {
+					spacing = 2
+					position = { 0 5 }
+					flowcontainer = {
+						spacing = 1
+						direction = vertical
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('diplo_play_toggle')]"
 
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('idle_gen_toggle'))]"
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('diplo_play_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Diplo Plays" }
+							tooltip = "DIPLO_PLAY_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('isolated_state_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('isolated_state_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Isolated States" }
+							tooltip = "ISOLATED_STATES_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('unproductive_trade_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('unproductive_trade_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('unproductive_trade_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Trade Routes" }
+							tooltip = "UNPRODUCTIVE_TRADE_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('upcoming_revolt_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('upcoming_revolt_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Revolution" }
+							tooltip = "UPCOMING_REVOLT_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('wasted_construction_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('wasted_construction_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Construction" }
+							tooltip = "WASTED_CONSTRUCTION_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('has_convoys_being_sunk_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('has_convoys_being_sunk_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Convoys Sunk" }
+							tooltip = "CONVOYS_SUNK_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('high_attrition_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('high_attrition_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('high_attrition_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Convoys Sunk" }
+							tooltip = "HIGH_ATTRITION_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('active_peace_deal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('active_peace_deal_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('active_peace_deal_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Active Peace" }
+							tooltip = "ACTIVE_PEACE_DEAL_ALERT_TOGGLE"
+						}
 					}
+					flowcontainer = {
+						position = { 5 5 }
+						spacing = 1
+						direction = vertical
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('idle_gen_toggle')]"
 
-					blockoverride "text" { text = "Idle Commander" }
-					tooltip = "IDLE_GENERAL_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('need_convoys_toggle')]"
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('idle_gen_toggle'))]"
+							}
 
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('need_convoys_toggle'))]"
+							blockoverride "text" { text = "Idle Commander" }
+							tooltip = "IDLE_GENERAL_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('need_convoys_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('need_convoys_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Need Convoys" }
+							tooltip = "NEED_CONVOYS_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('low_market_access_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('low_market_access_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Low Access" }
+							tooltip = "LOW_ACCESS_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('bad_tax_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('bad_tax_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Tax Capacity" }
+							tooltip = "BAD_TAX_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('stockpiling_gold_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('stockpiling_gold_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Gold Stockpile" }
+							tooltip = "STOCKPILING_GOLD_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('low_legitimacy_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('low_legitimacy_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Low Legitimacy" }
+							tooltip = "LOW_LEGITIMACY_ALERT_TOGGLE"
+						}
 					}
+					flowcontainer = {
+						position = { 5 5 }
+						spacing = 1
+						direction = vertical
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('market_shortage_toggle')]"
 
-					blockoverride "text" { text = "Need Convoys" }
-					tooltip = "NEED_CONVOYS_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('low_market_access_toggle')]"
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('market_shortage_toggle'))]"
+							}
 
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('low_market_access_toggle'))]"
+							blockoverride "text" { text = "Market Shortage" }
+							tooltip = "MARKET_SHORTAGE_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('army_reserve_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('army_reserve_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Army Reserve" }
+							tooltip = "ARMY_RESERVE_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('navy_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('navy_reserve_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('navy_reserve_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Navy Reserve" }
+							tooltip = "NAVY_RESERVE_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('secession_growing_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('secession_growing_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Secession Growing" }
+							tooltip = "SECESSION_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('country_default_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('country_default_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('country_default_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Country Default" }
+							tooltip = "COUNTRY_DEFAULT_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('has_no_research_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('no_research_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('no_research_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Research" }
+							tooltip = "HAS_NO_RESEARCH_ALERT_TOGGLE"
+						}
 					}
+					flowcontainer = {
+						position = { 5 5 }
+						spacing = 1
+						direction = vertical
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
 
-					blockoverride "text" { text = "Low Access" }
-					tooltip = "LOW_ACCESS_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('bad_tax_toggle')]"
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('decreasing_interests_toggle'))]"
+							}
 
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('bad_tax_toggle'))]"
+							blockoverride "text" { text = "Decreasing Interests" }
+							tooltip = "DESCREASING_INTERESTS_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('bureaucracy_shortage_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('bureaucracy_shortage_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Low Bureaucracy" }
+							tooltip = "BUREAUCRACY_SHORTAGE_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('government_reform_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('government_reform_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Free Gov Reform" }
+							tooltip = "GOV_REFORM_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('losing_rank_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('losing_rank_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Losing Rank" }
+							tooltip = "LOSING_RANK_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('has_no_war_goal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('no_war_goal_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('no_war_goal_toggle'))]"
+							}
+
+							blockoverride "text" { text = "No War Goal" }
+							tooltip = "HAS_NO_WAR_GOAL_ALERT_TOGGLE"
+						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('vulnerable_front_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('vulnerable_front_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('vulnerable_front_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Vulnerable Front" }
+							tooltip = "VULNERABLE_FRONT_ALERT_TOGGLE"
+						}
 					}
-
-					blockoverride "text" { text = "Tax Capacity" }
-					tooltip = "BAD_TAX_ALERT_TOGGLE"
-				}
-			}
-			flowcontainer = {
-				position = { 5 5 }
-				spacing = 1
-				direction = vertical
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('market_shortage_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('market_shortage_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Market Shortage" }
-					tooltip = "MARKET_SHORTAGE_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('army_reserve_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('army_reserve_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Army Reserve" }
-					tooltip = "ARMY_RESERVE_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('navy_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('navy_reserve_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('navy_reserve_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Navy Reserve" }
-					tooltip = "NAVY_RESERVE_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('secession_growing_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('secession_growing_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Secession Growing" }
-					tooltip = "SECESSION_ALERT_TOGGLE"
-				}
-			}
-			flowcontainer = {
-				position = { 5 5 }
-				spacing = 1
-				direction = vertical
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('decreasing_interests_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Decreasing Interests" }
-					tooltip = "DESCREASING_INTERESTS_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('bureaucracy_shortage_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('bureaucracy_shortage_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Low Bureaucracy" }
-					tooltip = "BUREAUCRACY_SHORTAGE_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('government_reform_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('government_reform_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Free Gov Reform" }
-					tooltip = "GOV_REFORM_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('losing_rank_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('losing_rank_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Losing Rank" }
-					tooltip = "LOSING_RANK_ALERT_TOGGLE"
-				}
-			}
-			flowcontainer = {
-				spacing = 1
-				direction = vertical
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('wasted_construction_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('wasted_construction_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Construction" }
-					tooltip = "WASTED_CONSTRUCTION_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('has_convoys_being_sunk_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('has_convoys_being_sunk_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Convoys Sunk" }
-					tooltip = "CONVOYS_SUNK_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('stockpiling_gold_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('stockpiling_gold_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Gold Stockpile" }
-					tooltip = "STOCKPILING_GOLD_ALERT_TOGGLE"
-				}
-				button_checkbox_label_custom = {
-					onclick = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-					onclick = "[GetVariableSystem.Toggle('low_legitimacy_toggle')]"
-
-					blockoverride "checkbox"
-					{
-						checked = "[Not(GetVariableSystem.Exists('low_legitimacy_toggle'))]"
-					}
-
-					blockoverride "text" { text = "Low Legitimacy" }
-					tooltip = "LOW_LEGITIMACY_ALERT_TOGGLE"
 				}
 			}
 		}
 	}
 
+	# NOTE: Put all red custom alerts in this container
 	type custom_alert_box_red = flowcontainer {
 		visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
-		# Expensive Goods
-		#custom_alert = {
-		#	blockoverride "click"  {
-		#		onclick = "[InformationPanelBar.OpenMarketPanelTab( GetPlayer.GetCapital.AccessMarket, 'details' )]"
-		#	}
-		#	visible = "[EqualTo_string(GetPlayer.GetCustom('has_expensive_goods_loc'), 'yes')]"
-		#	blockoverride "alert_texture" {
-		#		texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
-		#		size = { 43 43 }
-		#	}
-		#	tooltip = "alert_expensive_goods_alert_typhion_ui"
-		#}
 		# Market Shortage
-		custom_alert_red = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_market_shortage_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'details' )]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_market_shortage_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/unused/supply_low.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
 			tooltip = "alert_market_shortage_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Secession Growing
-		custom_alert_red = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_secession_growing_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('culture', 'cultures')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_secession_growing_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/secession_growing.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
 			tooltip = "alert_secession_growing_alert_typhion_ui"
-			using = tooltip_below
-		}				
+		}
 		# Revolution is Coming
-		custom_alert_red = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_upcoming_revolt_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_upcoming_revolt_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/politics_icons/revolution.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
 			tooltip = "alert_upcoming_revolt_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Isolated State
 		# TODO: Make is so onclick cycles through relevant states.
-		custom_alert_red = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/generic_icons/market_isolated.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
 			tooltip = "alert_isolated_state_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Target of Diplo Plays
-		custom_alert_red = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('is_in_diplo_play_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('is_in_diplo_play_loc'), 'yes')]"
 			blockoverride "alert_texture" {
-
 				texture = "gfx/interface/icons/lens_toolbar_icons/military_lens_button.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
 			tooltip = "alert_is_in_diplo_play_alert_ui"
-			using = tooltip_below
 		}
 		# Convoys Sunk
-		custom_alert_red = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_convoys_being_sunk_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'navy')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_convoys_being_sunk_loc'), 'yes')]"
 			blockoverride "alert_texture" {
-
 				texture = "gfx/interface/icons/alert_icons/unused/critical_supply_network.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
 			tooltip = "alert_has_convoys_being_sunk_alert_typhion_ui"
-			using = tooltip_below
 		}
 	}
 
-	type custom_alert_box = flowcontainer {
+	type custom_alert_box_yellow = flowcontainer {
 		visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
-		# Expensive Goods
-		#custom_alert = {
-		#	blockoverride "click"  {
-		#		onclick = "[InformationPanelBar.OpenMarketPanelTab( GetPlayer.GetCapital.AccessMarket, 'details' )]"
-		#	}
-		#	visible = "[EqualTo_string(GetPlayer.GetCustom('has_expensive_goods_loc'), 'yes')]"
-		#	blockoverride "alert_texture" {
-		#		texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
-		#		size = { 43 43 }
-		#	}
-		#	tooltip = "alert_expensive_goods_alert_typhion_ui"
-		#	using = tooltip_below
-		#}
 		# Insufficient Tax
 		# TODO: Make is so onclick cycles through relevant states.
 		custom_alert = {
-			blockoverride "click"  {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_insufficient_tax_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_insufficient_tax_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/topbar/income_power_icon.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
 			tooltip = "alert_insufficient_tax_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Low Market Access
 		# TODO: Make is so onclick cycles through relevant states.
 		custom_alert = {
-			blockoverride "click"  {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_low_market_access_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_low_market_access_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/invention_icons/railways.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
 			tooltip = "alert_low_market_access_alert_typhion_ui"
-			using = tooltip_below
 		}
-		# Need Convoys Steamers
+		## Need Convoys Steamers
 		custom_alert = {
-			blockoverride "click"  {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('needs_convoys_steamers_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('needs_convoys_steamers_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/goods_icons/steamers.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
 			tooltip = "alert_need_convoys_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Need Convoys
 		custom_alert = {
-			blockoverride "click"  {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('needs_convoys_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('needs_convoys_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/goods_icons/clippers.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
 			tooltip = "alert_need_convoys_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Construction Paused
 		custom_alert = {
-			blockoverride "click"  {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('is_construction_paused_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('production_methods', 'construction_queues')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('is_construction_paused_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/wasted_construction.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
 			tooltip = "alert_is_construction_paused_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Losing Rank
 		custom_alert = {
-			blockoverride "click"  {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('is_losing_rank_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('is_losing_rank_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/is_losing_rank.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
 			tooltip = "alert_is_losing_rank_alert_typhion_ui"
-			using = tooltip_below
 		}
 	}
 
 	type custom_alert_box_green = flowcontainer {
 		visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
 		# Navy in Reserve
-		custom_alert_green = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_navy_in_reserve_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'navy')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_navy_in_reserve_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/has_navy_in_reserve.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
 			tooltip = "alert_navy_in_reserve_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Army in Reserve
-		custom_alert_green = {
-			blockoverride "click"  {
-				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
-				#click_modifiers = {
-				#	onshift = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
-				#}
-			}
+		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_army_in_reserve_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+			}
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/has_army_in_reserve.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
 			tooltip = "alert_army_in_reserve_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Idle mobilized general
-		custom_alert_green = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_idle_general_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_idle_general_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
 			tooltip = "alert_idle_general_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Unproductive Trade Routes
-		custom_alert_green = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_unproductive_trade_route_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('has_unproductive_trade_route_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/unused/market_over_capacity.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
 			tooltip = "alert_unproductive_trade_route_alert_typhion_ui"
-			using = tooltip_below
 		}
 		# Stockpiling Gold
-		custom_alert_green = {
-			blockoverride "click"  {
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('stockpiling_gold_loc'), 'yes')]"
+			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('budget', 'overview')]"
 			}
-			visible = "[EqualTo_string(GetPlayer.GetCustom('stockpiling_gold_loc'), 'yes')]"
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/goods_icons/gold.dds"
 			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
 			tooltip = "alert_stockpiling_gold_alert_typhion_ui"
-			using = tooltip_below
 		}
 	}
 
@@ -585,9 +715,14 @@ types custom_alert_types {
 	# If/when vanilla changes this should be changed too
 	type custom_alert = widget {
 		size = { 70 70 }
+		using = tooltip_below
 		button = {
 			size = { 100% 100% }
-			texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			block "button_color" {
+				# texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+				# texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+				# texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
 			effectname = "NoHighlight"
 			using = current_situation_button_sound
 			using = tooltip_below
@@ -604,7 +739,7 @@ types custom_alert_types {
 				}
 				blockoverride "entity_instance" {
 					entity_instance = vfx_entity_ui_alert_once_for_new
-				}			
+				}
 			}
 
 			### alert animation
@@ -617,13 +752,13 @@ types custom_alert_types {
 				rotate_uv = 0
 				alpha = 0.8
 			}
-			
+
 			state = {
 				trigger_on_create = yes
 				name = glow_loop1
 				next = glow_loop2
 				duration = 1.5
-			
+
 				modify_texture = {
 					name = "glow_loop"
 					rotate_uv = -22.5
@@ -633,13 +768,13 @@ types custom_alert_types {
 				name = glow_loop2
 				next = glow_loop1
 				duration = 0
-			
+
 				modify_texture = {
 					name = "glow_loop"
 					rotate_uv = 0
 				}
 			}
-			
+
 			### button states
 			modify_texture = {
 				name = "mouse_enter"
@@ -658,14 +793,14 @@ types custom_alert_types {
 				blend_mode = overlay
 				alpha = 0
 			}
-			
+
 			### show
 			state = {
 				name = _show
 				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('show')]"
 				position = { 0 0 }
 				using = button_animation_duration
-				
+
 				modify_texture = {
 					name = mouse_press
 					alpha = 0
@@ -683,7 +818,7 @@ types custom_alert_types {
 				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('enter')]"
 				position = { 0 0 }
 				using = button_animation_duration
-				
+
 				modify_texture = {
 					name = mouse_press
 					alpha = 0
@@ -694,14 +829,14 @@ types custom_alert_types {
 					rotate_uv = 180
 				}
 			}
-			
+
 			### leave
 			state = {
 				name = _mouse_leave
 				on_start = "[PdxGuiWidget.AccessChild('icon').InterruptThenTriggerAnimation('enter','leave')]"
 				position = { 0 0 }
 				using = button_animation_duration
-				
+
 				modify_texture = {
 					name = mouse_press
 					alpha = 0
@@ -719,7 +854,7 @@ types custom_alert_types {
 				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('press')]"
 				position = { 1 2 }
 				using = button_animation_duration
-				
+
 				modify_texture = {
 					name = mouse_press
 					alpha = 1
@@ -737,7 +872,7 @@ types custom_alert_types {
 				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('release')]"
 				position = { 0 0 }
 				using = button_animation_duration
-				
+
 				modify_texture = {
 					name = mouse_press
 					alpha = 0
@@ -748,7 +883,7 @@ types custom_alert_types {
 					rotate_uv = 0
 				}
 			}
-			
+
 			### ALERT ICON INSIDE THE BUTTON
 			icon = {
 				name = icon
@@ -757,7 +892,7 @@ types custom_alert_types {
 				block "alert_texture" {
 					#texture = "[Alert.GetTexture]"
 				}
-				
+
 				### button states
 				modify_texture = {
 					name = "mouse_enter"
@@ -776,16 +911,16 @@ types custom_alert_types {
 					blend_mode = overlay
 					alpha = 0
 				}
-				
+
 				scale = 1
-				
+
 				### show
 				state = {
 					name = show
 					position = { 0 0 }
 					using = button_animation_duration
 					scale = 1
-					
+
 					modify_texture = {
 						name = mouse_press
 						alpha = 0
@@ -803,7 +938,7 @@ types custom_alert_types {
 					position = { 0 0 }
 					using = button_animation_duration
 					scale = 1.1
-					
+
 					modify_texture = {
 						name = mouse_press
 						alpha = 0
@@ -814,14 +949,14 @@ types custom_alert_types {
 						rotate_uv = 180
 					}
 				}
-				
+
 				### leave
 				state = {
 					name = leave
 					position = { 0 0 }
 					using = button_animation_duration
 					scale = 1
-					
+
 					modify_texture = {
 						name = mouse_press
 						alpha = 0
@@ -839,7 +974,7 @@ types custom_alert_types {
 					position = { 1 2 }
 					using = button_animation_duration
 					scale = 1.1
-					
+
 					modify_texture = {
 						name = mouse_press
 						alpha = 1
@@ -857,7 +992,7 @@ types custom_alert_types {
 					position = { 0 0 }
 					using = button_animation_duration
 					scale = 1.1
-					
+
 					modify_texture = {
 						name = mouse_press
 						alpha = 0
@@ -879,612 +1014,13 @@ types custom_alert_types {
 					parentanchor = hcenter|vcenter
 				}
 				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_above_icon
-				}			
-			}
-		}
-	}
+					block "vfx_color" {
+						# entity_instance = vfx_entity_ui_alert_above_icon_yellow
+						# entity_instance = vfx_entity_ui_alert_above_icon_red
+						# entity_instance = vfx_entity_ui_alert_above_icon_green
 
-	type custom_alert_red = widget {
-		size = { 70 70 }
-		button = {
-			size = { 100% 100% }
-			texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
-			effectname = "NoHighlight"
-			using = current_situation_button_sound
-			using = tooltip_below
-			block "click"  {
-
-			}
-			### ALERT VFX - NEW
-			vfx = {
-				blockoverride "size" {
-					size = { 400% 400% }
-				}
-				blockoverride "parent_anchor" {
-					parentanchor = hcenter|vcenter
-				}
-				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_once_for_new
-				}			
-			}
-
-			### alert animation
-			modify_texture = {
-				name = "glow_loop"
-				texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				rotate_uv = 0
-				alpha = 0.8
-			}
-			
-			state = {
-				trigger_on_create = yes
-				name = glow_loop1
-				next = glow_loop2
-				duration = 1.5
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = -22.5
-				}
-			}
-			state = {
-				name = glow_loop2
-				next = glow_loop1
-				duration = 0
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = 0
-				}
-			}
-			
-			### button states
-			modify_texture = {
-				name = "mouse_enter"
-				texture = "gfx/interface/buttons/button_icons/icon_button_mouse_enter.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				alpha = 0
-				rotate_uv = 0
-			}
-			modify_texture = {
-				name = "mouse_press"
-				texture = "gfx/interface/buttons/default_button_mousepress.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				alpha = 0
-			}
-			
-			### show
-			state = {
-				name = _show
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('show')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-
-			### enter
-			state = {
-				name = _mouse_enter
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('enter')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 1
-					rotate_uv = 180
-				}
-			}
-			
-			### leave
-			state = {
-				name = _mouse_leave
-				on_start = "[PdxGuiWidget.AccessChild('icon').InterruptThenTriggerAnimation('enter','leave')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-
-			### press
-			state = {
-				name = _mouse_press
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('press')]"
-				position = { 1 2 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 1
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-
-			### release
-			state = {
-				name = _mouse_release
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('release')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-			
-			### ALERT ICON INSIDE THE BUTTON
-			icon = {
-				name = icon
-				parentanchor = center
-				size = { 55 55 }
-				block "alert_texture" {
-					#texture = "[Alert.GetTexture]"
-				}
-				
-				### button states
-				modify_texture = {
-					name = "mouse_enter"
-					texture = "gfx/interface/buttons/button_icons/icon_button_mouse_enter.dds"
-					spriteType = Corneredstretched
-					spriteborder = { 0 0 }
-					blend_mode = overlay
-					alpha = 0
-					rotate_uv = 0
-				}
-				modify_texture = {
-					name = "mouse_press"
-					texture = "gfx/interface/buttons/default_button_mousepress.dds"
-					spriteType = Corneredstretched
-					spriteborder = { 0 0 }
-					blend_mode = overlay
-					alpha = 0
-				}
-				
-				scale = 1
-				
-				### show
-				state = {
-					name = show
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
 					}
 				}
-
-				### enter
-				state = {
-					name = enter
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1.1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 1
-						rotate_uv = 180
-					}
-				}
-				
-				### leave
-				state = {
-					name = leave
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-
-				### press
-				state = {
-					name = press
-					position = { 1 2 }
-					using = button_animation_duration
-					scale = 1.1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 1
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-
-				### release
-				state = {
-					name = release
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1.1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-			}
-
-			### ALERT VFX - IDLE
-			vfx = {
-				blockoverride "size" {
-					size = { 400% 400% }
-				}
-				blockoverride "parent_anchor" {
-					parentanchor = hcenter|vcenter
-				}
-				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_above_icon
-				}			
-			}
-		}
-	}
-
-	type custom_alert_green = widget {
-		size = { 70 70 }
-		button = {
-			size = { 100% 100% }
-			texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
-			effectname = "NoHighlight"
-			using = current_situation_button_sound
-			using = tooltip_below
-			block "click"  {
-
-			}
-			### ALERT VFX - NEW
-			vfx = {
-				blockoverride "size" {
-					size = { 400% 400% }
-				}
-				blockoverride "parent_anchor" {
-					parentanchor = hcenter|vcenter
-				}
-				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_once_for_new
-				}			
-			}
-
-			### alert animation
-			modify_texture = {
-				name = "glow_loop"
-				texture = "gfx/interface/icons/alert_icons/alert_animation.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				rotate_uv = 0
-				alpha = 0.8
-			}
-			
-			state = {
-				trigger_on_create = yes
-				name = glow_loop1
-				next = glow_loop2
-				duration = 1.5
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = -22.5
-				}
-			}
-			state = {
-				name = glow_loop2
-				next = glow_loop1
-				duration = 0
-			
-				modify_texture = {
-					name = "glow_loop"
-					rotate_uv = 0
-				}
-			}
-			
-			### button states
-			modify_texture = {
-				name = "mouse_enter"
-				texture = "gfx/interface/buttons/button_icons/icon_button_mouse_enter.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				alpha = 0
-				rotate_uv = 0
-			}
-			modify_texture = {
-				name = "mouse_press"
-				texture = "gfx/interface/buttons/default_button_mousepress.dds"
-				spriteType = Corneredstretched
-				spriteborder = { 0 0 }
-				blend_mode = overlay
-				alpha = 0
-			}
-			
-			### show
-			state = {
-				name = _show
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('show')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-
-			### enter
-			state = {
-				name = _mouse_enter
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('enter')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 1
-					rotate_uv = 180
-				}
-			}
-			
-			### leave
-			state = {
-				name = _mouse_leave
-				on_start = "[PdxGuiWidget.AccessChild('icon').InterruptThenTriggerAnimation('enter','leave')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-
-			### press
-			state = {
-				name = _mouse_press
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('press')]"
-				position = { 1 2 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 1
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-
-			### release
-			state = {
-				name = _mouse_release
-				on_start = "[PdxGuiWidget.AccessChild('icon').TriggerAnimation('release')]"
-				position = { 0 0 }
-				using = button_animation_duration
-				
-				modify_texture = {
-					name = mouse_press
-					alpha = 0
-				}
-				modify_texture = {
-					name = mouse_enter
-					alpha = 0
-					rotate_uv = 0
-				}
-			}
-			
-			### ALERT ICON INSIDE THE BUTTON
-			icon = {
-				name = icon
-				parentanchor = center
-				size = { 55 55 }
-				block "alert_texture" {
-					#texture = "[Alert.GetTexture]"
-				}
-				
-				### button states
-				modify_texture = {
-					name = "mouse_enter"
-					texture = "gfx/interface/buttons/button_icons/icon_button_mouse_enter.dds"
-					spriteType = Corneredstretched
-					spriteborder = { 0 0 }
-					blend_mode = overlay
-					alpha = 0
-					rotate_uv = 0
-				}
-				modify_texture = {
-					name = "mouse_press"
-					texture = "gfx/interface/buttons/default_button_mousepress.dds"
-					spriteType = Corneredstretched
-					spriteborder = { 0 0 }
-					blend_mode = overlay
-					alpha = 0
-				}
-				
-				scale = 1
-				
-				### show
-				state = {
-					name = show
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-
-				### enter
-				state = {
-					name = enter
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1.1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 1
-						rotate_uv = 180
-					}
-				}
-				
-				### leave
-				state = {
-					name = leave
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-
-				### press
-				state = {
-					name = press
-					position = { 1 2 }
-					using = button_animation_duration
-					scale = 1.1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 1
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-
-				### release
-				state = {
-					name = release
-					position = { 0 0 }
-					using = button_animation_duration
-					scale = 1.1
-					
-					modify_texture = {
-						name = mouse_press
-						alpha = 0
-					}
-					modify_texture = {
-						name = mouse_enter
-						alpha = 0
-						rotate_uv = 0
-					}
-				}
-			}
-
-			### ALERT VFX - IDLE
-			vfx = {
-				blockoverride "size" {
-					size = { 400% 400% }
-				}
-				blockoverride "parent_anchor" {
-					parentanchor = hcenter|vcenter
-				}
-				blockoverride "entity_instance" {
-					entity_instance = vfx_entity_ui_alert_above_icon
-				}			
 			}
 		}
 	}

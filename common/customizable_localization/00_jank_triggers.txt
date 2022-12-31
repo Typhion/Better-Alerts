@@ -320,9 +320,11 @@ vulnerable_front_loc = {
 	type = country
 	text = {
 		trigger = {
-			any_scope_front = {
-    			is_vulnerable_front = scope:actor
-    		}
+			any_scope_war = {
+				any_scope_front = {
+	    			is_vulnerable_front = scope:actor
+	    		}
+			}
         	NOT = { has_variable = vulnerable_front_alert_disabled }
 		}
 		localization_key = "yes"

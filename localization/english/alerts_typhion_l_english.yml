@@ -85,7 +85,8 @@ no:0 "no"
  alert_stockpiling_gold_alert_typhion_ui:0 "#T $alert_stockpiling_gold_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_stockpiling_gold_alert_typhion_desc$\n\n@information! $alert_stockpiling_gold_alert_typhion_hint$\n\n#I Click to open the Budget Panel#!"
  
  alert_is_construction_paused_alert_typhion_ui:0 "#T $alert_is_construction_paused_name$#!\n$TOOLTIP_DELIMITER$\n$alert_is_construction_paused_desc$\n\n@information! $alert_is_construction_paused_hint$\n\n#I Click to open the $alert_is_construction_paused_action$#!"
-
+ 
+ alert_has_convoys_being_sunk_typhion_desc:2 "Convoys are being Raided in the following Sea Nodes:[AccessPlayer.GetSeaNodesMightBeConvoyRaidedInDesc]. \n\n This means that all connections to overseas territory, trade to other markets, and supplies to our expeditionary forces going through these Sea Nodes are being disurpted, which can have disastrous effects on our Economic and Military Might."
  alert_has_convoys_being_sunk_alert_typhion_ui:0 "#T $alert_has_convoys_being_sunk_name$#!\n$TOOLTIP_DELIMITER$\n$alert_has_convoys_being_sunk_desc$\n\n@information! $alert_has_convoys_being_sunk_hint$\n\n#I Click to open the $alert_has_convoys_being_sunk_action$#!"
 
  alert_is_losing_rank_alert_typhion_ui:0 "#T $alert_is_losing_rank_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_is_losing_rank_alert_desc$\n\n@information! $alert_is_losing_rank_alert_hint$\n\n#I Click to open the $alert_is_losing_rank_alert_action$#!"
@@ -95,6 +96,7 @@ no:0 "no"
  alert_vulnerable_front_alert_typhion_ui:0 "#T $alert_vulnerable_front_name$#!\n$TOOLTIP_DELIMITER$\n$alert_vulnerable_front_desc$\n\n@information! $alert_vulnerable_front_hint$\n\n#I Click to open the $alert_vulnerable_front_action$#!"
 
  alert_high_attrition_alert_typhion_ui:0 "#T $alert_high_attrition_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_high_attrition_alert_desc$\n\n@information! $alert_high_attrition_alert_hint$\n\n#I Click to open the $alert_high_attrition_alert_action$#!"
+
 
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"

@@ -1,0 +1,91 @@
+# Vanilla Red alert particle
+#entity = 
+#{
+#	name = "vfx_entity_ui_alert_above_icon"
+#	scale = 1
+#	default_state = "idle"
+	
+#	state = 
+#	{ 
+#		name = "idle" 
+#		state_time = 5 
+#		looping = yes 
+		
+#		event = 
+#		{ 
+#			time = 0 
+#			particle = "particle_ui_alert_above_icon" 
+#			trigger_once = yes 
+#			keep_particle = yes
+#		}
+#	}
+#}
+
+# Yellow Alert
+entity = 
+{
+	name = "vfx_entity_ui_alert_above_icon_yellow"
+	scale = 1
+	default_state = "idle"
+	
+	state = 
+	{ 
+		name = "idle" 
+		state_time = 5 
+		looping = yes 
+		
+		event = 
+		{ 
+			time = 0 
+			particle = "particle_ui_alert_above_icon_yellow" 
+			trigger_once = yes 
+			keep_particle = yes
+		}
+	}
+}
+
+# Green Alert
+entity = 
+{
+	name = "vfx_entity_ui_alert_above_icon_green"
+	scale = 1
+	default_state = "idle"
+	
+	state = 
+	{ 
+		name = "idle" 
+		state_time = 5 
+		looping = yes 
+		
+		event = 
+		{ 
+			time = 0 
+			particle = "particle_ui_alert_above_icon_green" 
+			trigger_once = yes 
+			keep_particle = yes
+		}
+	}
+}
+
+# Red Alert
+entity = 
+{
+	name = "vfx_entity_ui_alert_above_icon_red"
+	scale = 1
+	default_state = "idle"
+	
+	state = 
+	{ 
+		name = "idle" 
+		state_time = 5 
+		looping = yes 
+		
+		event = 
+		{ 
+			time = 0 
+			particle = "particle_ui_alert_above_icon_red" 
+			trigger_once = yes 
+			keep_particle = yes
+		}
+	}
+}
