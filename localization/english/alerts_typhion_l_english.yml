@@ -91,7 +91,7 @@ no:0 "no"
 
  alert_is_losing_rank_alert_typhion_ui:0 "#T $alert_is_losing_rank_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_is_losing_rank_alert_desc$\n\n@information! $alert_is_losing_rank_alert_hint$\n\n#I Click to open the $alert_is_losing_rank_alert_action$#!"
 
- alert_vulnerable_front_alert_typhion_ui:0 "#T Vulnerable [concept_front]#!\n$TOOLTIP_DELIMITER$\nWe have no [Concept('concept_general', '$concept_generals$')] nor [Concept('concept_battalion', '$concept_battalions$')] defending a front and there is at least one enemy $concept_general$ assigned to it.\n\n@information! $alert_vulnerable_front_hint$\n\n#I Click to open the $alert_vulnerable_front_action$#!"
+ alert_vulnerable_front_alert_typhion_ui:0 "#T Vulnerable [concept_front]#!\n$TOOLTIP_DELIMITER$\nWe have no [Concept('concept_general', '$concept_generals$')] nor [Concept('concept_battalion', '$concept_battalions$')] defending a front and there is at least one enemy $concept_general$ assigned to it.\n\n@information! $alert_vulnerable_front_hint$\n\n#I Click to open the Diplomatic Overview#!"
 
  alert_high_attrition_alert_typhion_ui:0 "#T A [concept_general] has [concept_attrition]#!\n$TOOLTIP_DELIMITER$\nUnits of these [Concept('concept_general', 'concept_generals')] have a high risk of casualties due to attrition\n\n@information! $alert_high_attrition_alert_hint$\n\n#I Click to open the $alert_high_attrition_alert_action$#!"
 
@@ -99,7 +99,7 @@ no:0 "no"
 
  alert_has_no_research_alert_typhion_ui:0 "#T $alert_has_no_research_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_has_no_research_alert_desc$\n\n@information! $alert_has_no_research_alert_hint$\n\n#I Click to open the $alert_has_no_research_alert_action$#!"
 
- alert_active_peace_deal_alert_typhion_ui:0 "#T $alert_active_peace_deal_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_active_peace_deal_alert_desc$\n\n@information! $alert_active_peace_deal_alert_hint$\n\n#I Click to open the Outliner#!"
+ alert_active_peace_deal_alert_typhion_ui:0 "#T $alert_active_peace_deal_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_active_peace_deal_alert_desc$\n\n@information! $alert_active_peace_deal_alert_hint$\n\n#I Click to open the Diplomatic Overview#!"
 
  alert_has_no_war_goal_alert_typhion_ui:0 "#T No Primary [concept_war_goal] in a [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$alert_has_no_war_goal_alert_desc$\n\n@information! $alert_has_no_war_goal_alert_hint$\n\n#I Click to open the Diplomatic Overview#!"
 

@@ -516,7 +516,7 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('vulnerable_front_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
 			}
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/vaulnarable_front.dds"
@@ -675,7 +675,7 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('active_peace_deal_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 			}
 			blockoverride "alert_texture" {
 				texture = "gfx/interface/icons/alert_icons/active_peace_deal.dds"
