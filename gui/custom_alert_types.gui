@@ -246,6 +246,18 @@ types custom_alert_types {
 							blockoverride "text" { text = "Low Legitimacy" }
 							tooltip = "LOW_LEGITIMACY_ALERT_TOGGLE"
 						}
+						button_checkbox_label_custom = {
+							onclick = "[GetScriptedGui('available_decisions_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetVariableSystem.Toggle('available_decisions_toggle')]"
+
+							blockoverride "checkbox"
+							{
+								checked = "[Not(GetVariableSystem.Exists('available_decisions_toggle'))]"
+							}
+
+							blockoverride "text" { text = "Decisions" }
+							tooltip = "TOGGLE_DECISIONS_TOOLTIP"
+						}
 					}
 					flowcontainer = {
 						position = { 5 5 }
@@ -861,6 +873,39 @@ types custom_alert_types {
 				entity_instance = vfx_entity_ui_alert_above_icon_green
 			}
 			tooltip = "alert_stockpiling_gold_alert_typhion_ui"
+		}
+	}
+
+	type custom_alert_box_decisions = dynamicgridbox {
+		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), [Not(IsDataModelEmpty(AccessPlayer.GetDecisions))])]"
+		datamodel = "[AccessPlayer.GetDecisions]"
+		direction = horizontal
+		datamodel_wrap = 3
+		#block "datamodel_wrap" {
+		#	datamodel_wrap = 1
+		#}
+		maxverticalslots = 1
+		#maxhorizontalslots = 1
+		#parentanchor = left
+		# Available Decisions
+		item = {
+			custom_alert = {
+				visible = "[And(And(IsValid(Decision.TakeDecision(GetPlayer)), Not(GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag)))), EqualTo_string(GetPlayer.GetCustom('available_decisions_loc'), 'yes'))]"
+				blockoverride "click" {
+					onclick = "[InformationPanelBar.OpenPanelTab('journal', 'decisions')]"
+				}
+				blockoverride "alert_texture" {
+					#size = { 45 45 }
+					texture = "gfx/interface/icons/lens_toolbar_icons/unused/grant_recognition.dds"
+				}
+				blockoverride "button_color" {
+					texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+				}
+				blockoverride "vfx_color" {
+					entity_instance = vfx_entity_ui_alert_above_icon_green
+				}
+				tooltip = "alert_available_decision_alert_typhion_ui"
+			}
 		}
 	}
 

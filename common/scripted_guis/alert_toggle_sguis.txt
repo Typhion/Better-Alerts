@@ -301,3 +301,14 @@ active_peace_deal_toggle_sgui = {
 		}
 	}
 }
+available_decisions_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = available_decisions_alert_disabled
+		}
+	}
+}

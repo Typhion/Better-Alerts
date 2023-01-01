@@ -435,3 +435,15 @@ country_approaching_bureaucracy_shortage_loc = {
 		localization_key = "no"
 	}		
 }
+available_decisions_loc = {
+	type = country
+	text = {
+		trigger = {
+			NOT = { has_variable = available_decisions_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}

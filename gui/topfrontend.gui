@@ -508,6 +508,9 @@ types topfrontend_types {
 			# MOD ALERTS GREEN
 			custom_alert_box_green = {}
 
+			# MOD ALERTS DECISIONS
+			custom_alert_box_decisions = {}
+
 			# MOD ALERTS MENU
 			custom_alert_toggle_menu = {}
 

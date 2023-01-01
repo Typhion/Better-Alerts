@@ -109,6 +109,11 @@ no:0 "no"
 
  alert_country_approaching_bureaucracy_shortage_alert_typhion_ui:0 "#T $alert_country_approaching_bureaucracy_shortage_name$#!\n$TOOLTIP_DELIMITER$\n$alert_country_approaching_bureaucracy_shortage_desc$\n\n@information! $alert_country_approaching_bureaucracy_shortage_hint$\n\n#I Click to open the $alert_country_approaching_bureaucracy_shortage_action$#!"
 
+ alert_available_decision_name:0 "Available Decisions"
+ alert_available_decision_desc:0 "You have one or more available decisions."
+ alert_available_decision_action:0 "Click to open the Decisions tab"
+ alert_available_decision_alert_typhion_ui:0 "#T $alert_available_decision_name$#!\n$TOOLTIP_DELIMITER$\n$alert_available_decision_desc$\n\n#I Click to open the $alert_available_decision_action$#!"
+
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"
  MARKET_SHORTAGE_ALERT_TOGGLE:0 "Toggle [concept_input_goods_shortage] Alerts"
@@ -136,3 +141,6 @@ no:0 "no"
  VULNERABLE_FRONT_ALERT_TOGGLE:0 "Toggle [concept_front] Alerts"
  HIGH_ATTRITION_ALERT_TOGGLE:0 "Toggle [concept_attrition] Alerts"
  ACTIVE_PEACE_DEAL_ALERT_TOGGLE:0 "Toggle [concept_peace_deal] Alerts"
+
+ TOGGLE_DECISION_TOOLTIP:0 "Toggle Decision Alert"
+ TOGGLE_DECISIONS_TOOLTIP:0 "Toggle Decision Alerts"
