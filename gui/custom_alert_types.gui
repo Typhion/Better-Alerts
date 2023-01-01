@@ -485,7 +485,7 @@ types custom_alert_types {
 				onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
 			}
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/lens_toolbar_icons/military_lens_button.dds"
+				texture = "gfx/interface/icons/alert_icons/unused/diplomatic_play.dds"
 			}
 			blockoverride "button_color" {
 				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
@@ -511,6 +511,40 @@ types custom_alert_types {
 				entity_instance = vfx_entity_ui_alert_above_icon_red
 			}
 			tooltip = "alert_has_convoys_being_sunk_alert_typhion_ui"
+		}
+		# Vulnerable Front
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('vulnerable_front_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/vaulnarable_front.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
+			tooltip = "alert_vulnerable_front_alert_typhion_ui"
+		}
+		# High Attrition
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('high_attrition_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/high_attrition.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_red
+			}
+			tooltip = "alert_high_attrition_alert_typhion_ui"
 		}
 	}
 
@@ -593,7 +627,7 @@ types custom_alert_types {
 				onclick = "[InformationPanelBar.OpenPanelTab('production_methods', 'construction_queues')]"
 			}
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/alert_icons/wasted_construction.dds"
+				texture = "gfx/interface/icons/alert_icons/has_construction_paused_alert.dds"
 			}
 			blockoverride "button_color" {
 				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
@@ -620,10 +654,129 @@ types custom_alert_types {
 			}
 			tooltip = "alert_is_losing_rank_alert_typhion_ui"
 		}
+		# No Research
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_no_research_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanel('tech_tree')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/has_no_research.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
+			tooltip = "alert_has_no_research_alert_typhion_ui"
+		}
+		# Active Peace Deal
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('active_peace_deal_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/active_peace_deal.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
+			tooltip = "alert_active_peace_deal_alert_typhion_ui"
+		}
+		# No War Goal
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_no_war_goal_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/has_no_war_goal.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
+			tooltip = "alert_has_no_war_goal_alert_typhion_ui"
+		}
+		# Wasted Construction
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('wasted_construction_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanelTab('production_methods', 'construction_queues')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/wasted_construction.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
+			tooltip = "alert_wasted_construction_alert_typhion_ui"
+		}
+		# Decreasing Interests
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_decreasing_interests_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/has_decreasing_interests.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
+			tooltip = "alert_has_decreasing_interests_alert_typhion_ui"
+		}
+		# Bureaucracy Shortage
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('country_approaching_bureaucracy_shortage_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'institutions')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/bureaucracy_shortage.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_yellow
+			}
+			tooltip = "alert_country_approaching_bureaucracy_shortage_alert_typhion_ui"
+		}
 	}
 
 	type custom_alert_box_green = flowcontainer {
 		visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
+		# Free Government Reform
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('free_government_reform_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/reform_government.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
+			tooltip = "alert_free_government_reform_alert_typhion_ui"
+		}
 		# Navy in Reserve
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_navy_in_reserve_loc'), 'yes')]"

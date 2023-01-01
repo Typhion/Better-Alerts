@@ -259,6 +259,7 @@ is_construction_paused_loc = {
 	text = {
 		trigger = {
 			is_construction_paused = yes
+			NOT = { has_variable = wasted_construction_alert_disabled }
 		}
 		localization_key = "yes"
 	}
@@ -342,6 +343,91 @@ high_attrition_loc = {
 				has_high_attrition = yes
 			}
 			NOT = { has_variable = high_attrition_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+free_government_reform_loc = {
+	type = country
+	text = {
+		trigger = {
+			has_free_government_reform = yes
+			NOT = { has_variable = government_reform_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+has_no_research_loc = {
+	type = country
+	text = {
+		trigger = {
+			NOT = { is_researching_technology = any }
+			has_researchable_technology = yes
+			NOT = { has_variable = has_no_research_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+active_peace_deal_loc = {
+	type = country
+	text = {
+		trigger = {
+			has_active_peace_deal = yes
+			NOT = { has_variable = active_peace_deal_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+wasted_construction_loc = {
+	type = country
+	text = {
+		trigger = {
+			has_wasted_construction = yes
+			NOT = { has_variable = wasted_construction_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+has_decreasing_interests_loc = {
+	type = country
+	text = {
+		trigger = {
+			has_decreasing_interests = yes
+			NOT = { has_variable = decreasing_interests_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+
+country_approaching_bureaucracy_shortage_loc = {
+	type = country
+	text = {
+		trigger = {
+			approaching_bureaucracy_shortage = yes
+			NOT = { has_variable = bureaucracy_shortage_alert_disabled }
 		}
 		localization_key = "yes"
 	}
