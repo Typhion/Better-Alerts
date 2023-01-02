@@ -48,7 +48,6 @@ wasted_construction = {
 
 low_legitimacy_alert = {
 	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/unused/low_legitimacy.dds"
 
 	valid = {
 		government_legitimacy <= 50
@@ -56,7 +55,7 @@ low_legitimacy_alert = {
 	}
 
 	open_panel = politics|interest_groups
-	type = alert
+	type = angry_important_action
 }
 
 has_decreasing_interests_alert = {
@@ -117,7 +116,6 @@ is_construction_paused = {
 
  country_default = {
  	script_context = player_country
-	texture = "gfx/interface/icons/alert_icons/bankruptcy.dds"
 
 	valid = {
 		in_default = yes
@@ -125,7 +123,7 @@ is_construction_paused = {
 	}
 
 	open_panel = budget|assets
-	type = alert
+	type = angry_important_action
 }
 
 has_no_research_alert = {

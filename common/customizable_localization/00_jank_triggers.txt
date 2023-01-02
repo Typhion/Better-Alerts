@@ -447,6 +447,32 @@ available_decisions_loc = {
 		localization_key = "no"
 	}		
 }
+low_legitimacy_loc = {
+	type = country
+	text = {
+		trigger = {
+			government_legitimacy <= 50
+			NOT = { has_variable = low_legitimacy_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
+country_default_loc = {
+	type = country
+	text = {
+		trigger = {
+			in_default = yes
+			NOT = { has_variable = country_default_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
 
 
 
