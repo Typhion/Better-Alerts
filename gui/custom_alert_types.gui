@@ -727,7 +727,7 @@ types custom_alert_types {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 			}
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/goods_icons/clippers.dds"
+				texture = "gfx/interface/icons/alert_icons/clippers_darker.dds"
 			}
 			blockoverride "button_color" {
 				texture = "gfx/interface/icons/alert_icons/alert_button_yellow.dds"
