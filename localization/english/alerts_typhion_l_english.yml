@@ -111,8 +111,9 @@ no:0 "no"
 
  alert_available_decision_name:0 "Available Decisions"
  alert_available_decision_desc:0 "You have one or more available decisions."
+ alert_available_decision_hint:0 "You can disable individual Decision Alerts in the Decisions tab by right clicking the green checkmark button."
  alert_available_decision_action:0 "Click to open the Decisions tab"
- alert_available_decision_alert_typhion_ui:0 "#T $alert_available_decision_name$#!\n$TOOLTIP_DELIMITER$\n$alert_available_decision_desc$\n\n#I Click to open the $alert_available_decision_action$#!"
+ alert_available_decision_alert_typhion_ui:0 "#T $alert_available_decision_name$#!\n$TOOLTIP_DELIMITER$\n$alert_available_decision_desc$\n\n@information! $alert_available_decision_hint$\n\n#I Click to open the $alert_available_decision_action$#!"
 
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"
