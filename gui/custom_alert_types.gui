@@ -890,12 +890,12 @@ types custom_alert_types {
 		# Available Decisions
 		item = {
 			custom_alert = {
-				visible = "[And(And(IsValid(Decision.TakeDecision(GetPlayer)), Not(GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag)))), EqualTo_string(GetPlayer.GetCustom('available_decisions_loc'), 'yes'))]"
+				visible = "[And(And(IsValid(Decision.TakeDecision(GetPlayer)), Not(GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag)))), And(EqualTo_string(GetPlayer.GetCustom('available_decisions_loc'), 'yes'), Not(GetVariableSystem.Exists('alert_toggle_menu'))))]"
 				blockoverride "click" {
 					onclick = "[InformationPanelBar.OpenPanelTab('journal', 'decisions')]"
 				}
 				blockoverride "alert_texture" {
-					#size = { 45 45 }
+					size = { 48 48 }
 					texture = "gfx/interface/icons/lens_toolbar_icons/unused/grant_recognition.dds"
 				}
 				blockoverride "button_color" {
