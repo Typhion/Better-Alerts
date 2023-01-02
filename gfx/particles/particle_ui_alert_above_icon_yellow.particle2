@@ -51,7 +51,7 @@ graph={
 			id=5
 			node={
 				value={
-					0.614702 0.497049 0.115693 1.000000
+					0.366122 0.298193 0.078009 1.000000
 				}
 
 			}
@@ -211,7 +211,7 @@ graph={
 				type="Catmull-Rom-Centripetal"
 				curve={
 					{ x = 0.000000 y = 0.000000 }
-					{ x = 0.507480 y = 0.560230 }
+					{ x = 0.511795 y = 0.513031 }
 					{ x = 1.000000 y = 0.000000 }
 				}
 			}
@@ -337,18 +337,21 @@ graph={
 			inputs={
 			}
 		}
-		pdxns:values:Float={
-			id=29
+		pdxns:values:Color={
+			id=140
 			node={
-				value=0.000000
+				value={
+					0.366122 0.298193 0.078009 1.000000
+				}
+
 			}
 			inputs={
 			}
 		}
 		pdxns:values:Float={
-			id=30
+			id=139
 			node={
-				value=0.000000
+				value=0.020000
 			}
 			inputs={
 			}
@@ -416,7 +419,7 @@ graph={
 			}
 		}
 		pdxns:values:Float={
-			id=35
+			id=138
 			node={
 				value=0.200000
 			}
@@ -424,9 +427,9 @@ graph={
 			}
 		}
 		pdxns:values:Float={
-			id=36
+			id=137
 			node={
-				value=0.020000
+				value=0.000000
 			}
 			inputs={
 			}
@@ -439,13 +442,10 @@ graph={
 			inputs={
 			}
 		}
-		pdxns:values:Color={
-			id=38
+		pdxns:values:Float={
+			id=136
 			node={
-				value={
-					0.497514 0.383166 0.014134 1.000000
-				}
-
+				value=0.000000
 			}
 			inputs={
 			}
@@ -630,7 +630,7 @@ graph={
 				}
 				link={
 					pin_id="usr:StartColor"
-					linked_node=72
+					linked_node=135
 					linked_pin="output"
 				}
 			}
@@ -984,34 +984,34 @@ graph={
 			}
 		}
 		pdxns:common:compound={
-			id=72
+			id=135
 			node={
 				graph="Color variation"
 			}
 			inputs={
 				link={
 					pin_id="color"
-					linked_node=38
+					linked_node=140
 					linked_pin="value"
 				}
 				link={
 					pin_id="hue_variation"
-					linked_node=36
+					linked_node=139
 					linked_pin="value"
 				}
 				link={
 					pin_id="saturation_variation"
-					linked_node=35
+					linked_node=138
 					linked_pin="value"
 				}
 				link={
 					pin_id="value_variation"
-					linked_node=30
+					linked_node=137
 					linked_pin="value"
 				}
 				link={
 					pin_id="alpha_variation"
-					linked_node=29
+					linked_node=136
 					linked_pin="value"
 				}
 			}
@@ -1081,8 +1081,8 @@ graph={
 				type="Catmull-Rom-Centripetal"
 				curve={
 					{ x = 0.000000 y = 0.000000 }
-					{ x = 0.430956 y = 0.366902 }
-					{ x = 1.000000 y = 0.806593 }
+					{ x = 0.458286 y = 0.319703 }
+					{ x = 1.000000 y = 0.710143 }
 				}
 			}
 			inputs={

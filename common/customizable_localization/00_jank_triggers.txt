@@ -306,7 +306,7 @@ has_no_war_goal_loc = {
 					initiator = root
 					target = root
 				}
-				scope:actor = { should_set_wargoal = yes }
+				root = { should_set_wargoal = yes }
 			}
 			NOT = { has_variable = has_no_war_goal_alert_disabled }
 		}
@@ -323,7 +323,7 @@ vulnerable_front_loc = {
 		trigger = {
 			any_scope_war = {
 				any_scope_front = {
-	    			is_vulnerable_front = scope:actor
+	    			is_vulnerable_front = ROOT
 	    		}
 			}
         	NOT = { has_variable = vulnerable_front_alert_disabled }
@@ -446,4 +446,21 @@ available_decisions_loc = {
 	text = {
 		localization_key = "no"
 	}		
+}
+
+
+
+# STATE TRIGGERS #
+
+is_isolated_state_loc = {
+	type = state
+	text = {
+		trigger = {
+			is_isolated_from_market = yes
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
 }

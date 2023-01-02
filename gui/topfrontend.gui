@@ -126,7 +126,7 @@ types topfrontend_types {
 
 			### ALERTS
 			dynamicgridbox = {
-				visible = "[Not(GetVariableSystem.Exists('alert_toggle_menu'))]"
+				visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
 				datamodel = "[TopFrontend.AccessAlerts]"
 				flipdirection = yes
 
@@ -513,6 +513,14 @@ types topfrontend_types {
 
 			# MOD ALERTS MENU
 			custom_alert_toggle_menu = {}
+
+			# MOD STATE WIDGETS
+			alert_state_widget = {
+				visible = "[GetVariableSystem.Exists('isolated_state_alert_var')]"
+				blockoverride "item_visibility" {
+					visible = "[EqualTo_string(State.GetCustom('is_isolated_state_loc'), 'yes')]"
+				}
+			}
 
 			### DIPLO MESSAGES
 			dynamicgridbox = {

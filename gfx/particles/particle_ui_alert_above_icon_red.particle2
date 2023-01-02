@@ -386,7 +386,7 @@ graph={
 			}
 		}
 		pdxns:values:Float={
-			id=29
+			id=140
 			node={
 				value=0.000000
 			}
@@ -394,7 +394,7 @@ graph={
 			}
 		}
 		pdxns:values:Float={
-			id=30
+			id=139
 			node={
 				value=0.000000
 			}
@@ -450,7 +450,7 @@ graph={
 			}
 		}
 		pdxns:values:Float={
-			id=35
+			id=138
 			node={
 				value=0.200000
 			}
@@ -458,7 +458,7 @@ graph={
 			}
 		}
 		pdxns:values:Float={
-			id=36
+			id=137
 			node={
 				value=0.020000
 			}
@@ -493,10 +493,10 @@ graph={
 			}
 		}
 		pdxns:values:Color={
-			id=38
+			id=136
 			node={
 				value={
-					0.632457 0.105559 0.105559 1.000000
+					0.444247 0.108853 0.108853 1.000000
 				}
 
 			}
@@ -674,7 +674,7 @@ graph={
 			id=52
 			node={
 				value={
-					0.632457 0.105559 0.105559 1.000000
+					0.444247 0.108853 0.108853 1.000000
 				}
 
 			}
@@ -1009,7 +1009,7 @@ graph={
 				}
 				link={
 					pin_id="usr:StartColor"
-					linked_node=88
+					linked_node=135
 					linked_pin="output"
 				}
 			}
@@ -1210,34 +1210,34 @@ graph={
 			}
 		}
 		pdxns:common:compound={
-			id=88
+			id=135
 			node={
 				graph="Color variation"
 			}
 			inputs={
 				link={
 					pin_id="color"
-					linked_node=38
+					linked_node=136
 					linked_pin="value"
 				}
 				link={
 					pin_id="hue_variation"
-					linked_node=36
+					linked_node=137
 					linked_pin="value"
 				}
 				link={
 					pin_id="saturation_variation"
-					linked_node=35
+					linked_node=138
 					linked_pin="value"
 				}
 				link={
 					pin_id="value_variation"
-					linked_node=30
+					linked_node=139
 					linked_pin="value"
 				}
 				link={
 					pin_id="alpha_variation"
-					linked_node=29
+					linked_node=140
 					linked_pin="value"
 				}
 			}
