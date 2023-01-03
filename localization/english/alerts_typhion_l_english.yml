@@ -76,7 +76,7 @@ no:0 "no"
  alert_has_navy_troops_in_reserve_alert_typhion_hint:0 "Promote existing [Concept('concept_admiral', '$concept_admirals$')] in order to give them higher [concept_command_limit], which can be done on the details panel for that $concept_admiral$ (or by right-clicking the $concept_admiral$). You can also assign $concept_flotillas$ by recruiting more $concept_admirals$, which can be done on the Navy tab in the #b Military#! panel or through the [concept_military_lens].\n\nHowever, promoting an $concept_admiral$ is usually recommended over recruiting more."
  alert_navy_in_reserve_alert_typhion_ui:0 "#T $alert_has_navy_troops_in_reserve_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n@information! $alert_has_navy_troops_in_reserve_alert_typhion_hint$\n\n#I Click to open the Military Panel#!$alert_action_typhion_disable$"
 
- alert_is_in_diplo_play_alert_typhion_name:0 "You are being targeted in a diplo play"
+ alert_is_in_diplo_play_alert_typhion_name:0 "You are being targeted in a [concept_diplomatic_play]"
  alert_is_in_diplo_play_alert_typhion_hint:0 "See whether you can defeat your enemies or surrender."
  alert_is_in_diplo_play_alert_ui:0 "#T $alert_is_in_diplo_play_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n@information! $alert_is_in_diplo_play_alert_typhion_hint$\n\n#I Click to open the Diplomacy Panel#!$alert_action_typhion_disable$"
 

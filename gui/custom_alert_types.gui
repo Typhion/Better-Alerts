@@ -1130,14 +1130,12 @@ types custom_alert_types {
 	type custom_alert_box_decisions = dynamicgridbox {
 		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
 		datamodel = "[AccessPlayer.GetDecisions]"
-		direction = horizontal
-		datamodel_wrap = 3
-		#block "datamodel_wrap" {
-		#	datamodel_wrap = 1
-		#}
-		maxverticalslots = 1
-		#maxhorizontalslots = 1
-		#parentanchor = left
+		#flipdirection = yes
+		maximumsize = { 70 70 }
+		datamodel_wrap = 1
+		ignoreinvisible = yes
+		alwaystransparent = yes
+		scissor = yes
 		# Available Decisions
 		item = {
 			custom_alert = {
