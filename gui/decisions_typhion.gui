@@ -47,11 +47,7 @@ types decisions_typhion_types
 			button_icon_round_toggle_typhion_green = {
 				parentanchor = left|vcenter
 				size = { 50 50 }
-				#rightclick_modifiers = {
-				#	ondefault = "[GetVariableSystem.Toggle(Concatenate('decision_toggle_', Decision.GetTooltipTag))]"
-				#}
 				texture = "gfx/interface/buttons/round_button_small_wood_action_yellow.dds"
-				#tooltip = "[Decision.GetTooltip( GetPlayer )]"
 				visible = "[IsValid( Decision.TakeDecision( GetPlayer ) )]"
 				onclick = "[Execute( Decision.TakeDecision( GetPlayer ) )]"
 			}
@@ -59,53 +55,12 @@ types decisions_typhion_types
 			button_icon_round_toggle_typhion_gray = {
 				parentanchor = left|vcenter
 				size = { 50 50 }
-				#rightclick_modifiers = {
-				#	ondefault = "[GetVariableSystem.Toggle(Concatenate('decision_toggle_', Decision.GetTooltipTag))]"
-				#}
-				#texture = "gfx/interface/buttons/round_button_full_alert_full_gray.dds"
-				#tooltip = "[Decision.GetTooltip( GetPlayer )]"
 				visible = "[Not(IsValid( Decision.TakeDecision( GetPlayer ) ))]"
-				#onclick = "[Execute( Decision.TakeDecision( GetPlayer ) )]"
 			}
-
-			#button_checkbox_label_custom = {
-			#	parentanchor = right|vcenter
-			#	size = { 15 15 }
-			#	using = tooltip_above
-			#	onclick = "[GetVariableSystem.Toggle(Concatenate('decision_toggle_', Decision.GetTooltipTag))]"
-	#
-			#	blockoverride "checkbox"
-			#	{
-			#		checked = "[Not(GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag)))]"
-			#	}
-	#
-			#	blockoverride "text" { text = "" }
-			#	tooltip = "TOGGLE_DECISION_TOOLTIP"
-			#}
 		}
 		
 		divider_clean = {
 			parentanchor = bottom
-		}
-	}
-
-	type button_icon_round_action_disabled_alert = button_icon_round
-	{
-		blockoverride "wood_texture" {
-			visible = "[Not(GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag)))]"
-			texture = "gfx/interface/buttons/round_button_small_wood_action.dds"
-		}
-		blockoverride "wood_texture_yellow" {
-			visible = "[GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag))]"
-			texture = "gfx/interface/buttons/round_button_small_wood_action_yellow.dds"
-		}
-		blockoverride "frame_visible" {}
-	}
-
-	type button_icon_check_disabled_alert = button_icon_round_action_disabled_alert
-	{
-		blockoverride "icon" {
-			texture = "gfx/interface/buttons/button_icons/check.dds"
 		}
 	}
 
