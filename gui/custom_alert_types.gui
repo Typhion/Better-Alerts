@@ -429,9 +429,7 @@ types custom_alert_types {
 		widgetanchor = top|left
 		movable = no
 		layer = layer_rightclickmenu
-		#minimumsize = { 220 120 }
-		#maximumsize = { 950 120 }
-		size = { 350 190 }
+		size = { 250 175 }
 		state = {
 			name = sound
 			trigger_on_create = yes
@@ -445,15 +443,25 @@ types custom_alert_types {
 		background = {
 			using = frame_small
 		}
-		allow_outside = no
-		scissor = yes
+		textbox = {
+			position = { -10 0 }
+			size = { 75% 40 }
+			block "header_text" 
+			{
+				#text = "Isolated States"
+			}
+			elide = right
+			fontsize_min = 14
+			parentanchor = hcenter
+			align = center|nobaseline
+			using = header_font
+			fontsize = 20
+			default_format = "#header"
+		}
 		DEM_scrollbox = {
-			layoutpolicy_vertical = expanding
-			layoutpolicy_horizontal = expanding
-			alwaystransparent = yes
 			blockoverride "area_size" {
 				position = { 5 45 }
-				size = { 340 140 }
+				size = { 230 120 }
 			}
 
 			blockoverride "scrollbox_background" {
@@ -461,35 +469,34 @@ types custom_alert_types {
 			}
 			blockoverride "scrollbox_replace_vbox" {
 				dynamicgridbox = {
-					parentanchor = left
 					position = { 5 0 }
+					block "data" {}
 					datamodel = "[AccessPlayer.AccessStates]"
-					ignoreinvisible = yes
-					datamodel_wrap = 2
+					datamodel_wrap = 1
 					flipdirection = yes
+					ignoreinvisible = yes
 					item = {
 						button = {
+							parentanchor = top|center
 							block "item_visibility" {
 								#visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
 							}
 							using = default_button_action
-							size = { 160 35 }
+							size = { 210 35 }
 							onmousehierarchyenter = "[AccessHighlightManager.HighlightState(State.Self)]"
 							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 							onclick = "[InformationPanelBar.OpenStatePanel( State.AccessSelf )]"
 							onclick = "[State.ZoomToCapital]"
 							onrightclick = "[RightClickMenuManager.ShowForState(State.AccessSelf)]"
-							alwaystransparent = no
 							textbox = {
 								using = Font_Type_Standard
-								fontsize = 14
+								fontsize = 16
 								autoresize = yes
 								elide = right
 								text = "#bold [State.GetNameNoFormatting]#!"
 								max_width = 140
 								default_format = "#clickable"
 								alwaystransparent = yes
-								text_selectable = no
 								parentanchor = center
 								align = nobaseline
 								tooltipwidget = {
@@ -501,30 +508,19 @@ types custom_alert_types {
 				}
 			}
 		}
-		textbox = {
-			position = { -10 0 }
-			size = { 75% 40 }
-			text = "Isolated States"
-			elide = right
-			fontsize_min = 14
-			parentanchor = hcenter
-			align = center|nobaseline
-			using = header_font
-			fontsize = 20
-			default_format = "#header"
-		}
 		close_button = {
 			name = "Close"
 			size = { 35 35 }
 			parentanchor = right|top
 			position = { -5 5 }
 			shortcut = "close_window"
-			onclick = "[GetVariableSystem.Toggle('isolated_state_alert_var')]"
+			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
+			block "onclose" {}
 		}
 	}
 	# NOTE: Put all red custom alerts in this container
 	type custom_alert_box_red = flowcontainer {
-		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
+		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
 		# Market Shortage
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_market_shortage_loc'), 'yes')]"
@@ -589,12 +585,11 @@ types custom_alert_types {
 			tooltip = "alert_upcoming_revolt_alert_typhion_ui"
 		}
 		# Isolated State
-		# TODO: Make is so onclick cycles through relevant states.
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
 			blockoverride "click" {
-				#onclick = "[InformationPanelBar.OpenPanel('outliner')]"
-				onclick = "[GetVariableSystem.Toggle('isolated_state_alert_var')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'isolated_states')]"
+				onclick = "[GetScriptedGui('build_isolated_states_list').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('isolated_state_toggle')]"
@@ -740,13 +735,13 @@ types custom_alert_types {
 	}
 
 	type custom_alert_box_yellow = flowcontainer {
-		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
+		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
 		# Insufficient Tax
-		# TODO: Make is so onclick cycles through relevant states.
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_insufficient_tax_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'insufficient_tax')]"
+				onclick = "[GetScriptedGui('build_insufficient_tax_list').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('bad_tax_toggle')]"
@@ -764,11 +759,11 @@ types custom_alert_types {
 			tooltip = "alert_insufficient_tax_alert_typhion_ui"
 		}
 		# Low Market Access
-		# TODO: Make is so onclick cycles through relevant states.
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_low_market_access_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanel('outliner')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'low_access')]"
+				onclick = "[GetScriptedGui('build_low_access_list').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('low_market_access_toggle')]"
@@ -998,7 +993,7 @@ types custom_alert_types {
 	}
 
 	type custom_alert_box_green = flowcontainer {
-		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
+		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
 		# Free Government Reform
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('free_government_reform_loc'), 'yes')]"
@@ -1128,7 +1123,7 @@ types custom_alert_types {
 	}
 
 	type custom_alert_box_decisions = dynamicgridbox {
-		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
+		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
 		datamodel = "[AccessPlayer.GetDecisions]"
 		#flipdirection = yes
 		maximumsize = { 70 70 }

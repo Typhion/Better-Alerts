@@ -39,7 +39,6 @@ types topfrontend_types {
 		name = "topfrontend"
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding 
-
 		### SITUATIONS + ALERTS
 		flowcontainer = {
 			using = hud_visibility
@@ -126,7 +125,7 @@ types topfrontend_types {
 
 			### ALERTS
 			dynamicgridbox = {
-				visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('isolated_state_alert_var')))]"
+				visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
 				datamodel = "[TopFrontend.AccessAlerts]"
 				flipdirection = yes
 
@@ -515,13 +514,38 @@ types topfrontend_types {
 			custom_alert_toggle_menu = {}
 
 			# MOD STATE WIDGETS
+
+			# Isolated States
 			alert_state_widget = {
-				visible = "[GetVariableSystem.Exists('isolated_state_alert_var')]"
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'isolated_states')]"
 				blockoverride "item_visibility" {
 					visible = "[EqualTo_string(State.GetCustom('is_isolated_state_loc'), 'yes')]"
 				}
+				blockoverride "header_text" {
+					text = "Isolated States"
+				}
 			}
-
+			# Insufficient Tax States
+			alert_state_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'insufficient_tax')]"
+				blockoverride "item_visibility" {
+					visible = "[EqualTo_string(State.GetCustom('insufficient_tax_state_loc'), 'yes')]"
+				}
+				blockoverride "header_text" {
+					text = "Insufficient Tax"
+				}
+			}
+			# Low Market Access
+			alert_state_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'low_access')]"
+				blockoverride "item_visibility" {
+					visible = "[EqualTo_string(State.GetCustom('has_low_market_access_state_loc'), 'yes')]"
+				}
+				blockoverride "header_text" {
+					text = "Low Market Access"
+				}
+			}
+			
 			### DIPLO MESSAGES
 			dynamicgridbox = {
 				datamodel = "[TopFrontend.AccessProposals]"

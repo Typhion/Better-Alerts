@@ -490,3 +490,31 @@ is_isolated_state_loc = {
 		localization_key = "no"
 	}
 }
+
+insufficient_tax_state_loc = {
+	type = state
+	text = {
+		trigger = {
+			tax_capacity < tax_capacity_usage
+			is_incorporated = yes
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_low_market_access_state_loc = {
+	type = state
+	text = {
+		trigger = {
+			market_access < 1
+			NOT = { is_isolated_from_market = yes }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
