@@ -1,0 +1,55 @@
+[h1] Description [/h1]
+Adds a lot of Alerts to be more visible instead of in the current situation thingy. Also makes it so the current situation thingy doesn't light up when there are unread messages. The alerts are fully colour coded and toggleable. Decisions also have a system of being individually toggled.
+
+[h2] Features [/h2]
+[list]
+    [*] Custom gui elements for alerts
+    [*] Made all alerts toggleable (Open toggle menu by right-clicking Current Situation Toggle or right-click an alert to disable it)
+    [*] Changed the little glow on the alerts to be less annoying
+    [*] Fully colour coded Alerts
+    [*] Decisions are individually toggleable now by right-clicking on them
+    [*] Added a menu for alerts that required you to be able to check multiple things (such as states, generals, etc.)
+[/list]
+
+[h2] New Alerts [/h2]
+[list]
+    [*] Wasted Construction Alert (Hammer Icon)
+    [*] Isolated State Alert (Market Stall Icon)
+    [*] Unproductive Trade Route Alert (Crate with red arrow Icon)
+    [*] Insurrectionary Alert (Revolution Icon)
+    [*] Secession Alert (Growing Secession Icon)
+    [*] Idle Mobilized General Alert (Idle Mobilized General Icon)
+    [*] Decreasing Interests Alert (Decreasing Interests Icon)
+    [*] Convoys Being Sunk Alert (Steering wheel with red arrow Icon)
+    [*] Stockpiling Gold Alert (Gold Icon)
+    [*] Low Legitimacy Alert (Low Legitimacy Icon)
+    [*] Trade Route Needs Convoys Alert (Clipper Icon)
+    [*] Trade Route Needs Convoys Alert (Steamer Icon once Ironclads are researched)
+    [*] Low Market Access Alert (Railway Icon)
+    [*] Insufficient Tax Capacity Alert (Pound Sterling Icon)
+    [*] Goods Shortage Alert (Empty Crates and Barrels Icon)
+    [*] Army in Reserve Alert (Prussian Helmet with Camp Icon)
+    [*] Navy in Reserve Alert (Anchor with Camp Icon)
+    [*] X Expensive Goods Alert (Gold Coins Icon) - Currently disabled
+    [*] Targeted In Diplo Play Alert (Diplomatic Play Icon)
+    [*] Construction Paused Alert (Same icon as the actual Construction Paused Icon)
+[/list]
+
+[h3] Toggleable Vanilla Alerts [/h3]
+[list]
+    [*] ALL
+[/list]
+
+[h2] Supported Languages [/h2]
+[list]
+    [*] English
+    [*] Spanish (Thanks to Juanen from the Imperator Invictus team)
+[/list]
+
+If you are willing to translate this to one of the available languages then leave a comment. Currently there is an English placeholder for every language so that it doesn't just show the loc key.
+
+[h2] Compatibility [/h2]
+Compatible with most other mods except for mods changing alerts and the topfrontend.gui file. Also load this mod after any mod altering the journal.gui.
+
+[h2] Suggestions [/h2]
+If there are any more suggestions for alerts or better icons, feel free to leave a comment.
