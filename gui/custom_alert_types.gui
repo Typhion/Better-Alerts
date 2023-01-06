@@ -429,7 +429,7 @@ types custom_alert_types {
 		widgetanchor = top|left
 		movable = no
 		layer = layer_rightclickmenu
-		size = { 250 175 }
+		size = { 250 125 }
 		state = {
 			name = sound
 			trigger_on_create = yes
@@ -461,7 +461,7 @@ types custom_alert_types {
 		DEM_scrollbox = {
 			blockoverride "area_size" {
 				position = { 5 45 }
-				size = { 230 120 }
+				size = { 230 70 }
 			}
 
 			blockoverride "scrollbox_background" {
