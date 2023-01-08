@@ -518,6 +518,340 @@ types custom_alert_types {
 			block "onclose" {}
 		}
 	}
+	type alert_general_widget = right_click_menu_widget {
+		# PARAMETERS:
+		# A visible trigger
+		# The 'item_visibility' blockoverride with a visible trigger
+
+		#visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
+		gfxtype = windowgfx
+		shaderfile = "gfx/FX/pdxgui_default.shader"
+		widgetanchor = top|left
+		movable = no
+		layer = layer_rightclickmenu
+		size = { 250 125 }
+		state = {
+			name = sound
+			trigger_on_create = yes
+			start_sound = {
+				using = ui_sfx_global_panel_show
+			}
+		}
+		background = {
+			using = default_background
+		}
+		background = {
+			using = frame_small
+		}
+		textbox = {
+			position = { -10 0 }
+			size = { 75% 40 }
+			block "header_text" 
+			{
+				#text = "Isolated States"
+			}
+			elide = right
+			fontsize_min = 14
+			parentanchor = hcenter
+			align = center|nobaseline
+			using = header_font
+			fontsize = 20
+			default_format = "#header"
+		}
+		DEM_scrollbox = {
+			blockoverride "area_size" {
+				position = { 5 45 }
+				size = { 230 70 }
+			}
+
+			blockoverride "scrollbox_background" {
+
+			}
+			blockoverride "scrollbox_replace_vbox" {
+				dynamicgridbox = {
+					position = { 5 0 }
+					block "data" {
+						#datamodel = "[GetGlobalList('idle_general_list')]"
+					}
+					datamodel_wrap = 1
+					flipdirection = yes
+					ignoreinvisible = yes
+					item = {
+						button = {
+							datacontext = "[Scope.AccessCharacter]"
+							parentanchor = top|center
+							block "item_visibility" {
+								#visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
+							}
+							using = default_button_action
+							size = { 210 35 }
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCharacter( Character.Self )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+							onclick = "[InformationPanelBar.OpenCommanderPanel( Character.AccessSelf )]"
+							onrightclick = "[RightClickMenuManager.ShowForCharacter(Character.AccessSelf)]"
+							flowcontainer = {
+								parentanchor = left|vcenter
+								margin = { 10 10 }
+								character_portrait_mini = {}
+				
+								widget = {
+									size = { 5 5 }
+								}
+							}
+							textbox = {
+								using = Font_Type_Standard
+								fontsize = 16
+								autoresize = yes
+								elide = right
+								text = "[Scope.GetCharacter.GetFullName]"
+								max_width = 140
+								default_format = "#clickable"
+								alwaystransparent = yes
+								parentanchor = center
+								align = nobaseline
+								margin = { 10 10 }
+								tooltipwidget = {
+									FancyTooltip_Character = {}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		close_button = {
+			name = "Close"
+			size = { 35 35 }
+			parentanchor = right|top
+			position = { -5 5 }
+			shortcut = "close_window"
+			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
+			block "onclick_close_button" {
+				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+			}
+			block "onclose" {}
+		}
+	}
+	#type alert_front_widget = right_click_menu_widget {
+	#	# PARAMETERS:
+	#	# A visible trigger
+	#	# The 'item_visibility' blockoverride with a visible trigger
+#
+	#	#visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
+	#	gfxtype = windowgfx
+	#	shaderfile = "gfx/FX/pdxgui_default.shader"
+	#	widgetanchor = top|left
+	#	movable = no
+	#	layer = layer_rightclickmenu
+	#	size = { 250 125 }
+	#	state = {
+	#		name = sound
+	#		trigger_on_create = yes
+	#		start_sound = {
+	#			using = ui_sfx_global_panel_show
+	#		}
+	#	}
+	#	background = {
+	#		using = default_background
+	#	}
+	#	background = {
+	#		using = frame_small
+	#	}
+	#	textbox = {
+	#		position = { -10 0 }
+	#		size = { 75% 40 }
+	#		block "header_text" 
+	#		{
+	#			#text = "Isolated States"
+	#		}
+	#		elide = right
+	#		fontsize_min = 14
+	#		parentanchor = hcenter
+	#		align = center|nobaseline
+	#		using = header_font
+	#		fontsize = 20
+	#		default_format = "#header"
+	#	}
+	#	DEM_scrollbox = {
+	#		blockoverride "area_size" {
+	#			position = { 5 45 }
+	#			size = { 230 70 }
+	#		}
+#
+	#		blockoverride "scrollbox_background" {
+#
+	#		}
+	#		blockoverride "scrollbox_replace_vbox" {
+	#			dynamicgridbox = {
+	#				position = { 5 0 }
+	#				block "data" {}
+	#				datamodel = "[GetGlobalList('vulnerable_front_list')]"
+	#				datamodel_wrap = 1
+	#				flipdirection = yes
+	#				ignoreinvisible = yes
+	#				item = {
+	#					button = {
+	#						datacontext = "[Scope.AccessFront]"
+	#						parentanchor = top|center
+	#						block "item_visibility" {
+	#							#visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
+	#						}
+	#						using = default_button_action
+	#						size = { 210 35 }
+	#						onmousehierarchyenter = "[AccessHighlightManager.HighlightFront(Front.Self)]"
+	#						onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+	#						onclick = "[InformationPanelBar.OpenFrontPanel( Front.AccessSelf )]"
+	#						textbox = {
+	#							using = Font_Type_Standard
+	#							fontsize = 16
+	#							autoresize = yes
+	#							elide = right
+	#							text = "#bold [Front.GetNameNoFormatting]#!"
+	#							max_width = 140
+	#							default_format = "#clickable"
+	#							alwaystransparent = yes
+	#							parentanchor = center
+	#							align = nobaseline
+	#							tooltipwidget = {
+	#								FancyTooltip_Front = {}
+	#							}
+	#						}
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#	close_button = {
+	#		name = "Close"
+	#		size = { 35 35 }
+	#		parentanchor = right|top
+	#		position = { -5 5 }
+	#		shortcut = "close_window"
+	#		onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
+	#		onclick = "[GetScriptedGui('toggle_vulnerable_front_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+	#		block "onclose" {}
+	#	}
+	#}
+	type alert_diplo_play_widget = right_click_menu_widget {
+		# PARAMETERS:
+		# A visible trigger
+		# The 'item_visibility' blockoverride with a visible trigger
+
+		#visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
+		gfxtype = windowgfx
+		shaderfile = "gfx/FX/pdxgui_default.shader"
+		widgetanchor = top|left
+		movable = no
+		layer = layer_rightclickmenu
+		size = { 250 125 }
+		state = {
+			name = sound
+			trigger_on_create = yes
+			start_sound = {
+				using = ui_sfx_global_panel_show
+			}
+		}
+		background = {
+			using = default_background
+		}
+		background = {
+			using = frame_small
+		}
+		textbox = {
+			position = { -10 0 }
+			size = { 75% 40 }
+			block "header_text" 
+			{
+				#text = "Isolated States"
+			}
+			elide = right
+			fontsize_min = 14
+			parentanchor = hcenter
+			align = center|nobaseline
+			using = header_font
+			fontsize = 20
+			default_format = "#header"
+		}
+		DEM_scrollbox = {
+			blockoverride "area_size" {
+				position = { 5 45 }
+				size = { 230 70 }
+			}
+
+			blockoverride "scrollbox_background" {
+
+			}
+			blockoverride "scrollbox_replace_vbox" {
+				dynamicgridbox = {
+					position = { 5 0 }
+					datamodel = "[AccessPlayer.AccessActiveDiplomaticPlays]"
+					datamodel_wrap = 1
+					flipdirection = yes
+					ignoreinvisible = yes
+					item = {
+						button = {
+							datacontext = "[Scope.AccessDiplomaticPlay]"
+							tooltip = "DIPLOMATIC_PLAY_OUTLINER_TOOLTIP"
+							parentanchor = top|center
+							block "item_visibility" {
+								#visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
+							}
+							using = default_button_action
+							size = { 210 35 }
+							onclick = "[InformationPanelBar.OpenDiplomaticPlayPanel( DiplomaticPlay.AccessSelf )]"
+							onrightclick = "[RightClickMenuManager.ShowForDiplomaticPlay(DiplomaticPlay.AccessSelf)]"
+							
+							### left side
+							flowcontainer = {
+								datacontext = "[DiplomaticPlay.GetInitiator]"
+								parentanchor = vcenter|left
+								position = { 10 0 }
+								spacing = 5
+								
+								tiny_flag_no_interact = {
+									parentanchor = vcenter
+								}
+							}
+							textbox = {
+								datacontext = "[DiplomaticPlay.GetInitiator]"
+								using = Font_Type_Standard
+								fontsize = 16
+								autoresize = yes
+								elide = right
+								text = "[DiplomaticPlay.GetInitiator.GetNameNoFlag] vs. [DiplomaticPlay.GetTarget.GetNameNoFlag]"
+								max_width = 140
+								default_format = "#clickable"
+								alwaystransparent = yes
+								parentanchor = center
+								align = nobaseline
+								margin = { 10 10 }
+							}
+							### right side side
+							flowcontainer = {
+								datacontext = "[DiplomaticPlay.GetTarget]"
+								parentanchor = vcenter|right
+								position = { -10 0 }
+								spacing = 5
+								
+								tiny_flag_no_interact = {
+									parentanchor = vcenter
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		close_button = {
+			name = "Close"
+			size = { 35 35 }
+			parentanchor = right|top
+			position = { -5 5 }
+			shortcut = "close_window"
+			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
+			block "onclose" {}
+		}
+	}
 	# NOTE: Put all red custom alerts in this container
 	type custom_alert_box_red = flowcontainer {
 		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
@@ -589,7 +923,6 @@ types custom_alert_types {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_isolated_state_loc'), 'yes')]"
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'isolated_states')]"
-				onclick = "[GetScriptedGui('build_isolated_states_list').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('isolated_state_toggle')]"
@@ -610,7 +943,9 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('is_in_diplo_play_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
+				#onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'diplo_play_target')]"
+				#onclick = "[GetScriptedGui('toggle_diplo_play_target_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('diplo_play_toggle')]"
@@ -653,6 +988,8 @@ types custom_alert_types {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('vulnerable_front_loc'), 'yes')]"
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+				#onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'vulnerable_front')]"
+				#onclick = "[GetScriptedGui('toggle_vulnerable_front_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('vulnerable_front_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('vulnerable_front_toggle')]"
@@ -673,7 +1010,9 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('high_attrition_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+				#onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'attrition_general')]"
+				onclick = "[GetScriptedGui('toggle_attrition_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('high_attrition_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('high_attrition_toggle')]"
@@ -910,7 +1249,8 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_no_war_goal_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
+				#onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'has_no_war_goal')]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('has_no_war_goal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('no_war_goal_toggle')]"
@@ -1061,7 +1401,9 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_idle_general_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+				#onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'idle_general')]"
+				onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('idle_gen_toggle')]"

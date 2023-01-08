@@ -94,7 +94,7 @@
 
  alert_vulnerable_front_alert_typhion_ui:0 "#T Vulnerable [concept_front]#!\n$TOOLTIP_DELIMITER$\nWe have no [Concept('concept_general', '$concept_generals$')] nor [Concept('concept_battalion', '$concept_battalions$')] defending a front and there is at least one enemy $concept_general$ assigned to it.\n\n@information! $alert_vulnerable_front_hint$\n\n#I Click to open the Diplomatic Overview#!$alert_action_typhion_disable$"
 
- alert_high_attrition_alert_typhion_ui:0 "#T A [concept_general] has [concept_attrition]#!\n$TOOLTIP_DELIMITER$\nUnits of these [Concept('concept_general', 'concept_generals')] have a high risk of casualties due to attrition\n\n@information! $alert_high_attrition_alert_hint$\n\n#I Click to open the $alert_high_attrition_alert_action$#!$alert_action_typhion_disable$"
+ alert_high_attrition_alert_typhion_ui:0 "#T A [concept_general] has [concept_attrition]#!\n$TOOLTIP_DELIMITER$\nUnits of these [Concept('concept_general', '$concept_generals$')] have a high risk of casualties due to attrition\n\n@information! $alert_high_attrition_alert_hint$\n\n#I Click to open the $alert_high_attrition_alert_action$#!$alert_action_typhion_disable$"
 
  alert_free_government_reform_alert_typhion_ui:0 "#T $alert_free_government_reform_name$#!\n$TOOLTIP_DELIMITER$\n[LabelingHelper.GetDaysLoc(AccessPlayer.GetRemainingDaysForFreeGovernmentReformRaw, 'FREE_REFORM_DATE_PREFIX')] remaining.\n\nDue to the recent [concept_election] your next [concept_government_reform] will not result in any new [Concept('concept_radical','$concept_radicals$')], as long as it is done within the above time limit.\n\n@information! $alert_free_government_reform_hint$\n\n#I Click to open the $alert_free_government_reform_action$#!$alert_action_typhion_disable$"
 

@@ -323,7 +323,7 @@ vulnerable_front_loc = {
 		trigger = {
 			any_scope_war = {
 				any_scope_front = {
-	    			is_vulnerable_front = ROOT
+	    			is_vulnerable_front = root
 	    		}
 			}
         	NOT = { has_variable = vulnerable_front_alert_disabled }
@@ -517,4 +517,43 @@ has_low_market_access_state_loc = {
 	text = {
 		localization_key = "no"
 	}
+}
+
+diplo_play_target_list_loc = {
+	type = diplomatic_play
+	text = {
+		trigger = {
+			any_country = {
+				is_ai = no
+				is_diplomatic_play_target = yes
+				prev = {
+					target_is = prev
+				}
+			}
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}
+}
+
+has_no_war_goal_list_loc = {
+	type = diplomatic_play
+	text = {
+		trigger = {
+			any_country = {
+				is_ai = no
+				OR = {
+					prev = { initiator = prev }
+					prev = { target = prev }
+				}
+				should_set_wargoal = yes
+			}
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
 }

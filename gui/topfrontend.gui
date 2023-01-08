@@ -545,6 +545,59 @@ types topfrontend_types {
 					text = "Low Market Access"
 				}
 			}
+			# Idle Generals
+			alert_general_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'idle_general')]"
+				blockoverride "data" {
+					datamodel = "[GetGlobalList('idle_general_list')]"
+				}
+				blockoverride "onclick_close_button" {
+					onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				}
+				blockoverride "header_text" {
+					text = "Idle Generals"
+				}
+			}
+			# Attrition Generals
+			alert_general_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'attrition_general')]"
+				blockoverride "data" {
+					datamodel = "[GetGlobalList('attrition_general_list')]"
+				}
+				blockoverride "onclick_close_button" {
+					onclick = "[GetScriptedGui('toggle_attrition_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				}
+				blockoverride "header_text" {
+					text = "Attrition Generals"
+				}
+			}
+			# Vulnerable Fronts
+			#alert_front_widget = {
+			#	visible = "[GetVariableSystem.HasValue('state_alert_var', 'vulnerable_front')]"
+			#	blockoverride "header_text" {
+			#		text = "Vulnerable Fronts"
+			#	}
+			#}
+			# Diplo Play Target
+			alert_diplo_play_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'diplo_play_target')]"
+				blockoverride "item_visibility" {
+					visible = "[EqualTo_string(DiplomaticPlay.GetCustom('diplo_play_target_list_loc'), 'yes')]"
+				}
+				blockoverride "header_text" {
+					text = "Aggressive Diplo Plays"
+				}
+			}
+			# Has No War Goal
+			alert_diplo_play_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'has_no_war_goal')]"
+				blockoverride "item_visibility" {
+					visible = "[EqualTo_string(DiplomaticPlay.GetCustom('has_no_war_goal_list_loc'), 'yes')]"
+				}
+				blockoverride "header_text" {
+					text = "DP No War Goal"
+				}
+			}
 			
 			### DIPLO MESSAGES
 			dynamicgridbox = {
