@@ -1080,7 +1080,6 @@ types custom_alert_types {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_insufficient_tax_loc'), 'yes')]"
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'insufficient_tax')]"
-				onclick = "[GetScriptedGui('build_insufficient_tax_list').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('bad_tax_toggle')]"
@@ -1102,7 +1101,6 @@ types custom_alert_types {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_low_market_access_loc'), 'yes')]"
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'low_access')]"
-				onclick = "[GetScriptedGui('build_low_access_list').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('low_market_access_toggle')]"
