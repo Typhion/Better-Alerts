@@ -523,7 +523,7 @@ diplo_play_target_list_loc = {
 	type = diplomatic_play
 	text = {
 		trigger = {
-			any_country = {
+			any_scope_play_involved = {
 				is_ai = no
 				is_diplomatic_play_target = yes
 				prev = {
@@ -542,7 +542,7 @@ has_no_war_goal_list_loc = {
 	type = diplomatic_play
 	text = {
 		trigger = {
-			any_country = {
+			any_scope_play_involved = {
 				is_ai = no
 				OR = {
 					prev = { initiator = prev }
