@@ -598,6 +598,24 @@ types topfrontend_types {
 					text = "DP No War Goal"
 				}
 			}
+			alert_revolution_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'revolution_brewing')]"
+				blockoverride "data" {
+					datamodel = "[AccessPlayer.AccessCivilWars]"
+				}
+				blockoverride "header_text" {
+					text = "Revolution Brewing"
+				}
+			}
+			alert_secession_widget = {
+				visible = "[GetVariableSystem.HasValue('state_alert_var', 'secession_growing')]"
+				blockoverride "data" {
+					datamodel = "[AccessPlayer.AccessCivilWars]"
+				}
+				blockoverride "header_text" {
+					text = "Secession Growing"
+				}
+			}
 			
 			### DIPLO MESSAGES
 			dynamicgridbox = {

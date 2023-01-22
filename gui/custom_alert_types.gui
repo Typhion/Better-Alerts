@@ -852,6 +852,277 @@ types custom_alert_types {
 			block "onclose" {}
 		}
 	}
+	type alert_revolution_widget = right_click_menu_widget {
+		# PARAMETERS:
+		# A visible trigger
+		# The 'item_visibility' blockoverride with a visible trigger
+
+		#visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
+		gfxtype = windowgfx
+		shaderfile = "gfx/FX/pdxgui_default.shader"
+		widgetanchor = top|left
+		movable = no
+		layer = layer_rightclickmenu
+		size = { 250 125 }
+		state = {
+			name = sound
+			trigger_on_create = yes
+			start_sound = {
+				using = ui_sfx_global_panel_show
+			}
+		}
+		background = {
+			using = default_background
+		}
+		background = {
+			using = frame_small
+		}
+		textbox = {
+			position = { -10 0 }
+			size = { 75% 40 }
+			block "header_text" 
+			{
+				#text = "Isolated States"
+			}
+			elide = right
+			fontsize_min = 14
+			parentanchor = hcenter
+			align = center|nobaseline
+			using = header_font
+			fontsize = 20
+			default_format = "#header"
+		}
+		DEM_scrollbox = {
+			blockoverride "area_size" {
+				position = { 5 45 }
+				size = { 230 70 }
+			}
+
+			blockoverride "scrollbox_background" {
+
+			}
+			blockoverride "scrollbox_replace_vbox" {
+				dynamicgridbox = {
+					position = { 5 0 }
+					block "data" {
+						#datamodel = "[GetGlobalList('idle_general_list')]"
+					}
+					datamodel_wrap = 1
+					flipdirection = yes
+					ignoreinvisible = yes
+					direction = vertical
+					spacing = 2
+					item = {
+						flowcontainer = {
+							direction = vertical
+							alwaystransparent = no
+							datacontext = "[Scope.AccessCivilWars]"
+							parentanchor = top|center
+							block "item_visibility" {
+								visible = "[Not( CivilWar.HasBrokenOut )]"
+							}
+							size = { 220 35 }
+							spacing = 6
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCivilWarCountry( CivilWar.Self )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+
+							bad_progressbar_horizontal = {
+								visible = "[And(CivilWar.IsRevolution, CivilWar.HasPoliticalMovement)]"
+								size = { 220 30 }
+								tooltip = "REVOLUTIONS_PROGRESS_TOOLTIP"
+			
+								blockoverride "values" {
+									value = "[FixedPointToFloat( CivilWar.GetProgress )]"
+									min = 0
+									max = 1
+								}
+			
+								flowcontainer = {
+									parentanchor = vcenter
+									margin_left = 10
+									spacing = 7
+									dynamicgridbox = {
+										datamodel = "[CivilWar.AccessInsurrectionaryIGs( GetPlayer.Self )]"
+										flipdirection = yes
+										item = {
+											ig_button = {
+												size = { 23 23 }
+											}
+										}
+									}
+									### revolution header
+									textbox = {
+										text = "REVOLUTIONS_HEADER"
+										tooltip = "REVOLUTIONS_HEADER_TOOLTIP"
+										align = nobaseline
+										autoresize = yes
+									}
+								}
+			
+								textbox = {
+									text = "[CivilWar.GetProgress|%0v]"
+									autoresize = yes
+									align = nobaseline
+									parentanchor = right|vcenter
+									margin_right = 35
+								}
+								
+								blockoverride "in_government_icon"{}
+			
+								icon = {
+									parentanchor = right|vcenter
+									size = { 25 25 }
+									texture = "gfx/interface/icons/politics_icons/radicalized.dds"
+									position = { -5 0 }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		close_button = {
+			name = "Close"
+			size = { 35 35 }
+			parentanchor = right|top
+			position = { -5 5 }
+			shortcut = "close_window"
+			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
+			block "onclick_close_button" {
+				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+			}
+			block "onclose" {}
+		}
+	}
+	type alert_secession_widget = right_click_menu_widget {
+		# PARAMETERS:
+		# A visible trigger
+		# The 'item_visibility' blockoverride with a visible trigger
+
+		#visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
+		gfxtype = windowgfx
+		shaderfile = "gfx/FX/pdxgui_default.shader"
+		widgetanchor = top|left
+		movable = no
+		layer = layer_rightclickmenu
+		size = { 250 125 }
+		state = {
+			name = sound
+			trigger_on_create = yes
+			start_sound = {
+				using = ui_sfx_global_panel_show
+			}
+		}
+		background = {
+			using = default_background
+		}
+		background = {
+			using = frame_small
+		}
+		textbox = {
+			position = { -10 0 }
+			size = { 75% 40 }
+			block "header_text" 
+			{
+				#text = "Isolated States"
+			}
+			elide = right
+			fontsize_min = 14
+			parentanchor = hcenter
+			align = center|nobaseline
+			using = header_font
+			fontsize = 20
+			default_format = "#header"
+		}
+		DEM_scrollbox = {
+			blockoverride "area_size" {
+				position = { 5 45 }
+				size = { 230 70 }
+			}
+
+			blockoverride "scrollbox_background" {
+
+			}
+			blockoverride "scrollbox_replace_vbox" {
+				dynamicgridbox = {
+					position = { 5 0 }
+					block "data" {
+						#datamodel = "[GetGlobalList('idle_general_list')]"
+					}
+					datamodel_wrap = 1
+					flipdirection = yes
+					ignoreinvisible = yes
+					direction = vertical
+					spacing = 2
+					item = {
+						flowcontainer = {
+							direction = vertical
+							alwaystransparent = no
+							datacontext = "[Scope.AccessCivilWars]"
+							parentanchor = top|center
+							block "item_visibility" {
+								visible = "[Not( CivilWar.HasBrokenOut )]"
+							}
+							size = { 220 35 }
+							spacing = 6
+							onmousehierarchyenter = "[AccessHighlightManager.HighlightCivilWarCountry( CivilWar.Self )]"
+							onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+
+							bad_progressbar_horizontal = {
+								visible = "[CivilWar.IsSecession]"
+								size = { 220 30 }
+								tooltip = "SECESSION_PROGRESS_TOOLTIP"
+			
+								blockoverride "values" {
+									value = "[FixedPointToFloat( CivilWar.GetProgress )]"
+									min = 0
+									max = 1
+								}
+			
+								### secession header
+								textbox = {
+									text = "SECESSION_HEADER"
+									tooltip = "SECESSION_HEADER_TOOLTIP"
+									elide = right
+									align = nobaseline
+									autoresize = yes
+									parentanchor = vcenter
+									margin_left = 10
+								}
+			
+								textbox = {
+									text = "[CivilWar.GetProgress|%0v]"
+									autoresize = yes
+									align = nobaseline
+									parentanchor = right|vcenter
+									margin_right = 35
+								}
+			
+								icon = {
+									parentanchor = right|vcenter
+									size = { 25 25 }
+									texture = "gfx/interface/icons/war_goals/secession.dds"
+									position = { -5 0 }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		close_button = {
+			name = "Close"
+			size = { 35 35 }
+			parentanchor = right|top
+			position = { -5 5 }
+			shortcut = "close_window"
+			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
+			block "onclick_close_button" {
+				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+			}
+			block "onclose" {}
+		}
+	}
 	# NOTE: Put all red custom alerts in this container
 	type custom_alert_box_red = flowcontainer {
 		visible = "[And(Not(GetVariableSystem.Exists('alert_toggle_menu')), Not(GetVariableSystem.Exists('state_alert_var')))]"
@@ -880,7 +1151,7 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_secession_growing_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanelTab('culture', 'cultures')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'secession_growing')]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('secession_growing_toggle')]"
@@ -901,7 +1172,7 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_upcoming_revolt_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
+				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'revolution_brewing')]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('upcoming_revolt_toggle')]"
