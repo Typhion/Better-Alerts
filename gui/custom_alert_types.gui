@@ -799,7 +799,7 @@ types custom_alert_types {
 							using = default_button_action
 							size = { 210 35 }
 							onclick = "[InformationPanelBar.OpenDiplomaticPlayPanel( DiplomaticPlay.AccessSelf )]"
-							onrightclick = "[RightClickMenuManager.ShowForDiplomaticPlay(DiplomaticPlay.AccessSelf)]"
+							#onrightclick = "[RightClickMenuManager.ShowForDiplomaticPlay(DiplomaticPlay.AccessSelf)]"
 							
 							### left side
 							flowcontainer = {
@@ -910,13 +910,13 @@ types custom_alert_types {
 					datamodel_wrap = 1
 					flipdirection = yes
 					ignoreinvisible = yes
-					direction = vertical
-					spacing = 2
+					#direction = vertical
+					#spacing = 2
 					item = {
 						flowcontainer = {
 							direction = vertical
 							alwaystransparent = no
-							datacontext = "[Scope.AccessCivilWars]"
+							#datacontext = "[Scope.AccessCivilWars]"
 							parentanchor = top|center
 							block "item_visibility" {
 								visible = "[Not( CivilWar.HasBrokenOut )]"
@@ -1052,13 +1052,13 @@ types custom_alert_types {
 					datamodel_wrap = 1
 					flipdirection = yes
 					ignoreinvisible = yes
-					direction = vertical
-					spacing = 2
+					#direction = vertical
+					#spacing = 2
 					item = {
 						flowcontainer = {
 							direction = vertical
 							alwaystransparent = no
-							datacontext = "[Scope.AccessCivilWars]"
+							#datacontext = "[Scope.AccessCivilWars]"
 							parentanchor = top|center
 							block "item_visibility" {
 								visible = "[Not( CivilWar.HasBrokenOut )]"

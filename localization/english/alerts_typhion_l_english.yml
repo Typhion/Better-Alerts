@@ -13,7 +13,7 @@
  alert_low_market_access_alert_typhion_name:0 "Low [concept_market_access]"
  alert_low_market_access_alert_typhion_desc:0 "We have [GetPlayer.GetNumLowMarketAccessStates] [Concept('concept_state', '$concept_states$')] with low [concept_market_access]"
  alert_low_market_access_alert_typhion_hint:0 "You can improve the [concept_market_access] in your states by either increasing [concept_infrastructure] (which can be done by building [GetBuildingType('building_port').GetName] or [GetBuildingType('building_railway').GetName]), by [Concept('concept_decree', '$concept_decrees$')] like [GetDecreeType('decree_road_maintenance').GetName], or ensuring that there are enough Convoys to connect to its [concept_market_capital] overseas."
- alert_low_market_access_alert_typhion_ui:0 "#T $alert_low_market_access_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_market_access_alert_typhion_desc$\n\n@information! $alert_low_market_access_alert_typhion_hint$\n\n#I Click to open the Outliner#!$alert_action_typhion_disable$"
+ alert_low_market_access_alert_typhion_ui:0 "#T $alert_low_market_access_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_market_access_alert_typhion_desc$\n\n@information! $alert_low_market_access_alert_typhion_hint$\n\n#I Click to open the Market Access Menu#!$alert_action_typhion_disable$"
 
  alert_trade_route_needs_convoys_alert_typhion_name:0 "[Concept('concept_trade_route', '$concept_trade_routes$')] need [concept_convoys]"
  alert_trade_route_needs_convoys_alert_typhion_desc:0 "We have [Concept('concept_trade_route', '$concept_trade_routes$')] that need additional [concept_convoys] in order to grow"
@@ -28,7 +28,7 @@
  alert_isolated_state_alert_typhion_name:0 "[Concept('concept_isolated_state', '$concept_isolated_states$')]"
  alert_isolated_state_alert_typhion_desc:0 "We have [GetPlayer.GetNumIsolatedStates] [Concept('concept_isolated_state', '$concept_isolated_states$')] in our country."
  alert_isolated_state_alert_typhion_hint:0 "You can connect your states to the [AccessPlayer.GetCapital.GetMarket.GetName] by increasing [concept_infrastructure], which can be done by building Buildings that provide [concept_infrastructure] like Ports or Railroads, or by using the #v $decree_road_maintenance$#! [concept_decree]."
- alert_isolated_state_alert_typhion_ui:0 "#T $alert_isolated_state_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_isolated_state_alert_typhion_desc$\n\n@information! $alert_isolated_state_alert_typhion_hint$\n\n#I Click to open the Outliner#!$alert_action_typhion_disable$"
+ alert_isolated_state_alert_typhion_ui:0 "#T $alert_isolated_state_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_isolated_state_alert_typhion_desc$\n\n@information! $alert_isolated_state_alert_typhion_hint$\n\n#I Click to open the Isolated State Menu#!$alert_action_typhion_disable$"
 
  alert_unproductive_trade_route_alert_typhion_name:0 "Unproductive [Concept('concept_trade_route', '$concept_trade_routes$')]"
  alert_unproductive_trade_route_alert_typhion_desc:0 "We have unproductive [Concept('concept_trade_route', '$concept_trade_routes$')]."
@@ -38,22 +38,22 @@
  alert_insurrectionary_alert_typhion_name:0 "[Concept('concept_revolution','$concept_revolutions$')] Brewing"
  alert_insurrectionary_alert_typhion_desc:0 "There are Insurrectionary Interest Groups plotting a [Concept('concept_revolution','$concept_revolutions$')] in our country!"
  alert_insurrectionary_alert_typhion_hint:0 "You can de-radicalize them by improving their Approval, which can be done by enacting [Concept('concept_law', '$concept_laws$')] they approve of (or stop enacting Laws they disapprove of)."
- alert_upcoming_revolt_alert_typhion_ui:0 "#T $alert_insurrectionary_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_insurrectionary_alert_typhion_desc$\n\n@information! $alert_insurrectionary_alert_typhion_hint$\n\n#I Click to open the Politics Panel#!$alert_action_typhion_disable$"
+ alert_upcoming_revolt_alert_typhion_ui:0 "#T $alert_insurrectionary_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_insurrectionary_alert_typhion_desc$\n\n@information! $alert_insurrectionary_alert_typhion_hint$\n\n#I Click to open the Revolutions Menu#!$alert_action_typhion_disable$"
 
  alert_secession_growing_alert_typhion_name:0 "[Concept('concept_secession','$concept_secessions$')] Growing"
  alert_secession_growing_alert_typhion_desc:0 "There are multiple separatists organizing in our country"
  alert_secession_growing_alert_typhion_hint:0 "You can alleviate the risk of a [concept_secession] by decreasing the [Concept('concept_radical','$concept_radicals$')] of the targeted [concept_culture] in your [concept_country]. This can be done by improving the [concept_sol] in [Concept('concept_state','$concept_states$')] they live in, ensuring they are not [Concept('concept_discrimination','$concept_discriminated_against$')] in the long term, or by issuing [Concept('concept_decree', '$concept_decrees$')] to mitigate these factors in the short term."
- alert_secession_growing_alert_typhion_ui:0 "#T $alert_secession_growing_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_secession_growing_alert_typhion_desc$\n\n@information! $alert_secession_growing_alert_typhion_hint$\n\n#I Click to open the Culture Panel#!$alert_action_typhion_disable$"
+ alert_secession_growing_alert_typhion_ui:0 "#T $alert_secession_growing_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_secession_growing_alert_typhion_desc$\n\n@information! $alert_secession_growing_alert_typhion_hint$\n\n#I Click to open the Secessions Menu#!$alert_action_typhion_disable$"
 
  alert_idle_mobilized_general_typhion_name:0 "Idle Mobilized Generals"
  alert_idle_mobilized_general_typhion_desc:0 "A [concept_general] is mobilized and idling without a front assignment. They will defend the [concept_hq] from attacking forces while they await further orders"
  alert_idle_mobilized_general_typhion_hint:0 "You can give orders to [Concept('concept_general', '$concept_generals$')] in the $concept_general$ Panel."
- alert_idle_general_alert_typhion_ui:0 "#T $alert_idle_mobilized_general_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_idle_mobilized_general_typhion_desc$\n\n@information! $alert_idle_mobilized_general_typhion_hint$\n\n#I Click to open the Military Panel#!$alert_action_typhion_disable$"
+ alert_idle_general_alert_typhion_ui:0 "#T $alert_idle_mobilized_general_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_idle_mobilized_general_typhion_desc$\n\n@information! $alert_idle_mobilized_general_typhion_hint$\n\n#I Click to open the Idle General Menu#!$alert_action_typhion_disable$"
 
  alert_insufficient_tax_capacity_alert_typhion_name:0 "Insufficient [concept_tax_capacity]"
  alert_insufficient_tax_capacity_alert_typhion_desc:0 "We have [GetPlayer.GetNumInsufficientTaxCapacityStates] [Concept('concept_state', '$concept_states$')] with insufficient [concept_tax_capacity]"
  alert_insufficient_tax_capacity_alert_typhion_hint:0 "You can improve the [concept_tax_capacity] of your states by building [GetBuildingType('building_government_administration').GetName] [Concept('concept_building','$concept_buildings$')] in the [concept_state]. You can also further utilize production methods to increase the local taxation capacity created by these buildings.\n\n Nationwide you can look to changing your laws and research new technology to modernize your bureaucratic apparatus and increase its innate taxation capacity."
- alert_insufficient_tax_alert_typhion_ui:0 "#T $alert_insufficient_tax_capacity_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_insufficient_tax_capacity_alert_typhion_desc$\n\n@information! $alert_insufficient_tax_capacity_alert_typhion_hint$\n\n#I Click to open the Outliner#!$alert_action_typhion_disable$"
+ alert_insufficient_tax_alert_typhion_ui:0 "#T $alert_insufficient_tax_capacity_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_insufficient_tax_capacity_alert_typhion_desc$\n\n@information! $alert_insufficient_tax_capacity_alert_typhion_hint$\n\n#I Click to open the Tax Capacity Menu#!$alert_action_typhion_disable$"
 
 
  alert_market_goods_shortage_alert_typhion_name:0 "[Concept('concept_input_goods_shortage', '$concept_input_goods_shortages$')]"
@@ -102,7 +102,7 @@
 
  alert_active_peace_deal_alert_typhion_ui:0 "#T $alert_active_peace_deal_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_active_peace_deal_alert_desc$\n\n@information! $alert_active_peace_deal_alert_hint$\n\n#I Click to open the Diplomatic Overview#!$alert_action_typhion_disable$"
 
- alert_has_no_war_goal_alert_typhion_ui:0 "#T No Primary [concept_war_goal] in a [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$alert_has_no_war_goal_alert_desc$\n\n@information! $alert_has_no_war_goal_alert_hint$\n\n#I Click to open the Diplomatic Overview#!$alert_action_typhion_disable$"
+ alert_has_no_war_goal_alert_typhion_ui:0 "#T No Primary [concept_war_goal] in a [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$alert_has_no_war_goal_alert_desc$\n\n@information! $alert_has_no_war_goal_alert_hint$\n\n#I Click to open the Diplomatic Play Menu#!$alert_action_typhion_disable$"
 
  alert_wasted_construction_alert_typhion_ui:0 "#T $alert_wasted_construction_name$#!\n$TOOLTIP_DELIMITER$\n$alert_wasted_construction_desc$\n\n@information! $alert_wasted_construction_hint$\n\n#I Click to open the $alert_wasted_construction_action$#!$alert_action_typhion_disable$"
 
