@@ -47,9 +47,14 @@ types decisions_typhion_types
 			button_icon_round_toggle_typhion_green = {
 				parentanchor = left|vcenter
 				size = { 50 50 }
-				texture = "gfx/interface/buttons/round_button_small_wood_action_yellow.dds"
+				#texture = "gfx/interface/buttons/round_button_small_wood_action_yellow.dds"
 				visible = "[IsValid( Decision.TakeDecision( GetPlayer ) )]"
-				onclick = "[Execute( Decision.TakeDecision( GetPlayer ) )]"
+				blockoverride "on_click" {
+					onclick = "[Execute( Decision.TakeDecision( GetPlayer ) )]"
+					rightclick_modifiers = {
+						ondefault = "[GetVariableSystem.Toggle(Concatenate('decision_toggle_', Decision.GetTooltipTag))]"
+					}
+				}
 			}
 
 			button_icon_round_toggle_typhion_gray = {
@@ -71,11 +76,6 @@ types decisions_typhion_types
 		}
 		blockoverride "wood_texture_2" {
 			texture = "gfx/interface/buttons/round_button_small_wood_action_yellow.dds"
-		}
-		blockoverride "on_click" {
-			rightclick_modifiers = {
-				ondefault = "[GetVariableSystem.Toggle(Concatenate('decision_toggle_', Decision.GetTooltipTag))]"
-			}
 		}
 		blockoverride "view_1" {
 			visible = "[Not(GetVariableSystem.Exists(Concatenate('decision_toggle_', Decision.GetTooltipTag)))]"
