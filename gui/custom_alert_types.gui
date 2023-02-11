@@ -1311,7 +1311,7 @@ types custom_alert_types {
 				}
 			}
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/alert_icons/unused/low_legitimacy.dds"
+				texture = "gfx/interface/icons/alert_icons/low_legitimacy.dds"
 			}
 			blockoverride "button_color" {
 				texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
