@@ -1700,7 +1700,7 @@ types custom_alert_types {
 				}
 			}
 			blockoverride "alert_texture" {
-				texture = "gfx/interface/icons/alert_icons/unused/market_over_capacity.dds"
+				texture = "gfx/interface/icons/alert_icons/market_over_capacity.dds"
 			}
 			blockoverride "button_color" {
 				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
