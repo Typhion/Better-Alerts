@@ -82,7 +82,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('diplo_play_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Diplo Plays" }
+							blockoverride "text" { raw_text = "Diplo Plays" }
 							tooltip = "DIPLO_PLAY_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -94,7 +94,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('isolated_state_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Isolated States" }
+							blockoverride "text" { raw_text = "Isolated States" }
 							tooltip = "ISOLATED_STATES_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -106,7 +106,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('unproductive_trade_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Trade Routes" }
+							blockoverride "text" { raw_text = "Trade Routes" }
 							tooltip = "UNPRODUCTIVE_TRADE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -118,7 +118,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('upcoming_revolt_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Revolution" }
+							blockoverride "text" { raw_text = "Revolution" }
 							tooltip = "UPCOMING_REVOLT_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -130,7 +130,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('wasted_construction_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Construction" }
+							blockoverride "text" { raw_text = "Construction" }
 							tooltip = "WASTED_CONSTRUCTION_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -142,7 +142,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('has_convoys_being_sunk_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Convoys Sunk" }
+							blockoverride "text" { raw_text = "Convoys Sunk" }
 							tooltip = "CONVOYS_SUNK_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -154,7 +154,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('high_attrition_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Convoys Sunk" }
+							blockoverride "text" { raw_text = "Convoys Sunk" }
 							tooltip = "HIGH_ATTRITION_ALERT_TOGGLE"
 						}
 					}
@@ -171,7 +171,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('idle_gen_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Idle Commander" }
+							blockoverride "text" { raw_text = "Idle Commander" }
 							tooltip = "IDLE_GENERAL_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -183,7 +183,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('need_convoys_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Need Convoys" }
+							blockoverride "text" { raw_text = "Need Convoys" }
 							tooltip = "NEED_CONVOYS_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -195,7 +195,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('low_market_access_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Low Access" }
+							blockoverride "text" { raw_text = "Low Access" }
 							tooltip = "LOW_ACCESS_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -207,7 +207,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('bad_tax_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Tax Capacity" }
+							blockoverride "text" { raw_text = "Tax Capacity" }
 							tooltip = "BAD_TAX_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -219,7 +219,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('stockpiling_gold_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Gold Stockpile" }
+							blockoverride "text" { raw_text = "Gold Stockpile" }
 							tooltip = "STOCKPILING_GOLD_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -231,7 +231,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('low_legitimacy_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Low Legitimacy" }
+							blockoverride "text" { raw_text = "Low Legitimacy" }
 							tooltip = "LOW_LEGITIMACY_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -243,7 +243,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('available_decisions_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Decisions" }
+							blockoverride "text" { raw_text = "Decisions" }
 							tooltip = "TOGGLE_DECISIONS_TOOLTIP"
 						}
 					}
@@ -260,7 +260,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('market_shortage_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Market Shortage" }
+							blockoverride "text" { raw_text = "Market Shortage" }
 							tooltip = "MARKET_SHORTAGE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -272,7 +272,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('army_reserve_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Army Reserve" }
+							blockoverride "text" { raw_text = "Army Reserve" }
 							tooltip = "ARMY_RESERVE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -284,7 +284,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('navy_reserve_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Navy Reserve" }
+							blockoverride "text" { raw_text = "Navy Reserve" }
 							tooltip = "NAVY_RESERVE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -296,7 +296,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('secession_growing_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Secession Growing" }
+							blockoverride "text" { raw_text = "Secession Growing" }
 							tooltip = "SECESSION_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -308,7 +308,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('country_default_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Country Default" }
+							blockoverride "text" { raw_text = "Country Default" }
 							tooltip = "COUNTRY_DEFAULT_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -320,7 +320,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('no_research_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Research" }
+							blockoverride "text" { raw_text = "Research" }
 							tooltip = "HAS_NO_RESEARCH_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -332,7 +332,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('active_peace_deal_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Active Peace" }
+							blockoverride "text" { raw_text = "Active Peace" }
 							tooltip = "ACTIVE_PEACE_DEAL_ALERT_TOGGLE"
 						}
 					}
@@ -349,7 +349,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('decreasing_interests_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Decreasing Interests" }
+							blockoverride "text" { raw_text = "Decreasing Interests" }
 							tooltip = "DESCREASING_INTERESTS_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -361,7 +361,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('bureaucracy_shortage_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Low Bureaucracy" }
+							blockoverride "text" { raw_text = "Low Bureaucracy" }
 							tooltip = "BUREAUCRACY_SHORTAGE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -373,7 +373,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('government_reform_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Free Gov Reform" }
+							blockoverride "text" { raw_text = "Free Gov Reform" }
 							tooltip = "GOV_REFORM_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -385,7 +385,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('losing_rank_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Losing Rank" }
+							blockoverride "text" { raw_text = "Losing Rank" }
 							tooltip = "LOSING_RANK_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -397,7 +397,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('no_war_goal_toggle'))]"
 							}
 
-							blockoverride "text" { text = "No War Goal" }
+							blockoverride "text" { raw_text = "No War Goal" }
 							tooltip = "HAS_NO_WAR_GOAL_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
@@ -409,7 +409,7 @@ types custom_alert_types {
 								checked = "[Not(GetVariableSystem.Exists('vulnerable_front_toggle'))]"
 							}
 
-							blockoverride "text" { text = "Vulnerable Front" }
+							blockoverride "text" { raw_text = "Vulnerable Front" }
 							tooltip = "VULNERABLE_FRONT_ALERT_TOGGLE"
 						}
 					}
@@ -493,7 +493,7 @@ types custom_alert_types {
 								fontsize = 16
 								autoresize = yes
 								elide = right
-								text = "#bold [State.GetNameNoFormatting]#!"
+								raw_text = "#bold [State.GetNameNoFormatting]#!"
 								max_width = 140
 								default_format = "#clickable"
 								alwaystransparent = yes
@@ -548,7 +548,7 @@ types custom_alert_types {
 			size = { 75% 40 }
 			block "header_text" 
 			{
-				#text = "Isolated States"
+				#raw_text = "Isolated States"
 			}
 			elide = right
 			fontsize_min = 14
@@ -603,7 +603,7 @@ types custom_alert_types {
 								fontsize = 16
 								autoresize = yes
 								elide = right
-								text = "[Scope.GetCharacter.GetFullName]"
+								raw_text = "[Scope.GetCharacter.GetFullName]"
 								max_width = 140
 								default_format = "#clickable"
 								alwaystransparent = yes
@@ -662,7 +662,7 @@ types custom_alert_types {
 	#		size = { 75% 40 }
 	#		block "header_text" 
 	#		{
-	#			#text = "Isolated States"
+	#			#raw_text = "Isolated States"
 	#		}
 	#		elide = right
 	#		fontsize_min = 14
@@ -706,7 +706,7 @@ types custom_alert_types {
 	#							fontsize = 16
 	#							autoresize = yes
 	#							elide = right
-	#							text = "#bold [Front.GetNameNoFormatting]#!"
+	#							raw_text = "#bold [Front.GetNameNoFormatting]#!"
 	#							max_width = 140
 	#							default_format = "#clickable"
 	#							alwaystransparent = yes
@@ -762,7 +762,7 @@ types custom_alert_types {
 			size = { 75% 40 }
 			block "header_text" 
 			{
-				#text = "Isolated States"
+				#raw_text = "Isolated States"
 			}
 			elide = right
 			fontsize_min = 14
@@ -818,7 +818,7 @@ types custom_alert_types {
 								fontsize = 16
 								autoresize = yes
 								elide = right
-								text = "[DiplomaticPlay.GetInitiator.GetNameNoFlag] vs. [DiplomaticPlay.GetTarget.GetNameNoFlag]"
+								raw_text = "[DiplomaticPlay.GetInitiator.GetNameNoFlag] vs. [DiplomaticPlay.GetTarget.GetNameNoFlag]"
 								max_width = 140
 								default_format = "#clickable"
 								alwaystransparent = yes
@@ -882,7 +882,7 @@ types custom_alert_types {
 			size = { 75% 40 }
 			block "header_text" 
 			{
-				#text = "Isolated States"
+				#raw_text = "Isolated States"
 			}
 			elide = right
 			fontsize_min = 14
@@ -1024,7 +1024,7 @@ types custom_alert_types {
 			size = { 75% 40 }
 			block "header_text" 
 			{
-				#text = "Isolated States"
+				#raw_text = "Isolated States"
 			}
 			elide = right
 			fontsize_min = 14

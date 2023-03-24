@@ -39,6 +39,7 @@ types topfrontend_types {
 		name = "topfrontend"
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding 
+
 		### SITUATIONS + ALERTS
 		flowcontainer = {
 			using = hud_visibility
@@ -52,9 +53,10 @@ types topfrontend_types {
 			widget = {
 				size = { 65 65 }
 				visible = "[Not( IsDataModelEmpty(TopFrontend.AccessImportantActions) )]"
-				tooltip = "CURRENT_SITUATION_TOOLTIP"
-			
+				
 				current_situation_button = {
+					tooltip = "CURRENT_SITUATION_TOOLTIP"
+					input_action = "current_situation"
 					blockoverride "current_situation_button_texture" {
 						texture = "gfx/interface/current_situations/current_situation_button.dds"
 					}
@@ -64,6 +66,9 @@ types topfrontend_types {
 				}
 
 				#current_situation_button = {
+				#	tooltip = "CURRENT_SITUATION_TOOLTIP"
+				#	input_action = "current_situation"
+
 				#	blockoverride "current_situation_button_texture" {
 				#		texture = "gfx/interface/current_situations/current_situation_button_unread.dds"
 				#	}
@@ -185,10 +190,6 @@ types topfrontend_types {
 								next = Remove1
 								position = { 0 0 }
 								duration = 0
-								# PRCAL-14057
-								# start_sound = {
-								# 	soundeffect = "event:/SFX/UI/Global/alert_remove"
-								# }
 							}
 							state = {
 								name = Remove1
@@ -196,7 +197,9 @@ types topfrontend_types {
 								duration = 0.3
 								alpha = 0
 								on_finish = "[Alert.RemovingFinished]"
-							}
+							}	
+							
+							### ALERT BUTTON
 							button = {
 								size = { 100% 100% }
 								texture = "gfx/interface/icons/alert_icons/alert_button_red.dds"
@@ -616,7 +619,7 @@ types topfrontend_types {
 					text = "Secession Growing"
 				}
 			}
-			
+
 			### DIPLO MESSAGES
 			dynamicgridbox = {
 				datamodel = "[TopFrontend.AccessProposals]"
@@ -633,7 +636,7 @@ types topfrontend_types {
 						onrightclick = "[PopupManager.CloseProposal( Proposal.AccessSelf )]"
 						tooltip = "[Proposal.GetToolTip]"
 						
-						#TODO PSGE-5001 / PRCAL-13636 - causes several proposals to be hidden
+						#TODO PSGE-5001
 						using = toplevel_envelope_animation
 						
 						### SECOND PART OF ENVELOPE OPENING (behind letter)
@@ -808,26 +811,6 @@ types topfrontend_types {
 							position = { 0 -5 }
 						}
 						
-						### OWE OBLIGATION
-						widget = {
-							size = { 30 30 }
-							parentanchor = hcenter|bottom
-							tooltip = "OWE_OBLIGATION_TOOLTIP"
-							visible = no #insert leet codez
-							
-							icon = {
-								using = rotate_glow_animation
-								alpha = 0.4
-							}
-							
-							icon = {
-								texture = "gfx/interface/icons/proposal_icons/owe_obligation.dds"
-								size = { 22 22 }
-								parentanchor = center
-								using = shimmer
-							}
-						}
-						
 						### TIMER
 						container = {
 							parentanchor = right|bottom
@@ -869,7 +852,7 @@ types topfrontend_types {
 		}
 		onrightclick = "[GetVariableSystem.Toggle('alert_toggle_menu')]"
 		onclick = "[GetVariableSystem.Clear('alert_toggle_menu')]"
-		onclick = "[RightClickMenuManager.ToggleImportantActionsList(TopFrontend.AccessSelf, PdxGuiWidget.Self)]"
+		onclick = "[RightClickMenuManager.ToggleImportantActionsList(TopFrontend.AccessSelf, PdxGuiWidget.AccessSelf)]"
 		using = current_situation_button_sound
 
 		state = {
@@ -896,7 +879,7 @@ types topfrontend_types {
 		# text 
 		textbox = {
 			name = "text"
-			text = "#v [TopFrontend.GetTotalNumOfImportantActionGroups]#!"
+			raw_text = "#v [TopFrontend.GetTotalNumOfImportantActionGroups]#!"
 			size = { 100% 100% }
 			using = fontsize_large
 			align = center|nobaseline
@@ -929,7 +912,7 @@ types topfrontend_types {
 		# text mouse over
 		textbox = {
 			name = "text_mouse_over"
-			text = "#v [TopFrontend.GetTotalNumOfImportantActionGroups]#!"
+			raw_text = "#v [TopFrontend.GetTotalNumOfImportantActionGroups]#!"
 			size = { 100% 100% }
 			using = fontsize_large
 			align = center|nobaseline
