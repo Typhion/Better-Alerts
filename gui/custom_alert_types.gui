@@ -1,26 +1,26 @@
 types custom_alert_types {
 
-    type button_checkbox_label_custom = button_group {
+	type button_checkbox_label_custom = button_group {
 		using = tooltip_se
 		block "sound" {
 			using = check_button_sound
 		}
-        flowcontainer = {
-            spacing = 2
-            checkbutton = {
-            	texture = "gfx/interface/buttons/check_button.dds"
-            	framesize = { 80 80 }
-            	size = { 25 25 }
-            	block "checkbox" {
-            	}
-            }
+		flowcontainer = {
+			spacing = 2
+			checkbutton = {
+				texture = "gfx/interface/buttons/check_button.dds"
+				framesize = { 80 80 }
+				size = { 25 25 }
+				block "checkbox" {
+				}
+			}
 			textbox = {
 				using = Font_Type_Standard
 				fontsize = 14
 				autoresize = yes
 				elide = right
 				block "text" {
-				    text = "DEFAULT TEXT"
+					text = "DEFAULT TEXT"
 				}
 				default_format = "#clickable"
 				alwaystransparent = no
@@ -28,8 +28,8 @@ types custom_alert_types {
 				parentanchor = vcenter
 				align = nobaseline
 			}
-        }
-    }
+		}
+	}
 
 	type custom_alert_toggle_menu = right_click_menu_widget {
 		visible = "[GetVariableSystem.Exists('alert_toggle_menu')]"
