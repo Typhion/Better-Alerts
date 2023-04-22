@@ -1130,7 +1130,7 @@ types custom_alert_types {
 		custom_alert = {
 			visible = "[EqualTo_string(GetPlayer.GetCustom('has_market_shortage_loc'), 'yes')]"
 			blockoverride "click" {
-				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'details' )]"
+				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'default' )]"
 				rightclick_modifiers = {
 					ondefault = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
 					ondefault = "[GetVariableSystem.Toggle('market_shortage_toggle')]"
