@@ -312,3 +312,14 @@ available_decisions_toggle_sgui = {
 		}
 	}
 }
+unused_interests_toggle_sgui = {
+	scope = country
+	saved_scopes = {
+		player_credit
+	}
+	effect = {
+		run_sgui_var_toggle = {
+			VAR = unused_interests_alert_disabled
+		}
+	}
+}

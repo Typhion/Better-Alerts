@@ -1731,6 +1731,27 @@ types custom_alert_types {
 			}
 			tooltip = "alert_stockpiling_gold_alert_typhion_ui"
 		}
+		# Unused Interests
+		custom_alert = {
+			visible = "[EqualTo_string(GetPlayer.GetCustom('has_unused_interests_loc'), 'yes')]"
+			blockoverride "click" {
+				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
+				rightclick_modifiers = {
+					ondefault = "[GetScriptedGui('unused_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
+				}
+			}
+			blockoverride "alert_texture" {
+				texture = "gfx/interface/icons/alert_icons/unused_interests.dds"
+			}
+			blockoverride "button_color" {
+				texture = "gfx/interface/icons/alert_icons/alert_button_green.dds"
+			}
+			blockoverride "vfx_color" {
+				entity_instance = vfx_entity_ui_alert_above_icon_green
+			}
+			tooltip = "alert_unused_interests_alert_typhion_ui"
+		}
 	}
 
 	type custom_alert_box_decisions = dynamicgridbox {

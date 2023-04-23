@@ -33,6 +33,7 @@ Adds a lot of Alerts to be more visible instead of in the current situation thin
     [*] X Expensive Goods Alert (Gold Coins Icon) - Currently disabled
     [*] Targeted In Diplo Play Alert (Diplomatic Play Icon)
     [*] Construction Paused Alert (Same icon as the actual Construction Paused Icon)
+    [*] Unused Interests Alerts (Hand holding scroll Icon)
 [/list]
 
 [h3] Toggleable Vanilla Alerts [/h3]

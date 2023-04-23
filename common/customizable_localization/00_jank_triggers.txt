@@ -435,6 +435,7 @@ country_approaching_bureaucracy_shortage_loc = {
 		localization_key = "no"
 	}		
 }
+
 available_decisions_loc = {
 	type = country
 	text = {
@@ -447,6 +448,7 @@ available_decisions_loc = {
 		localization_key = "no"
 	}		
 }
+
 low_legitimacy_loc = {
 	type = country
 	text = {
@@ -460,6 +462,7 @@ low_legitimacy_loc = {
 		localization_key = "no"
 	}		
 }
+
 country_default_loc = {
 	type = country
 	text = {
@@ -474,7 +477,19 @@ country_default_loc = {
 	}		
 }
 
-
+has_unused_interests_loc = {
+	type = country
+	text = {
+		trigger = {
+			num_declared_interests < max_num_declared_interests
+			NOT = { has_variable = decreasing_interests_alert_disabled }
+		}
+		localization_key = "yes"
+	}
+	text = {
+		localization_key = "no"
+	}		
+}
 
 # STATE TRIGGERS #
 
