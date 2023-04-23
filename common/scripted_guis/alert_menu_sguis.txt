@@ -1,8 +1,5 @@
 ﻿toggle_idle_general_list_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_idle_general_sgui_toggle = {
 			VAR = idle_general_list
@@ -11,23 +8,9 @@
 }
 toggle_attrition_general_list_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_attrition_general_sgui_toggle = {
 			VAR = attrition_general_list
 		}
 	}
 }
-#toggle_vulnerable_front_list_sgui = {
-#	scope = country
-#	saved_scopes = {
-#		player_credit
-#	}
-#	effect = {
-#		run_vulnerable_front_sgui_toggle = {
-#			VAR = vulnerable_front_list
-#		}
-#	}
-#}

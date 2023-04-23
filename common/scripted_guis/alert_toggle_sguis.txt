@@ -1,8 +1,5 @@
 ﻿diplo_play_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = diplo_play_alert_disabled
@@ -11,9 +8,6 @@
 }
 isolated_state_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = isolated_state_alert_disabled
@@ -22,9 +16,6 @@ isolated_state_toggle_sgui = {
 }
 unproductive_trade_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = unproductive_trade_alert_disabled
@@ -33,9 +24,6 @@ unproductive_trade_toggle_sgui = {
 }
 upcoming_revolt_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = upcoming_revolt_alert_disabled
@@ -44,9 +32,6 @@ upcoming_revolt_toggle_sgui = {
 }
 idle_general_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = idle_general_alert_disabled
@@ -55,9 +40,6 @@ idle_general_toggle_sgui = {
 }
 needs_convoys_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = needs_convoys_alert_disabled
@@ -66,9 +48,6 @@ needs_convoys_toggle_sgui = {
 }
 low_market_access_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = low_market_access_alert_disabled
@@ -77,9 +56,6 @@ low_market_access_toggle_sgui = {
 }
 has_insufficient_tax_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = insufficient_tax_alert_disabled
@@ -88,9 +64,6 @@ has_insufficient_tax_toggle_sgui = {
 }
 market_shortage_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = market_shortage_alert_disabled
@@ -99,9 +72,6 @@ market_shortage_toggle_sgui = {
 }
 army_reserve_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = army_in_reserve_alert_disabled
@@ -110,9 +80,6 @@ army_reserve_toggle_sgui = {
 }
 navy_reserve_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = navy_in_reserve_alert_disabled
@@ -122,9 +89,6 @@ navy_reserve_toggle_sgui = {
 # THIS ONE IS UNUSED
 expensive_goods_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = expensive_goods_alert_disabled
@@ -133,9 +97,6 @@ expensive_goods_toggle_sgui = {
 }
 secession_growing_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = secession_growing_alert_disabled
@@ -149,9 +110,6 @@ secession_growing_toggle_sgui = {
 
 decreasing_interests_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = decreasing_interests_alert_disabled
@@ -160,9 +118,6 @@ decreasing_interests_toggle_sgui = {
 }
 bureaucracy_shortage_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = bureaucracy_shortage_alert_disabled
@@ -171,9 +126,6 @@ bureaucracy_shortage_toggle_sgui = {
 }
 government_reform_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = government_reform_alert_disabled
@@ -182,9 +134,6 @@ government_reform_toggle_sgui = {
 }
 losing_rank_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = losing_rank_alert_disabled
@@ -193,9 +142,6 @@ losing_rank_toggle_sgui = {
 }
 wasted_construction_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = wasted_construction_alert_disabled
@@ -204,9 +150,6 @@ wasted_construction_toggle_sgui = {
 }
 has_convoys_being_sunk_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = has_convoys_being_sunk_alert_disabled
@@ -215,9 +158,6 @@ has_convoys_being_sunk_toggle_sgui = {
 }
 stockpiling_gold_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = stockpiling_gold_alert_disabled
@@ -226,9 +166,6 @@ stockpiling_gold_toggle_sgui = {
 }
 low_legitimacy_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = low_legitimacy_alert_disabled
@@ -237,9 +174,6 @@ low_legitimacy_toggle_sgui = {
 }
 country_default_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = country_default_alert_disabled
@@ -248,9 +182,6 @@ country_default_toggle_sgui = {
 }
 has_no_research_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = has_no_research_alert_disabled
@@ -259,9 +190,6 @@ has_no_research_toggle_sgui = {
 }
 has_no_war_goal_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = has_no_war_goal_alert_disabled
@@ -270,9 +198,6 @@ has_no_war_goal_toggle_sgui = {
 }
 vulnerable_front_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = vulnerable_front_alert_disabled
@@ -281,9 +206,6 @@ vulnerable_front_toggle_sgui = {
 }
 high_attrition_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = high_attrition_alert_disabled
@@ -292,9 +214,6 @@ high_attrition_toggle_sgui = {
 }
 active_peace_deal_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = active_peace_deal_alert_disabled
@@ -303,9 +222,6 @@ active_peace_deal_toggle_sgui = {
 }
 available_decisions_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = available_decisions_alert_disabled
@@ -314,9 +230,6 @@ available_decisions_toggle_sgui = {
 }
 unused_interests_toggle_sgui = {
 	scope = country
-	saved_scopes = {
-		player_credit
-	}
 	effect = {
 		run_sgui_var_toggle = {
 			VAR = unused_interests_alert_disabled

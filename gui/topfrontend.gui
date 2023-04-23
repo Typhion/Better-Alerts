@@ -555,7 +555,7 @@ types topfrontend_types {
 					datamodel = "[GetGlobalList('idle_general_list')]"
 				}
 				blockoverride "onclick_close_button" {
-					onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 				}
 				blockoverride "header_text" {
 					text = "Idle Generals"
@@ -568,7 +568,7 @@ types topfrontend_types {
 					datamodel = "[GetGlobalList('attrition_general_list')]"
 				}
 				blockoverride "onclick_close_button" {
-					onclick = "[GetScriptedGui('toggle_attrition_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					onclick = "[GetScriptedGui('toggle_attrition_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 				}
 				blockoverride "header_text" {
 					text = "Attrition Generals"

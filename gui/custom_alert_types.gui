@@ -74,7 +74,7 @@ types custom_alert_types {
 						spacing = 1
 						direction = vertical
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('diplo_play_toggle')]"
 
 							blockoverride "checkbox"
@@ -86,7 +86,7 @@ types custom_alert_types {
 							tooltip = "DIPLO_PLAY_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('isolated_state_toggle')]"
 
 							blockoverride "checkbox"
@@ -98,7 +98,7 @@ types custom_alert_types {
 							tooltip = "ISOLATED_STATES_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('unproductive_trade_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('unproductive_trade_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('unproductive_trade_toggle')]"
 
 							blockoverride "checkbox"
@@ -110,7 +110,7 @@ types custom_alert_types {
 							tooltip = "UNPRODUCTIVE_TRADE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('upcoming_revolt_toggle')]"
 
 							blockoverride "checkbox"
@@ -122,7 +122,7 @@ types custom_alert_types {
 							tooltip = "UPCOMING_REVOLT_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('wasted_construction_toggle')]"
 
 							blockoverride "checkbox"
@@ -134,7 +134,7 @@ types custom_alert_types {
 							tooltip = "WASTED_CONSTRUCTION_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('has_convoys_being_sunk_toggle')]"
 
 							blockoverride "checkbox"
@@ -146,7 +146,7 @@ types custom_alert_types {
 							tooltip = "CONVOYS_SUNK_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('high_attrition_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('high_attrition_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('high_attrition_toggle')]"
 
 							blockoverride "checkbox"
@@ -163,7 +163,7 @@ types custom_alert_types {
 						spacing = 1
 						direction = vertical
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('idle_gen_toggle')]"
 
 							blockoverride "checkbox"
@@ -175,7 +175,7 @@ types custom_alert_types {
 							tooltip = "IDLE_GENERAL_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('need_convoys_toggle')]"
 
 							blockoverride "checkbox"
@@ -187,7 +187,7 @@ types custom_alert_types {
 							tooltip = "NEED_CONVOYS_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('low_market_access_toggle')]"
 
 							blockoverride "checkbox"
@@ -199,7 +199,7 @@ types custom_alert_types {
 							tooltip = "LOW_ACCESS_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('bad_tax_toggle')]"
 
 							blockoverride "checkbox"
@@ -211,7 +211,7 @@ types custom_alert_types {
 							tooltip = "BAD_TAX_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('stockpiling_gold_toggle')]"
 
 							blockoverride "checkbox"
@@ -223,7 +223,7 @@ types custom_alert_types {
 							tooltip = "STOCKPILING_GOLD_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('low_legitimacy_toggle')]"
 
 							blockoverride "checkbox"
@@ -235,7 +235,7 @@ types custom_alert_types {
 							tooltip = "LOW_LEGITIMACY_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('available_decisions_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('available_decisions_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('available_decisions_toggle')]"
 
 							blockoverride "checkbox"
@@ -252,7 +252,7 @@ types custom_alert_types {
 						spacing = 1
 						direction = vertical
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('market_shortage_toggle')]"
 
 							blockoverride "checkbox"
@@ -264,7 +264,7 @@ types custom_alert_types {
 							tooltip = "MARKET_SHORTAGE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('army_reserve_toggle')]"
 
 							blockoverride "checkbox"
@@ -276,7 +276,7 @@ types custom_alert_types {
 							tooltip = "ARMY_RESERVE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('navy_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('navy_reserve_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('navy_reserve_toggle')]"
 
 							blockoverride "checkbox"
@@ -288,7 +288,7 @@ types custom_alert_types {
 							tooltip = "NAVY_RESERVE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('secession_growing_toggle')]"
 
 							blockoverride "checkbox"
@@ -300,7 +300,7 @@ types custom_alert_types {
 							tooltip = "SECESSION_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('country_default_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('country_default_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('country_default_toggle')]"
 
 							blockoverride "checkbox"
@@ -312,7 +312,7 @@ types custom_alert_types {
 							tooltip = "COUNTRY_DEFAULT_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('has_no_research_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('has_no_research_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('no_research_toggle')]"
 
 							blockoverride "checkbox"
@@ -324,7 +324,7 @@ types custom_alert_types {
 							tooltip = "HAS_NO_RESEARCH_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('active_peace_deal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('active_peace_deal_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('active_peace_deal_toggle')]"
 
 							blockoverride "checkbox"
@@ -341,7 +341,7 @@ types custom_alert_types {
 						spacing = 1
 						direction = vertical
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
 
 							blockoverride "checkbox"
@@ -353,7 +353,7 @@ types custom_alert_types {
 							tooltip = "DESCREASING_INTERESTS_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('bureaucracy_shortage_toggle')]"
 
 							blockoverride "checkbox"
@@ -365,7 +365,7 @@ types custom_alert_types {
 							tooltip = "BUREAUCRACY_SHORTAGE_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('government_reform_toggle')]"
 
 							blockoverride "checkbox"
@@ -377,7 +377,7 @@ types custom_alert_types {
 							tooltip = "GOV_REFORM_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('losing_rank_toggle')]"
 
 							blockoverride "checkbox"
@@ -389,7 +389,7 @@ types custom_alert_types {
 							tooltip = "LOSING_RANK_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('has_no_war_goal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('has_no_war_goal_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('no_war_goal_toggle')]"
 
 							blockoverride "checkbox"
@@ -401,7 +401,7 @@ types custom_alert_types {
 							tooltip = "HAS_NO_WAR_GOAL_ALERT_TOGGLE"
 						}
 						button_checkbox_label_custom = {
-							onclick = "[GetScriptedGui('vulnerable_front_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+							onclick = "[GetScriptedGui('vulnerable_front_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 							onclick = "[GetVariableSystem.Toggle('vulnerable_front_toggle')]"
 
 							blockoverride "checkbox"
@@ -627,7 +627,7 @@ types custom_alert_types {
 			shortcut = "close_window"
 			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
 			block "onclick_close_button" {
-				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 			}
 			block "onclose" {}
 		}
@@ -728,7 +728,7 @@ types custom_alert_types {
 	#		position = { -5 5 }
 	#		shortcut = "close_window"
 	#		onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
-	#		onclick = "[GetScriptedGui('toggle_vulnerable_front_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+	#		onclick = "[GetScriptedGui('toggle_vulnerable_front_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 	#		block "onclose" {}
 	#	}
 	#}
@@ -989,7 +989,7 @@ types custom_alert_types {
 			shortcut = "close_window"
 			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
 			block "onclick_close_button" {
-				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 			}
 			block "onclose" {}
 		}
@@ -1118,7 +1118,7 @@ types custom_alert_types {
 			shortcut = "close_window"
 			onclick = "[GetVariableSystem.Toggle('state_alert_var')]"
 			block "onclick_close_button" {
-				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				#onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 			}
 			block "onclose" {}
 		}
@@ -1132,7 +1132,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'default' )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('market_shortage_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('market_shortage_toggle')]"
 				}
 			}
@@ -1153,7 +1153,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'secession_growing')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('secession_growing_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('secession_growing_toggle')]"
 				}
 			}
@@ -1174,7 +1174,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'revolution_brewing')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('upcoming_revolt_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('upcoming_revolt_toggle')]"
 				}
 			}
@@ -1195,7 +1195,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'isolated_states')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('isolated_state_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('isolated_state_toggle')]"
 				}
 			}
@@ -1216,9 +1216,9 @@ types custom_alert_types {
 			blockoverride "click" {
 				#onclick = "[InformationPanelBar.OpenCountryPanelTab(GetPlayer.Self, 'diplomacy')]"
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'diplo_play_target')]"
-				#onclick = "[GetScriptedGui('toggle_diplo_play_target_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				#onclick = "[GetScriptedGui('toggle_diplo_play_target_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('diplo_play_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('diplo_play_toggle')]"
 				}
 			}
@@ -1239,7 +1239,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'navy')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('has_convoys_being_sunk_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('has_convoys_being_sunk_toggle')]"
 				}
 			}
@@ -1260,9 +1260,9 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
 				#onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'vulnerable_front')]"
-				#onclick = "[GetScriptedGui('toggle_vulnerable_front_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				#onclick = "[GetScriptedGui('toggle_vulnerable_front_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('vulnerable_front_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('vulnerable_front_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('vulnerable_front_toggle')]"
 				}
 			}
@@ -1283,9 +1283,9 @@ types custom_alert_types {
 			blockoverride "click" {
 				#onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'attrition_general')]"
-				onclick = "[GetScriptedGui('toggle_attrition_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				onclick = "[GetScriptedGui('toggle_attrition_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('high_attrition_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('high_attrition_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('high_attrition_toggle')]"
 				}
 			}
@@ -1306,7 +1306,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('low_legitimacy_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('low_legitimacy_toggle')]"
 				}
 			}
@@ -1327,7 +1327,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('budget', 'assets')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('country_default_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('country_default_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('country_default_toggle')]"
 				}
 			}
@@ -1352,7 +1352,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'insufficient_tax')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('has_insufficient_tax_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('bad_tax_toggle')]"
 				}
 			}
@@ -1373,7 +1373,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'low_access')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('low_market_access_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('low_market_access_toggle')]"
 				}
 			}
@@ -1394,7 +1394,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('need_convoys_toggle')]"
 				}
 			}
@@ -1415,7 +1415,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('needs_convoys_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('need_convoys_toggle')]"
 				}
 			}
@@ -1436,7 +1436,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('production_methods', 'construction_queues')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('wasted_construction_toggle')]"
 				}
 			}
@@ -1457,7 +1457,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('losing_rank_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('losing_rank_toggle')]"
 				}
 			}
@@ -1478,7 +1478,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('tech_tree')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('has_no_research_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('has_no_research_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('no_research_toggle')]"
 				}
 			}
@@ -1499,7 +1499,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('active_peace_deal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('active_peace_deal_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('active_peace_deal_toggle')]"
 				}
 			}
@@ -1521,7 +1521,7 @@ types custom_alert_types {
 				#onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'has_no_war_goal')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('has_no_war_goal_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('has_no_war_goal_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('no_war_goal_toggle')]"
 				}
 			}
@@ -1542,7 +1542,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('production_methods', 'construction_queues')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('wasted_construction_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('wasted_construction_toggle')]"
 				}
 			}
@@ -1563,7 +1563,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
 				}
 			}
@@ -1584,7 +1584,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'institutions')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('bureaucracy_shortage_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('bureaucracy_shortage_toggle')]"
 				}
 			}
@@ -1609,7 +1609,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('politics', 'interest_groups')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('government_reform_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('government_reform_toggle')]"
 				}
 			}
@@ -1630,7 +1630,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'navy')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('navy_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('navy_reserve_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('navy_reserve_toggle')]"
 				}
 			}
@@ -1651,7 +1651,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('army_reserve_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('army_reserve_toggle')]"
 				}
 			}
@@ -1672,9 +1672,9 @@ types custom_alert_types {
 			blockoverride "click" {
 				#onclick = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
 				onclick = "[GetVariableSystem.SetOrToggle('state_alert_var', 'idle_general')]"
-				onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+				onclick = "[GetScriptedGui('toggle_idle_general_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('idle_general_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('idle_gen_toggle')]"
 				}
 			}
@@ -1695,7 +1695,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenMarketPanelTab( AccessPlayer.AccessFirstMarket, 'trade_routes' )]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('unproductive_trade_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('unproductive_trade_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('unproductive_trade_toggle')]"
 				}
 			}
@@ -1716,7 +1716,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanelTab('budget', 'overview')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('stockpiling_gold_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('stockpiling_gold_toggle')]"
 				}
 			}
@@ -1737,7 +1737,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('unused_interests_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+					ondefault = "[GetScriptedGui('unused_interests_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
 				}
 			}
@@ -1770,7 +1770,7 @@ types custom_alert_types {
 				blockoverride "click" {
 					onclick = "[InformationPanelBar.OpenPanelTab('journal', 'decisions')]"
 					rightclick_modifiers = {
-						ondefault = "[GetScriptedGui('available_decisions_toggle_sgui').Execute( GuiScope.AddScope('player_credit',MakeScopeValue(GetPlayer.GetMaxCredit)).End )]"
+						ondefault = "[GetScriptedGui('available_decisions_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 						ondefault = "[GetVariableSystem.Toggle('available_decisions_toggle')]"
 					}
 				}
