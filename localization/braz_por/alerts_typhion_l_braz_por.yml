@@ -116,9 +116,13 @@
  alert_available_decision_action:0 "Click to open the Decisions tab"
  alert_available_decision_alert_typhion_ui:0 "#T $alert_available_decision_name$#!\n$TOOLTIP_DELIMITER$\n$alert_available_decision_desc$\n\n@information! $alert_available_decision_hint$\n\n#I $alert_available_decision_action$#!$alert_action_typhion_disable$"
 
- alert_low_legitimacy_alert_typhion_ui:0 "#T $alert_low_legitimacy_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_legitimacy_alert_desc$\n\n@information! $alert_low_legitimacy_alert_hint$\n\n#I Click to open the $alert_low_legitimacy_alert_action$#!$alert_action_typhion_disable$"
+ alert_low_legitimacy_alert_name:0 "Low Legitimacy"
+ alert_low_legitimacy_alert_desc:0 "$alert_legitimacy_level_contested_alert_desc$"
+ alert_low_legitimacy_alert_typhion_ui:0 "#T $alert_low_legitimacy_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_legitimacy_alert_desc$\n\n@information! $alert_low_legitimacy_alert_hint$\n\n#I Click to open the $alert_legitimacy_level_contested_alert_action$#!$alert_action_typhion_disable$"
 
  alert_country_default_alert_typhion_ui:0 "#T $alert_country_default_name$#!\n$TOOLTIP_DELIMITER$\n$alert_country_default_desc$\n\n@information! $alert_country_default_hint$\n\n#I Click to open the $alert_country_default_action$#!$alert_action_typhion_disable$"
+
+ alert_unused_interests_alert_typhion_ui:0 "#T $alert_unused_interests_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_unused_interests_alert_desc$\n\n@information! $alert_unused_interests_alert_hint$\n\n#I Click to open the $alert_unused_interests_alert_action$#!$alert_action_typhion_disable$"
 
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"

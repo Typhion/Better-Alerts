@@ -30,69 +30,69 @@
 ### and then ask art to make an icon, you can also check the unused folder if anything fits, you can also use ANY icon in the game if it would fit
 ### but always check with art to verify it is looking good
 
- country_default = {
- 	script_context = player_country
+#country_default = {
+# 	script_context = player_country
+#
+#	valid = {
+#		in_default = yes
+#		NOT = { has_variable = country_default_alert_disabled }
+#	}
+#
+#	open_panel = budget|assets
+#	type = angry_important_action
+#}
 
-	valid = {
-		in_default = yes
-		NOT = { has_variable = country_default_alert_disabled }
-	}
+#is_construction_paused = {
+# 	script_context = player_country
+#
+#	valid = {
+#		OR = {
+#			is_construction_paused = yes
+#			construction_queue_num_queued_levels = 0
+#		}
+#		NOT = { has_variable = wasted_construction_alert_disabled }
+#	}
+#
+#	open_panel = production_methods|construction_queues
+#	type = angry_important_action
+#}
 
-	open_panel = budget|assets
-	type = angry_important_action
-}
+#country_approaching_bureaucracy_shortage = {
+#	script_context = player_country
+#
+#	valid = {
+#		approaching_bureaucracy_shortage = yes
+#		NOT = { has_variable = bureaucracy_shortage_alert_disabled }
+#	}
+#
+#	open_panel = politics|institutions
+#	type = important_action
+#}
 
- is_construction_paused = {
- 	script_context = player_country
+#has_no_research_alert = {
+#	script_context = player_country
+#
+#	valid = {
+#		NOT = { is_researching_technology = any }
+#		has_researchable_technology = yes
+#		NOT = { has_variable = has_no_research_alert_disabled }
+#	}
+#
+#	open_panel = tech_tree
+#	type = angry_important_action
+#}
 
-	valid = {
-		OR = {
-			is_construction_paused = yes
-			construction_queue_num_queued_levels = 0
-		}
-		NOT = { has_variable = wasted_construction_alert_disabled }
-	}
-
-	open_panel = production_methods|construction_queues
-	type = angry_important_action
- }
-
-country_approaching_bureaucracy_shortage = {
-	script_context = player_country
-
-	valid = {
-		approaching_bureaucracy_shortage = yes
-		NOT = { has_variable = bureaucracy_shortage_alert_disabled }
-	}
-
-	open_panel = politics|institutions
-	type = important_action
-}
-
-has_no_research_alert = {
-	script_context = player_country
-
-	valid = {
-		NOT = { is_researching_technology = any }
-		has_researchable_technology = yes
-		NOT = { has_variable = has_no_research_alert_disabled }
-	}
-
-	open_panel = tech_tree
-	type = angry_important_action
-}
-
-free_government_reform = {
-	script_context = player_country
-
-	valid = {
-		has_free_government_reform = yes
-		NOT = { has_variable = government_reform_alert_disabled }
-	}
-
-	open_panel = politics|interest_groups
-	type = important_action
-}
+#free_government_reform = {
+#	script_context = player_country
+#
+#	valid = {
+#		has_free_government_reform = yes
+#		NOT = { has_variable = government_reform_alert_disabled }
+#	}
+#
+#	open_panel = politics|interest_groups
+#	type = important_action
+#}
 
 revolution_alert = {
 	script_context = player_country
@@ -121,90 +121,90 @@ secession_alert = {
 	type = important_action
 }
 
-is_losing_rank_alert = {
-	script_context = player_country
+#is_losing_rank_alert = {
+#	script_context = player_country
+#
+#	valid = {
+#		is_losing_power_rank = yes
+#	}
+#
+#	open_panel = diplomatic_overview
+#	type = angry_important_action
+#}
 
-	valid = {
-		is_losing_power_rank = yes
-	}
+#has_no_war_goal_alert = {
+#	script_context = player_diplomatic_play
+#
+#	valid = {
+#		scope:actor = {
+#			should_set_wargoal = yes
+#			NOT = { has_variable = has_no_war_goal_alert_disabled }
+#		}
+#	}
+#
+#	open_panel = diplomatic_play
+#	type = angry_important_action
+#}
 
-	open_panel = diplomatic_overview
-	type = angry_important_action
-}
+#vulnerable_front = {
+#	script_context = player_front
+#
+#    valid = {
+#        is_vulnerable_front = scope:actor
+#        scope:actor = {
+#        	NOT = { has_variable = vulnerable_front_alert_disabled }
+#        }
+#    }
+#
+#	open_panel = front
+#	type = angry_important_action
+#}
 
-has_no_war_goal_alert = {
-	script_context = player_diplomatic_play
+#high_attrition_alert = {
+#	script_context = player_commander
+#
+#	valid = {
+#		has_high_attrition = yes
+#		scope:actor = { NOT = { has_variable = high_attrition_alert_disabled } }
+#	}
+#
+#	open_panel = commander
+#	type = angry_important_action
+#}
 
-	valid = {
-		scope:actor = {
-			should_set_wargoal = yes
-			NOT = { has_variable = has_no_war_goal_alert_disabled }
-		}
-	}
+#active_peace_deal_alert = {
+#	script_context = player_country
+#
+#	valid = {
+#		has_active_peace_deal = yes
+#		NOT = { has_variable = active_peace_deal_alert_disabled }
+#	}
+#
+#	open_panel = war
+#	type = angry_important_action
+#}
 
-	open_panel = diplomatic_play
-	type = angry_important_action
-}
+#legitimacy_level_illegitimate_alert = {
+#	script_context = player_country
+#	
+#	valid = {
+#		government_legitimacy < 25
+#	}
+#	
+#	open_panel = politics|interest_groups
+#	type = angry_important_action
+#}
 
-vulnerable_front = {
-	script_context = player_front
-
-    valid = {
-        is_vulnerable_front = scope:actor
-        scope:actor = {
-        	NOT = { has_variable = vulnerable_front_alert_disabled }
-        }
-    }
-
-	open_panel = front
-	type = angry_important_action
-}
-
-high_attrition_alert = {
-	script_context = player_commander
-
-	valid = {
-		has_high_attrition = yes
-		scope:actor = { NOT = { has_variable = high_attrition_alert_disabled } }
-	}
-
-	open_panel = commander
-	type = alert
-}
-
-active_peace_deal_alert = {
-	script_context = player_country
-
-	valid = {
-		has_active_peace_deal = yes
-		NOT = { has_variable = active_peace_deal_alert_disabled }
-	}
-
-	open_panel = war
-	type = angry_important_action
-}
-
-legitimacy_level_illegitimate_alert = {
-	script_context = player_country
-	
-	valid = {
-		government_legitimacy < 25
-	}
-	
-	open_panel = politics|interest_groups
-	type = angry_important_action
-}
-
-market_goods_shortage_alert = {
-	script_context = player_market_goods
-
-	valid = {
-		market_goods_shortage_ratio < 0.33
-	}
-
-	open_panel = goods_panel
-	type = angry_important_action
-}
+#market_goods_shortage_alert = {
+#	script_context = player_market_goods
+#
+#	valid = {
+#		market_goods_shortage_ratio < 0.33
+#	}
+#
+#	open_panel = goods_panel
+#	type = angry_important_action
+#}
 
 ### ANGRY IMPORTANT ACTIONS (should not have icons, if you move an alert here then remove the texture path and move the icon to the unused folder)
 

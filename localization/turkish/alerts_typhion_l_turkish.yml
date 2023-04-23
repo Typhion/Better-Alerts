@@ -10,7 +10,7 @@
  alert_action_typhion:0 "pls remove this PDX"
  alert_action_typhion_disable:0 "\n@rightclick! #instruction #bold Right-click#! to disable this Alert#!"
 
- alert_low_market_access_alert_typhion_name:0 "Low [concept_market_access]"
+ alert_low_market_access_alert_typhion_name:0 "Düşük [concept_market_access]"
  alert_low_market_access_alert_typhion_desc:0 "We have [GetPlayer.GetNumLowMarketAccessStates] [Concept('concept_state', '$concept_states$')] with low [concept_market_access]"
  alert_low_market_access_alert_typhion_hint:0 "You can improve the [concept_market_access] in your states by either increasing [concept_infrastructure] (which can be done by building [GetBuildingType('building_port').GetName] or [GetBuildingType('building_railway').GetName]), by [Concept('concept_decree', '$concept_decrees$')] like [GetDecreeType('decree_road_maintenance').GetName], or ensuring that there are enough Convoys to connect to its [concept_market_capital] overseas."
  alert_low_market_access_alert_typhion_ui:0 "#T $alert_low_market_access_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_market_access_alert_typhion_desc$\n\n@information! $alert_low_market_access_alert_typhion_hint$\n\n#I Click to open the Market Access Menu#!$alert_action_typhion_disable$"
@@ -30,7 +30,7 @@
  alert_isolated_state_alert_typhion_hint:0 "You can connect your states to the [AccessPlayer.GetCapital.GetMarket.GetName] by increasing [concept_infrastructure], which can be done by building Buildings that provide [concept_infrastructure] like Ports or Railroads, or by using the #v $decree_road_maintenance$#! [concept_decree]."
  alert_isolated_state_alert_typhion_ui:0 "#T $alert_isolated_state_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_isolated_state_alert_typhion_desc$\n\n@information! $alert_isolated_state_alert_typhion_hint$\n\n#I Click to open the Isolated State Menu#!$alert_action_typhion_disable$"
 
- alert_unproductive_trade_route_alert_typhion_name:0 "Unproductive [Concept('concept_trade_route', '$concept_trade_routes$')]"
+ alert_unproductive_trade_route_alert_typhion_name:0 "Verimsiz [Concept('concept_trade_route', '$concept_trade_routes$')]"
  alert_unproductive_trade_route_alert_typhion_desc:0 "We have unproductive [Concept('concept_trade_route', '$concept_trade_routes$')]."
  alert_unproductive_trade_route_alert_typhion_hint:0 "You can remove existing [Concept('concept_trade_route', '$concept_trade_routes$')] from either the Market Panel or using the Trade Lens. If you want to keep this route but have no other productive routes to maintain the trade centers profitability, consider subsidizing the building."
  alert_unproductive_trade_route_alert_typhion_ui:0 "#T $alert_unproductive_trade_route_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_unproductive_trade_route_alert_typhion_desc$\n\n@information! $alert_unproductive_trade_route_alert_typhion_hint$\n\n#I Click to open the Market Panel#!$alert_action_typhion_disable$"
@@ -45,12 +45,12 @@
  alert_secession_growing_alert_typhion_hint:0 "You can alleviate the risk of a [concept_secession] by decreasing the [Concept('concept_radical','$concept_radicals$')] of the targeted [concept_culture] in your [concept_country]. This can be done by improving the [concept_sol] in [Concept('concept_state','$concept_states$')] they live in, ensuring they are not [Concept('concept_discrimination','$concept_discriminated_against$')] in the long term, or by issuing [Concept('concept_decree', '$concept_decrees$')] to mitigate these factors in the short term."
  alert_secession_growing_alert_typhion_ui:0 "#T $alert_secession_growing_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_secession_growing_alert_typhion_desc$\n\n@information! $alert_secession_growing_alert_typhion_hint$\n\n#I Click to open the Secessions Menu#!$alert_action_typhion_disable$"
 
- alert_idle_mobilized_general_typhion_name:0 "Idle Mobilized Generals"
+ alert_idle_mobilized_general_typhion_name:0 "Boştaki Seferber Generaller"
  alert_idle_mobilized_general_typhion_desc:0 "A [concept_general] is mobilized and idling without a front assignment. They will defend the [concept_hq] from attacking forces while they await further orders"
  alert_idle_mobilized_general_typhion_hint:0 "You can give orders to [Concept('concept_general', '$concept_generals$')] in the $concept_general$ Panel."
  alert_idle_general_alert_typhion_ui:0 "#T $alert_idle_mobilized_general_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_idle_mobilized_general_typhion_desc$\n\n@information! $alert_idle_mobilized_general_typhion_hint$\n\n#I Click to open the Idle General Menu#!$alert_action_typhion_disable$"
 
- alert_insufficient_tax_capacity_alert_typhion_name:0 "Insufficient [concept_tax_capacity]"
+ alert_insufficient_tax_capacity_alert_typhion_name:0 "Yetersiz [concept_tax_capacity]"
  alert_insufficient_tax_capacity_alert_typhion_desc:0 "We have [GetPlayer.GetNumInsufficientTaxCapacityStates] [Concept('concept_state', '$concept_states$')] with insufficient [concept_tax_capacity]"
  alert_insufficient_tax_capacity_alert_typhion_hint:0 "You can improve the [concept_tax_capacity] of your states by building [GetBuildingType('building_government_administration').GetName] [Concept('concept_building','$concept_buildings$')] in the [concept_state]. You can also further utilize production methods to increase the local taxation capacity created by these buildings.\n\n Nationwide you can look to changing your laws and research new technology to modernize your bureaucratic apparatus and increase its innate taxation capacity."
  alert_insufficient_tax_alert_typhion_ui:0 "#T $alert_insufficient_tax_capacity_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_insufficient_tax_capacity_alert_typhion_desc$\n\n@information! $alert_insufficient_tax_capacity_alert_typhion_hint$\n\n#I Click to open the Tax Capacity Menu#!$alert_action_typhion_disable$"
@@ -61,7 +61,7 @@
  alert_market_goods_shortage_alert_typhion_hint:0 "You can resolve the shortages by increasing the number of [concept_sell_orders] for [Concept('concept_good', '$concept_goods$')]. This can be done by either producing more [Concept('concept_good', '$concept_goods$')], improving [concept_infrastructure] in [Concept('concept_state', '$concept_states$')] with low [concept_market_access] producing it, or setting up a [concept_trade_route] to get it from another [concept_market]."
  alert_market_shortage_alert_typhion_ui:0 "#T $alert_market_goods_shortage_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_market_goods_shortage_alert_typhion_desc$\n\n@information! $alert_market_goods_shortage_alert_typhion_hint$\n\n#I Click to open the Market Panel#!$alert_action_typhion_disable$"
 
- alert_expensive_goods_alert_typhion_name:0 "Expensive [Concept('concept_good', '$concept_goods$')]"
+ alert_expensive_goods_alert_typhion_name:0 "Pahalı [Concept('concept_good', '$concept_goods$')]"
  alert_expensive_goods_alert_typhion_desc:0 "We have expensive [Concept('concept_good', '$concept_goods$')] in at least one of our [Concept('concept_market', '$concept_markets$')]."
  alert_expensive_goods_alert_typhion_hint:0 "$alert_expensive_goods_alert_hint_common$"
  alert_expensive_goods_alert_typhion_ui:0 "#T $alert_expensive_goods_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_expensive_goods_alert_typhion_desc$\n\n@information! $alert_expensive_goods_alert_typhion_hint$\n\n#I Click to open the Market Panel#!$alert_action_typhion_disable$"
@@ -80,7 +80,7 @@
  alert_is_in_diplo_play_alert_typhion_hint:0 "See whether you can defeat your enemies or surrender."
  alert_is_in_diplo_play_alert_ui:0 "#T $alert_is_in_diplo_play_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n@information! $alert_is_in_diplo_play_alert_typhion_hint$\n\n#I Click to open the Diplomacy Panel#!$alert_action_typhion_disable$"
 
- alert_stockpiling_gold_alert_typhion_name:0 "Stockpiling [GetGoods('gold').GetTextIcon] [GetGoods('gold').GetName]"
+ alert_stockpiling_gold_alert_typhion_name:0 "[GetGoods('gold').GetTextIcon] [GetGoods('gold').GetName] biriktiriliyor"
  alert_stockpiling_gold_alert_typhion_desc:0 "Your [concept_treasury] is stockpiling gold beyond its capacity."
  alert_stockpiling_gold_alert_typhion_hint:0 "Increase your expenditures or reduce your income to balance your budget better. Stockpiling gold extracts @money![concept_money] from your economy and [concept_pop] at diminishing returns, leading to reductions in [concept_wealth] over time."
  alert_stockpiling_gold_alert_typhion_ui:0 "#T $alert_stockpiling_gold_alert_typhion_name$#!\n$TOOLTIP_DELIMITER$\n$alert_stockpiling_gold_alert_typhion_desc$\n\n@information! $alert_stockpiling_gold_alert_typhion_hint$\n\n#I Click to open the Budget Panel#!$alert_action_typhion_disable$"
@@ -110,15 +110,19 @@
 
  alert_country_approaching_bureaucracy_shortage_alert_typhion_ui:0 "#T $alert_country_approaching_bureaucracy_shortage_name$#!\n$TOOLTIP_DELIMITER$\n$alert_country_approaching_bureaucracy_shortage_desc$\n\n@information! $alert_country_approaching_bureaucracy_shortage_hint$\n\n#I Click to open the $alert_country_approaching_bureaucracy_shortage_action$#!$alert_action_typhion_disable$"
 
- alert_available_decision_name:0 "Available Decisions"
+ alert_available_decision_name:0 "Mevcut Kararlar"
  alert_available_decision_desc:0 "You have one or more available decisions."
  alert_available_decision_hint:0 "You can disable individual Decision Alerts in the Decisions tab by right clicking the green checkmark button."
  alert_available_decision_action:0 "Click to open the Decisions tab"
  alert_available_decision_alert_typhion_ui:0 "#T $alert_available_decision_name$#!\n$TOOLTIP_DELIMITER$\n$alert_available_decision_desc$\n\n@information! $alert_available_decision_hint$\n\n#I $alert_available_decision_action$#!$alert_action_typhion_disable$"
 
- alert_low_legitimacy_alert_typhion_ui:0 "#T $alert_low_legitimacy_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_legitimacy_alert_desc$\n\n@information! $alert_low_legitimacy_alert_hint$\n\n#I Click to open the $alert_low_legitimacy_alert_action$#!$alert_action_typhion_disable$"
+ alert_low_legitimacy_alert_name:0 "Low Legitimacy"
+ alert_low_legitimacy_alert_desc:0 "$alert_legitimacy_level_contested_alert_desc$"
+ alert_low_legitimacy_alert_typhion_ui:0 "#T $alert_low_legitimacy_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_low_legitimacy_alert_desc$\n\n@information! $alert_low_legitimacy_alert_hint$\n\n#I Click to open the $alert_legitimacy_level_contested_alert_action$#!$alert_action_typhion_disable$"
 
  alert_country_default_alert_typhion_ui:0 "#T $alert_country_default_name$#!\n$TOOLTIP_DELIMITER$\n$alert_country_default_desc$\n\n@information! $alert_country_default_hint$\n\n#I Click to open the $alert_country_default_action$#!$alert_action_typhion_disable$"
+
+ alert_unused_interests_alert_typhion_ui:0 "#T $alert_unused_interests_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_unused_interests_alert_desc$\n\n@information! $alert_unused_interests_alert_hint$\n\n#I Click to open the $alert_unused_interests_alert_action$#!$alert_action_typhion_disable$"
 
  DIPLO_PLAY_ALERT_TOGGLE:0 "Toggle [concept_diplomatic_play] Alerts"
  IDLE_GENERAL_ALERT_TOGGLE:0 "Toggle [Concept('concept_general', 'Idle $concept_general$')] Alerts"
