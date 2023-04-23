@@ -45,6 +45,7 @@ Adds a lot of Alerts to be more visible instead of in the current situation thin
 [list]
     [*] English
     [*] Spanish (Thanks to Juanen from the Imperator Invictus team)
+    [*] Turkish (Thanks to Tosun Paşa)
 [/list]
 
 If you are willing to translate this to one of the available languages then leave a comment. Currently there is an English placeholder for every language so that it doesn't just show the loc key.
