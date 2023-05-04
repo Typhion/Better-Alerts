@@ -228,11 +228,3 @@ available_decisions_toggle_sgui = {
 		}
 	}
 }
-unused_interests_toggle_sgui = {
-	scope = country
-	effect = {
-		run_sgui_var_toggle = {
-			VAR = unused_interests_alert_disabled
-		}
-	}
-}

@@ -1737,7 +1737,7 @@ types custom_alert_types {
 			blockoverride "click" {
 				onclick = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
 				rightclick_modifiers = {
-					ondefault = "[GetScriptedGui('unused_interests_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					ondefault = "[GetScriptedGui('decreasing_interests_toggle_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					ondefault = "[GetVariableSystem.Toggle('decreasing_interests_toggle')]"
 				}
 			}
