@@ -7,7 +7,6 @@
  yes:0 "yes"
  no:0 "no"
 
- alert_action_typhion:0 "pls remove this PDX"
  alert_action_typhion_disable:0 "\n@rightclick! #instruction #bold Right-click#! to disable this Alert#!"
 
  alert_low_market_access_alert_typhion_name:0 "Low [concept_market_access]"
