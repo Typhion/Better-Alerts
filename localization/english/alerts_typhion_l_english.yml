@@ -104,6 +104,10 @@
 
  alert_has_no_war_goal_alert_typhion_ui:0 "#T No Primary [concept_war_goal] in a [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$alert_has_no_war_goal_alert_desc$\n\n@information! $alert_has_no_war_goal_alert_hint$\n\n#I Click to open the Diplomatic Play Menu#!$alert_action_typhion_disable$"
 
+ alert_wasted_construction_name:0 "Wasted Construction"
+ alert_wasted_construction_desc:0 "You are not using available contruction in your government contruction queue."
+ alert_wasted_construction_hint:0 "You can try building buildings in your country."
+ alert_wasted_construction_action:0 "Construction Queue"
  alert_wasted_construction_alert_typhion_ui:0 "#T $alert_wasted_construction_name$#!\n$TOOLTIP_DELIMITER$\n$alert_wasted_construction_desc$\n\n@information! $alert_wasted_construction_hint$\n\n#I Click to open the $alert_wasted_construction_action$#!$alert_action_typhion_disable$"
 
  alert_has_decreasing_interests_alert_typhion_ui:0 "#T $alert_has_decreasing_interests_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_has_decreasing_interests_alert_desc$\n\n@information! $alert_has_decreasing_interests_alert_hint$\n\n#I Click to open the $alert_has_decreasing_interests_alert_action$#!$alert_action_typhion_disable$"
