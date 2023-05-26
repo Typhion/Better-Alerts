@@ -111,6 +111,10 @@
 
  alert_has_decreasing_interests_alert_typhion_ui:0 "#T $alert_has_decreasing_interests_alert_name$#!\n$TOOLTIP_DELIMITER$\n$alert_has_decreasing_interests_alert_desc$\n\n@information! $alert_has_decreasing_interests_alert_hint$\n\n#I Click to open the $alert_has_decreasing_interests_alert_action$#!$alert_action_typhion_disable$"
 
+ alert_country_approaching_bureaucracy_shortage_name:0 "Bureaucracy Shortage"
+ alert_country_approaching_bureaucracy_shortage_desc:0 "You have a shortage in bureaucracy."
+ alert_country_approaching_bureaucracy_shortage_hint:0 "You can try building more Government Administration buildings."
+ alert_country_approaching_bureaucracy_shortage_action:0 "Government Institutions Tab"
  alert_country_approaching_bureaucracy_shortage_alert_typhion_ui:0 "#T $alert_country_approaching_bureaucracy_shortage_name$#!\n$TOOLTIP_DELIMITER$\n$alert_country_approaching_bureaucracy_shortage_desc$\n\n@information! $alert_country_approaching_bureaucracy_shortage_hint$\n\n#I Click to open the $alert_country_approaching_bureaucracy_shortage_action$#!$alert_action_typhion_disable$"
 
  alert_available_decision_name:0 "Available Decisions"
