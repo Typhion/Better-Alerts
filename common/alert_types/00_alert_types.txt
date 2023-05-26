@@ -341,18 +341,18 @@ obligation_expiring = {
 	alert_group = expiring_obligations
 }
 
-idle_mobilized_general = {
-	script_context = player_commander
-
-	valid = {
-		is_mobilized = yes
-		has_commander_order = stand_by
-	}
-
-	open_panel = commander
-	type = angry_important_action
-	alert_group = idle_mobilized_general
-}
+#idle_mobilized_general = {
+#	script_context = player_commander
+#
+#	valid = {
+#		is_mobilized = yes
+#		has_commander_order = stand_by
+#	}
+#
+#	open_panel = commander
+#	type = angry_important_action
+#	alert_group = idle_mobilized_general
+#}
 
 has_convoys_being_sunk = {
 	script_context = player_country
@@ -529,26 +529,26 @@ expensive_military_goods_alert = {
 	alert_group = expensive_military_goods
 }
 
-has_army_troops_in_reserve_alert = {
-	script_context = player_country
+#has_army_troops_in_reserve_alert = {
+#	script_context = player_country
+#
+#	valid = {
+#		exists = active_diplomatic_play
+#		army_reserves  > 0
+#	}
+#
+#	open_panel = military|army
+#	type = important_action
+#}
 
-	valid = {
-		exists = active_diplomatic_play
-		army_reserves  > 0
-	}
-
-	open_panel = military|army
-	type = important_action
-}
-
-has_navy_troops_in_reserve_alert = {
-	script_context = player_country
-
-	valid = {
-		exists = active_diplomatic_play
-		navy_reserves  > 0
-	}
-
-	open_panel = military|navy
-	type = important_action
-}
+#has_navy_troops_in_reserve_alert = {
+#	script_context = player_country
+#
+#	valid = {
+#		exists = active_diplomatic_play
+#		navy_reserves  > 0
+#	}
+#
+#	open_panel = military|navy
+#	type = important_action
+#}
